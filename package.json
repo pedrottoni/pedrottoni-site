@@ -10,8 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.0.0",
+    "@astrojs/vercel": "^5.0.1",
     "@astrojs/vue": "^3.0.0",
     "astro": "^3.2.2",
+    "astro-compress": "^2.0.15",
     "vue": "^3.3.4"
   }
 }

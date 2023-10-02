@@ -1,14 +1,3 @@
-<template>
-	<div class="counter">
-		<button @click="subtract()">-</button>
-		<pre>{{ count }}</pre>
-		<button @click="add()">+</button>
-	</div>
-	<div class="counter-message">
-		<slot />
-	</div>
-</template>
-
 <script lang="ts">
 import { ref } from 'vue';
 export default {
@@ -25,6 +14,17 @@ export default {
 	},
 };
 </script>
+
+<template>
+	<div class="counter">
+		<button @click="subtract()">-</button>
+		<pre>{{ count }}</pre>
+		<button @click="add()">+</button>
+	</div>
+	<div class="counter-message">
+		<slot />
+	</div>
+</template>
 
 <style>
 .counter {
