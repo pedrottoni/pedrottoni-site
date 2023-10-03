@@ -1,5 +1,5 @@
 {
-  "name": "site",
+  "name": "ecliptic-eclipse",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,11 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.0.0",
     "@astrojs/vercel": "^5.0.1",
-    "@astrojs/vue": "^3.0.0",
     "astro": "^3.2.2",
-    "astro-compress": "^2.0.15",
-    "vue": "^3.3.4"
+    "gsap": "^3.12.2"
   }
 }

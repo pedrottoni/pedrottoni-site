@@ -1,33 +1,64 @@
 ---
-// Component Imports
-import Counter from '../components/Counter.vue';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+import { Image } from 'astro:assets';
+import nega from '../img/nega.jpg';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
-<html lang="pt-br">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<style>
-			html,
-			body {
-				font-family: system-ui;
-				margin: 0;
-			}
-			body {
-				padding: 2rem;
-			}
-		</style>
-	</head>
-	<body>
-		<main>
-			<Counter client:visible>
-				<h1>Hello, Vue!</h1>
-			</Counter>
-		</main>
-	</body>
-</html>
+<Layout title="Welcome to Astro.">
+  <main>
+	<Image src={nega} alt="Astro logo" class="nega" />
+	<Image src={nega} alt="Astro logo" quality="low" class="nega"/>
+    <div class="box green"></div>
+    <div class="box purple"></div>
+    <div class="box orange"></div>
+  </main>
+</Layout>
+
+<script>
+  import { gsap } from "gsap";
+
+  gsap.fromTo(
+    ".box",
+    {
+      backgroundColor: "red",
+      scale: 0,
+    },
+    {
+      backgroundColor: "black",
+      duration: 1,
+      repeat: -1,
+      yoyo: true,
+      scale: 1,
+    }
+  );
+</script>
+
+<style>
+  main {
+    display: flex;
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+	flex-wrap: wrap;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    gap: 1rem;
+  }
+  .box {
+    display: block;
+
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 10rem;
+    background-color: red;
+  }
+  .nega {
+	  width: 10rem;
+	  height: 10rem;
+	  object-fit: cover;
+  }
+</style>
