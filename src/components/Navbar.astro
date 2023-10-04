@@ -1,0 +1,69 @@
+---
+import { Image } from "astro:assets";
+import logo from "../img/logo catalise.png";
+import MenuMobile from "./menuMobile.astro";
+---
+
+<nav class="navbar">
+  <a href="/">
+    <Image src={logo} alt="Logo do Catálise" class="logo" />
+  </a>
+  <MenuMobile/>
+  <div class="links">
+    <a href="/" class="link">Home</a>
+    <a href="/sobre" class="link">Nossas turmas</a>
+    <a href="/" class="link">Materiais</a>
+    <a href="/" class="link">Quem somos</a>
+    <a href="/" class="link">Contato</a>
+  </div>
+</nav>
+
+<script>
+  // se o link da div com a classe links === currentURL, adicione a classe active no link
+  const nav = document.querySelector(".navbar");
+  const navLinks = nav.querySelectorAll(".link");
+  const currentURL = window.location.href;
+  navLinks.forEach((link) => {
+    if ((link as HTMLAnchorElement).href === currentURL) {
+      link.classList.add("active");
+    }
+  });
+</script>
+
+<style scoped>
+  .logo {
+    width: 8rem;
+    height: auto;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    height: 5rem;
+  }
+  .links {
+    display: none;
+    gap: 1rem;
+  }
+  .link:hover .link:focus {
+    color: green;
+  }
+  .links a.active {
+    color: greenyellow;
+  }
+  .desktop {
+    display: unset;
+  }
+  @media screen and (min-width: 768px) {
+    .links {
+      display: flex;
+      position: static;
+      width: auto;
+    }
+    .links a {
+      display: inline-block;
+      padding: 15px 20px;
+    }
+  }
+</style>

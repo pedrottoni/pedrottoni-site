@@ -1,0 +1,33 @@
+---
+
+---
+
+<div class="menuMobile">
+  <span class="linha"></span>
+  <span class="linha"></span>
+  <span class="linha"></span>
+</div>
+<script>
+    document.querySelector('.menuMobile').addEventListener('click', () => {
+        document.querySelector('.links').classList.toggle('desktop');
+      });
+
+</script>
+<style>
+  .menuMobile {
+    padding: 1rem;
+    cursor: pointer;
+  }
+  .menuMobile .linha {
+    display: block;
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: hsl(136, 100%, 35%);
+    margin: 0.5rem auto;
+  }
+  @media screen and (min-width: 768px) {
+    .menuMobile {
+      display: none;
+    }
+  }
+</style>

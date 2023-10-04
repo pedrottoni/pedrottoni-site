@@ -1,14 +1,12 @@
 ---
 import { Image } from 'astro:assets';
-import nega from '../img/nega.jpg';
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-	<Image src={nega} alt="Astro logo" class="nega" />
-	<Image src={nega} alt="Astro logo" quality="low" class="nega"/>
     <div class="box green"></div>
     <div class="box purple"></div>
     <div class="box orange"></div>
@@ -17,15 +15,14 @@ import Card from "../components/Card.astro";
 
 <script>
   import { gsap } from "gsap";
-
   gsap.fromTo(
     ".box",
     {
-      backgroundColor: "red",
+      backgroundColor: "cyan",
       scale: 0,
     },
     {
-      backgroundColor: "black",
+      backgroundColor: "blue",
       duration: 1,
       repeat: -1,
       yoyo: true,
@@ -37,10 +34,10 @@ import Card from "../components/Card.astro";
 <style>
   main {
     display: flex;
-    margin: auto;
+    align-items: center;
+    justify-content: center;
     padding: 1rem;
     width: 800px;
-	flex-wrap: wrap;
     max-width: calc(100% - 2rem);
     color: white;
     font-size: 20px;
@@ -48,17 +45,10 @@ import Card from "../components/Card.astro";
     gap: 1rem;
   }
   .box {
-    display: block;
-
-    align-items: center;
-    justify-content: center;
+    display: block;;
     width: 10rem;
     height: 10rem;
     background-color: red;
-  }
-  .nega {
-	  width: 10rem;
-	  height: 10rem;
-	  object-fit: cover;
+    border-radius: 100%;
   }
 </style>
