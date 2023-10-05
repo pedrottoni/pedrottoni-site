@@ -1,15 +1,20 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Capa from "../components/Capa.astro";
 
+const texto =
+  "Acreditamos que a educação é a chave para desbloquear o potencial de toda pessoa e, com tecnologia, ética e excelência, estamos dedicados a prepará-los para os desafios que os aguardam.";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>
-    <div class="box green"></div>
-    <div class="box purple"></div>
-    <div class="box orange"></div>
+  <main class="container">
+    <div class="testeGsap">
+      <div class="box green"></div>
+      <div class="box purple"></div>
+      <div class="box orange"></div>
+    </div>
+    <Capa title="Uma frase bacana" destaque=" Aqui!" texto={texto} />
   </main>
 </Layout>
 
@@ -32,20 +37,22 @@ import Card from "../components/Card.astro";
 </script>
 
 <style>
+  .testeGsap {
+    display: none;
+  }
   main {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
+    width: 100%;
     color: white;
     font-size: 20px;
     line-height: 1.6;
     gap: 1rem;
   }
   .box {
-    display: block;;
+    display: block;
     width: 10rem;
     height: 10rem;
     background-color: red;

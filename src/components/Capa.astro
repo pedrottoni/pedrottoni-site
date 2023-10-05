@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import capa from "../img/capa catalise.png";
+
+const { title, destaque, texto } = Astro.props;
+---
+
+<section>
+  <div>
+    <h1>
+      {title}
+      <span class="destaque">{destaque}</span>
+    </h1>
+    <p>{texto}</p>
+    <buttom>Conheça nossas turmas</buttom>]
+  </div>
+  <Image src={capa} alt="Capa do Catálise" class="capa" />
+</section>
+
+<style scoped>
+  section {
+    display: flex;
+    place-items: center;
+    place-content: space-between;
+    width: 100%;
+  }
+  .capa {
+    display: none;
+  }
+  h1 {
+    text-transform: uppercase;
+    margin-bottom: -0.4rem;
+  }
+  .destaque {
+    font-size: 3.6rem;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 0.15rem hsl(52, 93%, 52%);
+  }
+  div {
+    min-width: 50vw;
+  }
+
+  @media screen and (min-width: 768px) {
+    .capa {
+      display: unset;
+      width: 50%;
+      height: auto;
+    }
+    .links a {
+      display: inline-block;
+      padding: 15px 20px;
+    }
+  }
+</style>
