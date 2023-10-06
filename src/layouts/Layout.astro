@@ -9,14 +9,17 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html
+  lang="pt-BR"
+  style="background-image: url('/imagens/elementos do fundo.png'); background-blend-mode: overlay"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link
-      href="https://db.onlinewebfonts.com/a/bbto8R7NafMzQ3eqW0CDa3ABBA7Xr1nm"
+      href="https://db.onlinewebfonts.com/a/BA7Xr1nmW0CDa3AB6UzsL0BFbbto8R7N"
       rel="stylesheet"
       type="text/css"
     />
@@ -32,10 +35,10 @@ const { title } = Astro.props;
 <style is:global>
   /*
 https://www.onlinewebfonts.com/search?q=GothamSSm
-font-family: "GothamSSm-Black";
-font-family: "GothamSSm-Medium";
-font-family: "GothamSSm-Bold";
 font-family: "GothamSSm-Book";
+font-family: "GothamSSm-Bold";
+font-family: "GothamSSm-Light";
+font-family: "GothamSSm-Black";
 */
   :root {
     --accent: 136, 58, 234;
@@ -50,7 +53,10 @@ font-family: "GothamSSm-Book";
   }
   html {
     font-family: GothamSSm-Book, sans-serif;
-    background: hsl(226, 80%, 14%);
+    background-color: hsl(226, 80%, 14%);
+    background-blend-mode: overlay;
+    background-repeat: repeat;
+    background-position: center -30rem;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     text-size-adjust: none;
@@ -60,18 +66,25 @@ font-family: "GothamSSm-Book";
     padding: 0;
     box-sizing: border-box;
   }
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+  }
   .container {
     max-width: 1200px;
     margin: 0 auto;
   }
   h1 {
-    font-family: GothamSSm-Black;
+    font-family: GothamSSm-Bold;
     font-size: 3.4rem;
     line-height: 1.2;
+    margin: 0;
   }
   p {
-    font-family: GothamSSm-Book;
+    font-family: GothamSSm-Light;
     font-size: 1rem;
     line-height: 1.8;
+    margin: 0;
   }
 </style>

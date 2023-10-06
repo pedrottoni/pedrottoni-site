@@ -1,0 +1,41 @@
+---
+const { texto, estilo } = Astro.props;
+//claro, outline-claro, outline-escuro, grande, pequeno
+---
+
+<a class={estilo}>{texto}</a>
+<style scoped>
+  a {
+    font-family: GothamSSm-Bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0.8rem;
+    color: #333;
+    cursor: pointer;
+    filter: drop-shadow(0rem 0rem 1rem hsla(215, 100%, 25%, 0.6))
+      drop-shadow(0rem 0rem 1rem hsl(195, 63%, 24%, 0.6));
+    width: max-content;
+    height: max-content;
+    transition: all 0.5s ease;
+  }
+  a:hover {
+    filter: drop-shadow(-0.6rem -0.4rem 0.9rem hsl(215, 100%, 25%))
+      drop-shadow(0.6rem 0.4rem 0.9rem hsl(195, 63%, 24%));
+  }
+
+  .claro {
+    color: hsl(210, 33%, 99%);
+    filter: none;
+  }
+  .claro:hover {
+    filter: none;
+  }
+  .grande {
+    padding: 1.1rem 1rem;
+    font-size: 1rem;
+  }
+  .pequeno {
+    padding: 0.8rem 0.8rem;
+    font-size: 0.8rem;
+  }
+</style>

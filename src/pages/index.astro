@@ -1,7 +1,11 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Capa from "../components/Capa.astro";
+import Destaques from "../components/Destaques.astro";
+import Section from "../components/Section.astro";
+import CardTurmas from "../components/CardTurmas.astro";
+import CardEbooks from "../components/CardEbooks.astro";
+import CardAprovacoes from "../components/CardAprovacoes.astro";
 
 const texto =
   "Acreditamos que a educação é a chave para desbloquear o potencial de toda pessoa e, com tecnologia, ética e excelência, estamos dedicados a prepará-los para os desafios que os aguardam.";
@@ -15,47 +19,209 @@ const texto =
       <div class="box orange"></div>
     </div>
     <Capa title="Uma frase bacana" destaque=" Aqui!" texto={texto} />
+    <Destaques />
+    <Section
+      estilo="claro"
+      tag="Turmas"
+      titulo="Conheça nossas turmas"
+      subtitulo="LorenIpsum dolor sit amet consectetur adipisicing elit. Quaerat consectetur facilis molestias repudiandae reiciendis temporibus suscipit."
+      botao="Conheça nossas turmas"
+    >
+      <CardTurmas
+        estilo="grande"
+        tag="Turma"
+        turma="ITA/IME"
+        capa="/imagens/itaime.png"
+      />
+      <CardTurmas
+        estilo="grande"
+        tag="Turma"
+        turma="ITA/IME"
+        capa="/imagens/itaime.png"
+      />
+      <CardTurmas
+        estilo="grande"
+        tag="Turma"
+        turma="ITA/IME"
+        capa="/imagens/itaime.png"
+      />
+    </Section>
+    <Section
+      estilo=""
+      tag="Materiais"
+      titulo="Os melhores materiais para sua preparação"
+      subtitulo=""
+      link="Conheça nossos materiais"
+      colunas="col4"
+    >
+      <CardEbooks
+        capa="/imagens/itaime fundo.png"
+        tag="Ebook"
+        material="ITA/IME"
+      />
+      <CardEbooks
+        capa="/imagens/itaime fundo.png"
+        tag="Ebook"
+        material="ITA/IME"
+      />
+      <CardEbooks
+        capa="/imagens/itaime fundo.png"
+        tag="Ebook"
+        material="ITA/IME"
+      />
+      <CardEbooks
+        capa="/imagens/itaime fundo.png"
+        tag="Ebook"
+        material="ITA/IME"
+      />
+      <CardEbooks
+        capa="/imagens/itaime fundo.png"
+        tag="Ebook"
+        material="ITA/IME"
+      />
+      <CardEbooks
+        capa="/imagens/itaime fundo.png"
+        tag="Ebook"
+        material="ITA/IME"
+      />
+      <CardEbooks
+        capa="/imagens/itaime fundo.png"
+        tag="Ebook"
+        material="ITA/IME"
+      />
+      <CardEbooks
+        capa="/imagens/itaime fundo.png"
+        tag="Ebook"
+        material="ITA/IME"
+      />
+    </Section>
+    <Section
+      estilo="claro centro"
+      tag="Aprovações"
+      titulo="Eles conquistaram sonhos mais altos"
+      subtitulo="Como montar a revisão matadora para a reta final do ITA e aumentar em 10x suas chances de aprovação.Como montar a revisão matadora para a reta final do ITA e aumentar em 10x suas chances"
+    >
+      <CardAprovacoes
+        capa="/imagens/itaime fundo.png"
+        tag="ITA"
+        aprovado="João Matheus"
+      />
+      <CardAprovacoes
+        capa="/imagens/itaime fundo.png"
+        tag="ITA"
+        aprovado="João Matheus"
+      />
+      <CardAprovacoes
+        capa="/imagens/itaime fundo.png"
+        tag="ITA"
+        aprovado="João Matheus"
+      />
+    </Section>
+    <Capa title="Uma frase bacana" destaque=" Aqui!" texto={texto} />
+    <Section
+      estilo="claro centro"
+      tag="Depoimentos"
+      titulo="Conheça nossos alunos"
+    >
+      <CardAprovacoes
+        capa="/imagens/itaime fundo.png"
+        tag="ITA"
+        aprovado="João Matheus"
+      />
+      <CardAprovacoes
+        capa="/imagens/itaime fundo.png"
+        tag="ITA"
+        aprovado="João Matheus"
+      />
+      <CardAprovacoes
+        capa="/imagens/itaime fundo.png"
+        tag="ITA"
+        aprovado="João Matheus"
+      />
+    </Section>
+    <Section
+      estilo=""
+      tag="Materiais"
+      titulo="Os melhores materiais para sua preparação"
+      subtitulo=""
+      link="Conheça nossos materiais"
+      colunas="col3"
+    >
+      <CardTurmas
+        estilo="pequeno"
+        tag="Turma"
+        turma="ITA/IME"
+        capa="/imagens/itaime fundo.png"
+      />
+      <CardTurmas
+        estilo="pequeno"
+        tag="Turma"
+        turma="PRÉ ITA/IME"
+        capa="/imagens/itaime fundo.png"
+      />
+      <CardTurmas
+        estilo="pequeno"
+        tag="Turma"
+        turma="ITA/IME"
+        capa="/imagens/itaime fundo.png"
+      />
+      <CardTurmas
+        estilo="pequeno"
+        tag="Turma"
+        turma="ITA/IME"
+        capa="/imagens/itaime fundo.png"
+      />
+      <CardTurmas
+        estilo="pequeno"
+        tag="Turma"
+        turma="ITA/IME"
+        capa="/imagens/itaime fundo.png"
+      />
+      <CardTurmas
+        estilo="pequeno"
+        tag="Turma"
+        turma="ITA/IME"
+        capa="/imagens/itaime fundo.png"
+      />
+    </Section>
+    <script>
+      import { gsap } from "gsap";
+      gsap.fromTo(
+        ".box",
+        {
+          backgroundColor: "cyan",
+          scale: 0,
+        },
+        {
+          backgroundColor: "blue",
+          duration: 1,
+          repeat: -1,
+          yoyo: true,
+          scale: 1,
+        }
+      );
+    </script>
+
+    <style>
+      .testemateriais {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+        gap: 1rem;
+        place-items: center;
+        place-content: center;
+      }
+      .testeGsap {
+        display: none;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        color: white;
+      }
+    </style>
   </main>
 </Layout>
-
-<script>
-  import { gsap } from "gsap";
-  gsap.fromTo(
-    ".box",
-    {
-      backgroundColor: "cyan",
-      scale: 0,
-    },
-    {
-      backgroundColor: "blue",
-      duration: 1,
-      repeat: -1,
-      yoyo: true,
-      scale: 1,
-    }
-  );
-</script>
-
-<style>
-  .testeGsap {
-    display: none;
-  }
-  main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    width: 100%;
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-    gap: 1rem;
-  }
-  .box {
-    display: block;
-    width: 10rem;
-    height: 10rem;
-    background-color: red;
-    border-radius: 100%;
-  }
-</style>

@@ -1,0 +1,101 @@
+---
+const { estilo, titulo, subtitulo, tag, botao, link, colunas } = Astro.props;
+import Botao from "./Botao.astro";
+import Link from "./Link.astro";
+---
+
+<section class={estilo}>
+  <div>
+    <div>
+      <span>{tag}</span>
+      <h1>{titulo}</h1>
+      <p>{subtitulo}</p>
+    </div>
+    {botao && <Botao estilo="claro grande" texto={botao} />}
+    {link && <Link estilo="claro grande" texto={link} />}
+  </div>
+  <div class={"conteudo " + colunas}>
+    <slot />
+  </div>
+</section>
+
+<style scoped>
+  section {
+    width: 100%;
+  }
+  section > div:first-child {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    place-content: space-between;
+    place-items: center;
+  }
+  .conteudo {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    place-items: center;
+    place-content: center;
+    margin-top: 4rem;
+  }
+  .col3 {
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  }
+  .col4 {
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+  .claro > div:first-child {
+    display: block;
+  }
+  .claro {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    place-items: center;
+    place-content: space-between;
+    background: hsl(215, 60%, 96%);
+    border-radius: 2rem;
+    width: 100%;
+    padding: 6rem 6rem 6rem 6rem;
+    color: hsl(197, 9%, 16%);
+    filter: drop-shadow(-4rem -3rem 4rem hsl(215, 100%, 25%))
+      drop-shadow(4rem 3rem 4rem hsl(195, 63%, 24%));
+    overflow: hidden;
+  }
+  .claro .conteudo {
+    display: flex;
+    gap: 1rem;
+    width: 200%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 0;
+  }
+  .claro div {
+    max-width: 1200px;
+  }
+  .centro {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .centro > div:first-child {
+    max-width: 41rem;
+  }
+  span {
+    font-family: "GothamSSm-Bold";
+    font-size: 1.4rem;
+    color: hsl(52, 93%, 52%);
+    line-height: 2.5;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  .claro h1 {
+    font-family: GothamSSm-Black;
+  }
+  p {
+    font-family: GothamSSm-Book;
+    font-size: 1.1rem;
+    margin-top: 1.4rem;
+    margin-bottom: 2.4rem;
+  }
+</style>

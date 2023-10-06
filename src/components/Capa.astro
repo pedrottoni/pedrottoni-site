@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import capa from "../img/capa catalise.png";
+import Botao from "./Botao.astro";
 
 const { title, destaque, texto } = Astro.props;
 ---
@@ -12,7 +13,7 @@ const { title, destaque, texto } = Astro.props;
       <span class="destaque">{destaque}</span>
     </h1>
     <p>{texto}</p>
-    <buttom>Conheça nossas turmas</buttom>]
+    <Botao estilo="grande" texto="Textinho bacana" />
   </div>
   <Image src={capa} alt="Capa do Catálise" class="capa" />
 </section>
@@ -22,14 +23,22 @@ const { title, destaque, texto } = Astro.props;
     display: flex;
     place-items: center;
     place-content: space-between;
+    margin-top: 3rem;
     width: 100%;
   }
   .capa {
     display: none;
+    filter: drop-shadow(-2rem -2rem 4rem hsl(215, 100%, 25%))
+      drop-shadow(2rem 2rem 4rem hsl(195, 63%, 24%));
   }
   h1 {
+    font-family: GothamSSm-Black;
     text-transform: uppercase;
-    margin-bottom: -0.4rem;
+    margin-bottom: 1.2rem;
+  }
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
   }
   .destaque {
     font-size: 3.6rem;
@@ -37,11 +46,11 @@ const { title, destaque, texto } = Astro.props;
     color: transparent;
     -webkit-text-stroke: 0.15rem hsl(52, 93%, 52%);
   }
-  div {
-    min-width: 50vw;
-  }
 
   @media screen and (min-width: 768px) {
+    div {
+      width: clamp(24rem, 40vw, 30rem);
+    }
     .capa {
       display: unset;
       width: 50%;

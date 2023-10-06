@@ -1,0 +1,64 @@
+---
+const { texto, estilo } = Astro.props;
+//claro, outline-claro, outline-escuro, grande, pequeno
+---
+
+<button class={estilo}>{texto}</button>
+<style scoped>
+  button {
+    font-family: GothamSSm-Bold;
+    text-transform: uppercase;
+    background: linear-gradient(276deg, #24ac9d -0.02%, #42f5e1 85.16%);
+    border: none;
+    border-radius: 0.8rem;
+    color: #333;
+    cursor: pointer;
+    filter: drop-shadow(0rem 0rem 1rem hsla(215, 100%, 25%, 0.6))
+      drop-shadow(0rem 0rem 1rem hsl(195, 63%, 24%, 0.6));
+    width: max-content;
+    height: max-content;
+    transition: all 0.5s ease;
+  }
+  button:hover {
+    background: linear-gradient(180deg, #24ac9d -0.02%, #42f5e1 85.16%);
+    filter: drop-shadow(-0.6rem -0.4rem 0.9rem hsl(215, 100%, 25%))
+      drop-shadow(0.6rem 0.4rem 0.9rem hsl(195, 63%, 24%));
+  }
+
+  .claro {
+    color: hsl(210, 33%, 99%);
+    filter: none;
+    background: linear-gradient(276deg, #24ac9d -0.02%, #3b6fb5 85.16%);
+  }
+  .claro:hover {
+    background: linear-gradient(180deg, #24ac9d -0.02%, #3b6fb5 85.16%);
+    filter: none;
+  }
+  .outline-claro {
+    color: hsl(210, 33%, 99%);
+    background: transparent;
+    filter: none;
+    border: 1px solid hsl(210, 33%, 99%);
+  }
+  .outline-claro:hover {
+    background: hsl(210, 33%, 99%);
+  }
+  .outline-escuro {
+    color: hsl(215, 51%, 47%);
+    background: transparent;
+    filter: none;
+    border: 2px solid hsl(215, 51%, 47%);
+  }
+  .outline-escuro:hover {
+    background: #3b6eb4;
+    filter: none;
+  }
+  .grande {
+    padding: 1.1rem 1rem;
+    font-size: 1rem;
+  }
+  .pequeno {
+    padding: 0.8rem 0.8rem;
+    font-size: 0.8rem;
+  }
+</style>

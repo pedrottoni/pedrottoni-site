@@ -1,2 +1,78 @@
 ---
+import Botao from "./Botao.astro";
+const { capa, estilo, tag, turma } = Astro.props;
+//grande, pequeno
 ---
+
+<div class={"card " + estilo}>
+  <div class="capa">
+    <img src={capa} alt="Capa da turma" class="capa" />
+  </div>
+  <div class="texto">
+    <span>{tag}</span>
+    <h1>{turma}</h1>
+    <Botao estilo="outline-escuro pequeno" texto="Textinho bacana" />
+  </div>
+</div>
+
+<style scoped define:vars={{ capa }}>
+  .card {
+    background-color: hsl(210, 33%, 99%);
+    border-radius: 1rem;
+    box-shadow:
+      0px 5px 12px 0px rgba(0, 0, 0, 0.06),
+      0px 42px 94px 0px rgba(60, 110, 180, 0.13);
+    overflow: hidden;
+  }
+  .grande .capa {
+    background-image: linear-gradient(
+      45deg,
+      hsl(215, 99%, 65%),
+      hsl(195, 99%, 65%)
+    );
+    background-repeat: no-repeat;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    width: 100%;
+    height: 14rem;
+  }
+  .grande .texto {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    place-content: center;
+    padding: 1rem 3rem 3rem 3rem;
+  }
+  span {
+    color: hsl(200, 9%, 13%);
+    font-family: GothamSSm-Bold;
+  }
+  h1 {
+    color: hsl(200, 9%, 13%);
+    font-family: GothamSSm-Black;
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  .pequeno {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 0fr;
+    min-width: 24rem;
+    width: 100%;
+    direction: rtl;
+  }
+  .pequeno > * {
+    direction: ltr;
+  }
+  .pequeno .capa {
+    position: absolute;
+    right: clamp(-2.5rem, -4.8vw, -4rem);
+    top: -0.1rem;
+    width: auto;
+    height: 14rem;
+  }
+  .pequeno .texto {
+    padding: 2.2rem 2.2rem 2.2rem 2.2rem;
+    z-index: 1;
+  }
+</style>

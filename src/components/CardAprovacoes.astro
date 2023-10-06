@@ -1,6 +1,6 @@
 ---
 import Botao from "./Botao.astro";
-const { capa, tag, material } = Astro.props;
+const { capa, tag, aprovado, video } = Astro.props;
 //grande, pequeno
 ---
 
@@ -10,8 +10,8 @@ const { capa, tag, material } = Astro.props;
   </div>
   <div class="texto">
     <span>{tag}</span>
-    <h1>{material}</h1>
-    <Botao estilo="outline-claro pequeno" texto="Textinho bacana" />
+    <h1>{aprovado}</h1>
+    <Botao estilo="video" texto="Textinho bacana" />
   </div>
 </div>
 
@@ -21,7 +21,7 @@ const { capa, tag, material } = Astro.props;
   }
   .capa {
     width: 100%;
-    height: auto
+    height: auto;
   }
   .texto {
     display: flex;
@@ -31,7 +31,7 @@ const { capa, tag, material } = Astro.props;
     padding: 1rem 3rem 3rem 3rem;
   }
   span {
-    color: hsl(0, 0%, 100%);
+    color: hsl(200, 9%, 13%);
     font-family: GothamSSm-Bold;
   }
   h1 {
