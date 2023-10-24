@@ -4,14 +4,14 @@ import logo from "../img/logo catalise.png";
 import MenuMobile from "./MenuMobile.astro";
 ---
 
-<nav class=" container navbar">
+<nav class="container navbar">
   <a href="/">
     <Image src={logo} alt="Logo do Catálise" class="logo" />
   </a>
-  <MenuMobile/>
+  <MenuMobile />
   <div class="links">
     <a href="/" class="link">Home</a>
-    <a href="/turmas" class="link">Nossas turmas</a>
+    <a href="/turmas" class="link">Nossos produtos</a>
     <a href="/materiais" class="link">Materiais</a>
     <a href="/sobre" class="link">Quem somos</a>
     <a href="/contato" class="link">Contato</a>
@@ -32,25 +32,29 @@ import MenuMobile from "./MenuMobile.astro";
 
 <style scoped>
   .logo {
-    width: 8rem;
+    width: 9rem;
     height: auto;
   }
   .navbar {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1.5rem 1rem 1rem 1rem;
     height: 5rem;
+    z-index: 10;
   }
   .links {
     display: none;
     gap: 1rem;
+    text-decoration: none;
   }
-  .link:hover .link:focus {
-    color: green;
+  .link:hover,
+  .link:focus {
+    color: var(--clr-green);
   }
   .links a.active {
-    color: greenyellow;
+    color:  var(--clr-green);;
   }
   .desktop {
     display: unset;
@@ -60,6 +64,7 @@ import MenuMobile from "./MenuMobile.astro";
       display: flex;
       position: static;
       width: auto;
+      margin-top: -0.3rem;
     }
     .links a {
       display: inline-block;

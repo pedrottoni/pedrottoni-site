@@ -1,0 +1,192 @@
+---
+import { Image } from "astro:assets";
+
+import aluno1 from "../img/capa catalise.png";
+---
+
+<swiper-container
+  class="mySwiper"
+  pagination="true"
+  pagination-clickable="true"
+  effect="cards"
+>
+  <swiper-slide>
+    <div class="aluno">
+      <Image src={aluno1} alt="Capa do Catálise" slot="imagem" width="100" />
+      <div>
+        <span>Kauã Victor</span>
+        <span>Aprovado para a 2° fase do IME</span>
+      </div>
+    </div>
+    <p>
+      "O Catálise me guiou demais na minha aprovação com listas e simulados,
+      fico feliz de ter aceitado a proposta e confiado nesses mentores incríveis
+      que são o Amós e o Fernandão! Os encontros semanais foram essenciais e a
+      conexão que eu tive com meus colegas de mentoria foi um passo a mais na
+      minha aprovação! Agora é focar cada vez mais e confiar que a 2º fase do
+      IME é vapo!"
+    </p>
+  </swiper-slide>
+  <swiper-slide>
+    <div class="aluno">
+      <Image src={aluno1} alt="Capa do Catálise" slot="imagem" width="100" />
+      <div>
+        <span>Kauã Victor</span>
+        <span>Aprovado para a 2° fase do IME</span>
+      </div>
+    </div>
+    <p>
+      "O Catálise me guiou demais na minha aprovação com listas e simulados,
+      fico feliz de ter aceitado a proposta e confiado nesses mentores incríveis
+      que são o Amós e o Fernandão! Os encontros semanais foram essenciais e a
+      conexão que eu tive com meus colegas de mentoria foi um passo a mais na
+      minha aprovação! Agora é focar cada vez mais e confiar que a 2º fase do
+      IME é vapo!"
+    </p>
+  </swiper-slide>
+  <swiper-slide>
+    <div class="aluno">
+      <Image src={aluno1} alt="Capa do Catálise" slot="imagem" width="100" />
+      <div>
+        <span>Kauã Victor</span>
+        <span>Aprovado para a 2° fase do IME</span>
+      </div>
+    </div>
+    <p>
+      "O Catálise me guiou demais na minha aprovação com listas e simulados,
+      fico feliz de ter aceitado a proposta e confiado nesses mentores incríveis
+      que são o Amós e o Fernandão! Os encontros semanais foram essenciais e a
+      conexão que eu tive com meus colegas de mentoria foi um passo a mais na
+      minha aprovação! Agora é focar cada vez mais e confiar que a 2º fase do
+      IME é vapo!"
+    </p>
+  </swiper-slide>
+  <swiper-slide>
+    <div class="aluno">
+      <Image src={aluno1} alt="Capa do Catálise" slot="imagem" width="100" />
+      <div>
+        <span>Kauã Victor</span>
+        <span>Aprovado para a 2° fase do IME</span>
+      </div>
+    </div>
+    <p>
+      "O Catálise me guiou demais na minha aprovação com listas e simulados,
+      fico feliz de ter aceitado a proposta e confiado nesses mentores incríveis
+      que são o Amós e o Fernandão! Os encontros semanais foram essenciais e a
+      conexão que eu tive com meus colegas de mentoria foi um passo a mais na
+      minha aprovação! Agora é focar cada vez mais e confiar que a 2º fase do
+      IME é vapo!"
+    </p>
+  </swiper-slide>
+  <swiper-slide>
+    <div class="aluno">
+      <Image src={aluno1} alt="Capa do Catálise" slot="imagem" width="100" />
+      <div>
+        <span>Kauã Victor</span>
+        <span>Aprovado para a 2° fase do IME</span>
+      </div>
+    </div>
+    <p>
+      "O Catálise me guiou demais na minha aprovação com listas e simulados,
+      fico feliz de ter aceitado a proposta e confiado nesses mentores incríveis
+      que são o Amós e o Fernandão! Os encontros semanais foram essenciais e a
+      conexão que eu tive com meus colegas de mentoria foi um passo a mais na
+      minha aprovação! Agora é focar cada vez mais e confiar que a 2º fase do
+      IME é vapo!"
+    </p>
+  </swiper-slide>
+  <swiper-slide>
+    <div class="aluno">
+      <Image src={aluno1} alt="Capa do Catálise" slot="imagem" width="100" />
+      <div>
+        <span>Kauã Victor</span>
+        <span>Aprovado para a 2° fase do IME</span>
+      </div>
+    </div>
+    <p>
+      "O Catálise me guiou demais na minha aprovação com listas e simulados,
+      fico feliz de ter aceitado a proposta e confiado nesses mentores incríveis
+      que são o Amós e o Fernandão! Os encontros semanais foram essenciais e a
+      conexão que eu tive com meus colegas de mentoria foi um passo a mais na
+      minha aprovação! Agora é focar cada vez mais e confiar que a 2º fase do
+      IME é vapo!"
+    </p>
+  </swiper-slide>
+  <swiper-slide>
+    <div class="aluno">
+      <Image src={aluno1} alt="Capa do Catálise" slot="imagem" width="100" />
+      <div>
+        <span>Kauã Victor</span>
+        <span>Aprovado para a 2° fase do IME</span>
+      </div>
+    </div>
+    <p>
+      "O Catálise me guiou demais na minha aprovação com listas e simulados,
+      fico feliz de ter aceitado a proposta e confiado nesses mentores incríveis
+      que são o Amós e o Fernandão! Os encontros semanais foram essenciais e a
+      conexão que eu tive com meus colegas de mentoria foi um passo a mais na
+      minha aprovação! Agora é focar cada vez mais e confiar que a 2º fase do
+      IME é vapo!"
+    </p>
+  </swiper-slide>
+</swiper-container>
+
+<script>
+  import { register } from "swiper/element/bundle";
+  register();
+
+  const swiperEl = document.querySelector("swiper-container");
+
+  const swiperParams = {};
+
+  Object.assign(swiperEl, swiperParams);
+</script>
+<style scoped>
+  swiper-container {
+    position: absolute;
+    width: 40rem;
+    height: auto;
+  }
+  swiper-slide {
+    background: var(--clr-ice);
+    width: -webkit-fill-available !important;
+    padding: 2rem;
+    place-self: center;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 1.2rem -0.6rem rgba(0, 0, 0, 0.15);
+  }
+  .aluno {
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    gap: 1.4rem;
+    border-bottom: 0.1rem solid var(--clr-dblue);
+    padding-bottom: 1.6rem;
+  }
+  .aluno div span:first-child {
+    font-family: var(--font-bold);
+    font-size: 1.2rem;
+    line-height: 2;
+  }
+  .aluno div {
+    display: flex;
+    flex-direction: column;
+  }
+  swiper-slide p {
+    font-family: var(--font-book);
+    padding-top: 1.6rem;
+  }
+  swiper-container::part(pagination) {
+    bottom: -2rem;
+  }
+  swiper-container::part(bullet-active) {
+    background-color: var(--clr-lblue);
+    width: 2rem;
+    border-radius: 1rem;
+  }
+  swiper-container::part(bullet) {
+    width: 2rem;
+    border-radius: 1rem;
+    transition: all 0.4s ease;
+  }
+</style>

@@ -1,43 +1,174 @@
 ---
-import Botao from "./Botao.astro";
 const { capa, tag, aprovado, video } = Astro.props;
 //grande, pequeno
 ---
 
 <div class="card">
   <div class="capa">
-    <img src={capa} alt="Capa da material" class="capa" />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 104 104"
+      class="play-interno"
+    >
+      <g filter="url(#filter0_b_1_145)">
+        <circle cx="51.75" cy="51.76" r="51.63" fill="#42F5E1" fill-opacity=".7"
+        ></circle>
+      </g>
+      <path
+        fill="#FBFCFD"
+        d="M71.11 47.35a4.98 4.98 0 0 1 0 8.58L45.1 71.23a4.98 4.98 0 0 1-7.5-4.28V36.33a4.98 4.98 0 0 1 7.5-4.3l26 15.33Z"
+      ></path>
+      <defs>
+        <filter
+          id="filter0_b_1_145"
+          width="109.9"
+          height="109.9"
+          x="-3.2"
+          y="-3.19"
+          color-interpolation-filters="sRGB"
+          filterUnits="userSpaceOnUse"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+          <feGaussianBlur in="BackgroundImageFix" stdDeviation="1.66"
+          ></feGaussianBlur>
+          <feComposite
+            in2="SourceAlpha"
+            operator="in"
+            result="effect1_backgroundBlur_1_145"></feComposite>
+          <feBlend
+            in="SourceGraphic"
+            in2="effect1_backgroundBlur_1_145"
+            result="shape"></feBlend>
+        </filter>
+      </defs>
+    </svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 123 123"
+      class="play-externo"
+    >
+      <g filter="url(#filter0_b_536_2)">
+        <circle
+          cx="61.5"
+          cy="61.5"
+          r="60"
+          stroke="#42F5E1"
+          stroke-opacity=".2"
+          stroke-width="3"></circle>
+      </g>
+      <defs>
+        <filter
+          id="filter0_b_536_2"
+          width="129.64"
+          height="129.64"
+          x="-3.32"
+          y="-3.32"
+          color-interpolation-filters="sRGB"
+          filterUnits="userSpaceOnUse"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+          <feGaussianBlur in="BackgroundImageFix" stdDeviation="1.66"
+          ></feGaussianBlur>
+          <feComposite
+            in2="SourceAlpha"
+            operator="in"
+            result="effect1_backgroundBlur_536_2"></feComposite>
+          <feBlend
+            in="SourceGraphic"
+            in2="effect1_backgroundBlur_536_2"
+            result="shape"></feBlend>
+        </filter>
+      </defs>
+    </svg>
+    <img
+      src={capa + ".png"}
+      alt="Capa da material"
+      class="capa"
+      width="640"
+      height="240"
+    />
   </div>
   <div class="texto">
-    <span>{tag}</span>
-    <h1>{aprovado}</h1>
-    <Botao estilo="video" texto="Textinho bacana" />
+    <img
+      src={capa + " mini" + ".png"}
+      alt="Capa da material"
+      class="capa"
+      width="140"
+      height="80"
+    />
+    <div>
+      <span>{tag}</span>
+      <h1>{aprovado}</h1>
+    </div>
   </div>
 </div>
 
-<style scoped define:vars={{ capa }}>
+<style scoped>
   .card {
     overflow: hidden;
+    border-radius: 1rem;
+    cursor: pointer;
   }
   .capa {
-    width: 100%;
     height: auto;
+    margin-bottom: -1.4rem;
+    filter: brightness(0.9);
+    transition: all 0.8s ease;
+  }
+  svg {
+    position: absolute;
+    z-index: 9;
+    transition: all 0.4s ease;
+  }
+  .play-interno {
+    top: 36%;
+    left: calc(50% - 48px);
+    width: 6rem;
+    height: 6rem;
+  }
+  .play-externo {
+    top: calc(50% - 66px);
+    left: calc(50% - 56.43px);
+    width: 7rem;
+    height: 7rem;
+    transform: scale(0.9);
+  }
+  .card:hover .capa svg {
+    filter: contrast(2);
+  }
+  .card:hover .capa .play-externo {
+    transform: scale(1);
+  }
+  .card:hover .capa img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
   }
   .texto {
+    background: linear-gradient(45deg, hsl(215, 51%, 47%), hsl(195, 99%, 65%));
+    position: relative;
     display: flex;
-    flex-direction: column;
-    place-items: center;
-    place-content: center;
-    padding: 1rem 3rem 3rem 3rem;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem 1rem 1.1rem 8.8rem;
+  }
+  .texto img {
+    position: absolute;
+    top: -1.8rem;
+    left: 0;
+  }
+  .texto div {
+    color: var(--clr-ice);
+    text-align: left;
   }
   span {
-    color: hsl(200, 9%, 13%);
-    font-family: GothamSSm-Bold;
+    font-family: var(--font-bold);
+    font-size: 0.8rem;
   }
   h1 {
-    font-family: GothamSSm-Black;
-    font-size: 1.4rem;
-    margin-top: 0.5rem;
-    margin-bottom: 2rem;
+    font-family: var(--font-bold);
+    font-size: 1.2rem;
+    margin-top: 0.3rem;
   }
 </style>

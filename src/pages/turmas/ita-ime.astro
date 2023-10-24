@@ -1,0 +1,454 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+
+import Capa from "../../components/Capa.astro";
+import Destaques from "../../components/Destaques.astro";
+import Section from "../../components/Section.astro";
+import CardAprovacoes from "../../components/CardAprovacoes.astro";
+import Accordeon from "../../components/Accordeon.astro";
+import Cardserv from "../../components/Cardserv.astro";
+import CardDepoimentos from "../../components/CardDepoimentos.astro";
+
+import capa from "../../img/turma itaime.png";
+import materiais from "../../img/materiais.png";
+
+const textoCapa =
+  "A caminhada até a aprovação no ITA exige uma preparação exclusiva. Sabendo disso, gostaríamos de dizer que você terá a chance de fazer parte da Turma ITA do Catálise em 2023.";
+---
+
+<Layout title="Turma ITA/IME" description="Catálise - turma ITA/IME">
+  <main class="container">
+    <Capa
+      title="ITA IME"
+      destaque=" 2023"
+      texto={textoCapa}
+      botao="Compre agora"
+    >
+      <p class="txt-capa" slot="conteudo">
+        {textoCapa}
+      </p>
+      <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
+    </Capa>
+    <Destaques
+      img
+      titulo1="Embasamento Completo"
+      texto1="Matemática Básica, Física Básica e Produtividade nos estudos, que irá te preparar de forma exclusiva para o ITA."
+      titulo2="Microlearning"
+      texto2="Aulas divididas por frentes, disponibilizadas em Módulos e no formato 'Microlearning', que te levarão até o nível do ITA."
+      titulo3="Listas de Exercícios"
+      texto3="Após cada aula e ao final do assunto, que te ajudarão a fixar o conteúdo e a se preparar para as provas."
+      titulo4="Plantão de dúvidas"
+      texto4="Te dará suporte de Segunda a Sexta para tirar todas as suas dúvidas e garantir que você esteja sempre preparado."
+    />
+    <Capa estilo="claro" title="Textinho bacana sobre a Turma ITA" texto="">
+      <ul class="capa-itens" slot="conteudo">
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 144 144"
+          >
+            <path
+              fill="#77DCF8"
+              fill-opacity=".6"
+              d="M128.35 55.45c12.87 7.23 12.87 25.87 0 33.1L34 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C6 4.51 21.45-4.62 34 2.43l94.35 53.02Z"
+            ></path>
+            <path
+              fill="#4D97FE"
+              stroke="#4D97FE"
+              d="M37.5 29.5a10 10 0 0 0-9.96 9.95v60.34c-.05.37-.05.74 0 1.1v3.66a10 10 0 0 0 9.95 9.95h54.6a3.65 3.65 0 1 0 0-7.3h-54.6a2.6 2.6 0 0 1-2.65-2.65V104H92.1a3.65 3.65 0 0 0 3.65-3.65v-60.9a10 10 0 0 0-9.95-9.95H37.5Zm41.2 23.24-.46.2.46-.2a3.65 3.65 0 0 0-3.41-2.24h-27.3a3.65 3.65 0 1 0 0 7.3h27.3a3.65 3.65 0 0 0 3.41-2.24l-.46-.2.46.2a3.65 3.65 0 0 0 0-2.82ZM37.5 36.8h48.3a2.6 2.6 0 0 1 2.64 2.65V96.7h-53.6V39.45a2.6 2.6 0 0 1 2.65-2.65Z"
+            ></path>
+          </svg>
+           Mentorias em grupo e Momento Catálise
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 144 144"
+          >
+            <path
+              fill="#77DCF8"
+              fill-opacity=".6"
+              d="M128.35 55.45c12.87 7.23 12.87 25.87 0 33.1L34 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C6 4.51 21.45-4.62 34 2.43l94.35 53.02Z"
+            ></path>
+            <path
+              fill="#4D97FE"
+              stroke="#4D97FE"
+              d="M37.5 29.5a10 10 0 0 0-9.96 9.95v60.34c-.05.37-.05.74 0 1.1v3.66a10 10 0 0 0 9.95 9.95h54.6a3.65 3.65 0 1 0 0-7.3h-54.6a2.6 2.6 0 0 1-2.65-2.65V104H92.1a3.65 3.65 0 0 0 3.65-3.65v-60.9a10 10 0 0 0-9.95-9.95H37.5Zm41.2 23.24-.46.2.46-.2a3.65 3.65 0 0 0-3.41-2.24h-27.3a3.65 3.65 0 1 0 0 7.3h27.3a3.65 3.65 0 0 0 3.41-2.24l-.46-.2.46.2a3.65 3.65 0 0 0 0-2.82ZM37.5 36.8h48.3a2.6 2.6 0 0 1 2.64 2.65V96.7h-53.6V39.45a2.6 2.6 0 0 1 2.65-2.65Z"
+            ></path>
+          </svg>
+           Aulões de Reforço
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 144 144"
+          >
+            <path
+              fill="#77DCF8"
+              fill-opacity=".6"
+              d="M128.35 55.45c12.87 7.23 12.87 25.87 0 33.1L34 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C6 4.51 21.45-4.62 34 2.43l94.35 53.02Z"
+            ></path>
+            <path
+              fill="#4D97FE"
+              stroke="#4D97FE"
+              d="M37.5 29.5a10 10 0 0 0-9.96 9.95v60.34c-.05.37-.05.74 0 1.1v3.66a10 10 0 0 0 9.95 9.95h54.6a3.65 3.65 0 1 0 0-7.3h-54.6a2.6 2.6 0 0 1-2.65-2.65V104H92.1a3.65 3.65 0 0 0 3.65-3.65v-60.9a10 10 0 0 0-9.95-9.95H37.5Zm41.2 23.24-.46.2.46-.2a3.65 3.65 0 0 0-3.41-2.24h-27.3a3.65 3.65 0 1 0 0 7.3h27.3a3.65 3.65 0 0 0 3.41-2.24l-.46-.2.46.2a3.65 3.65 0 0 0 0-2.82ZM37.5 36.8h48.3a2.6 2.6 0 0 1 2.64 2.65V96.7h-53.6V39.45a2.6 2.6 0 0 1 2.65-2.65Z"
+            ></path>
+          </svg>
+           Comunidade VIP no Telegram
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 144 144"
+          >
+            <path
+              fill="#77DCF8"
+              fill-opacity=".6"
+              d="M128.35 55.45c12.87 7.23 12.87 25.87 0 33.1L34 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C6 4.51 21.45-4.62 34 2.43l94.35 53.02Z"
+            ></path>
+            <path
+              fill="#4D97FE"
+              stroke="#4D97FE"
+              d="M37.5 29.5a10 10 0 0 0-9.96 9.95v60.34c-.05.37-.05.74 0 1.1v3.66a10 10 0 0 0 9.95 9.95h54.6a3.65 3.65 0 1 0 0-7.3h-54.6a2.6 2.6 0 0 1-2.65-2.65V104H92.1a3.65 3.65 0 0 0 3.65-3.65v-60.9a10 10 0 0 0-9.95-9.95H37.5Zm41.2 23.24-.46.2.46-.2a3.65 3.65 0 0 0-3.41-2.24h-27.3a3.65 3.65 0 1 0 0 7.3h27.3a3.65 3.65 0 0 0 3.41-2.24l-.46-.2.46.2a3.65 3.65 0 0 0 0-2.82ZM37.5 36.8h48.3a2.6 2.6 0 0 1 2.64 2.65V96.7h-53.6V39.45a2.6 2.6 0 0 1 2.65-2.65Z"
+            ></path>
+          </svg>
+           Simulados 100% focados no ITA
+        </li>
+      </ul>
+      <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
+    </Capa>
+    <Section
+      estilo="centro"
+      colunas="col3"
+      tag="Conteúdo"
+      titulo="O que você aprenderá"
+      subtitulo="um texto bacana aqui A marketing company can use targeted advertising to reach specific audiences based on demographics"
+    >
+      <div class="tema">
+        <h2>Matemática<br />Básica</h2>
+        <ul>
+          <li>Matemática Básica</li>
+          <li>Matemática Básica</li>
+          <li>Matemática Básica</li>
+        </ul>
+      </div>
+      <div class="tema">
+        <h2>Física<br />Básica</h2>
+        <ul>
+          <li>Matemática Básica</li>
+          <li>Matemática Básica</li>
+          <li>Matemática Básica</li>
+        </ul>
+      </div>
+      <div class="tema">
+        <h2>Produtividade<br />nos estudos</h2>
+        <ul>
+          <li>Matemática Básica</li>
+          <li>Matemática Básica</li>
+          <li>Matemática Básica</li>
+        </ul>
+      </div>
+      <div class="tema">
+        <h2>Matemática<br />Básica</h2>
+        <ul>
+          <li>Matemática Básica</li>
+          <li>Matemática Básica</li>
+          <li>Matemática Básica</li>
+        </ul>
+      </div>
+      <div class="tema">
+        <h2>Física<br />Básica</h2>
+        <ul>
+          <li>Matemática Básica</li>
+          <li>Matemática Básica</li>
+          <li>Matemática Básica</li>
+        </ul>
+      </div>
+    </Section>
+    <Capa
+      estilo="claro"
+      title="Material didático"
+      botao="Conheça outros materiais"
+    >
+      <p class="txt-capa-claro" slot="conteudo">
+        Checklist para cada assunto + Bizuários de Química, que te ajudarão a
+        organizar seus estudos e a não perder nenhum conteúdo importante.
+      </p>
+      <Image
+        src={materiais}
+        alt="Capa do Catálise"
+        class="img-capa img-capa-material"
+        slot="imagem"
+      />
+    </Capa>
+    <Section
+      estilo="centro"
+      colunas="col4"
+      tag="Mais serviços"
+      titulo="Textinho bacana"
+    >
+      <Cardserv
+        capa="/icons/test.svg"
+        nome="Correção de Redações"
+        sobre="Você terá a correção de duas redações por mês de fevereiro até a prova do ITA, sem contar com as seis redações."
+      />
+      <Cardserv
+        capa="/icons/test.svg"
+        nome="Momento Catálise"
+        sobre="Bate papo com convidados especiais: alunos ou ex-alunos do ITA que estão trabalhando em grandes empresas.."
+      />
+      <Cardserv
+        capa="/icons/test.svg"
+        nome="Apoio psicologico"
+        sobre="Teremos ao longo do ano encontros Ao Vivo pelo Google Meet para Rodas de Conversa com Psicóloga xxxxx xxxxx."
+      />
+      <Cardserv
+        capa="/icons/test.svg"
+        nome="Guia de estudo"
+        sobre="Após cada simulado você receberá um relatório de desempenho com os assuntos que você precisa revisar."
+      />
+    </Section>
+    <Section
+      estilo="claro aprovacoes"
+      tag="Professores da turma"
+      titulo="Aquele extinho bem bacana"
+      subtitulo="LorenIpsum dolor sit amet consectetur adipisicing elit. Quaerat consectetur facilis molestias repudiandae reiciendis temporibus suscipit."
+    >
+      <div class="swiper swiper-professores">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <CardAprovacoes
+              capa="/imagens/Aprovado João Matheus"
+              tag="Física Básica"
+              aprovado="Nome do professor"
+            />
+          </div>
+          <div class="swiper-slide">
+            <CardAprovacoes
+              capa="/imagens/Aprovado Arnóbio Tomaz"
+              tag="Física Básica"
+              aprovado="Nome do professor"
+            />
+          </div>
+          <div class="swiper-slide">
+            <CardAprovacoes
+              capa="/imagens/Aprovado Bruno Mentor"
+              tag="Física Básica"
+              aprovado="Nome do professor"
+            />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </Section>
+    <Section tag="" titulo="Rotina de estudos" colunas="col4">
+      <div class="rotina">
+        <div>1</div>
+        <h2>Aprenda sobre o tema</h2>
+        <p>
+          O curso é composto por videoaulas específicas e de fácil entendimento
+        </p>
+      </div>
+      <div class="rotina">
+        <div>2</div>
+        <h2>Aprenda sobre o tema</h2>
+        <p>
+          O curso é composto por videoaulas específicas e de fácil entendimento
+        </p>
+      </div>
+      <div class="rotina">
+        <div>3</div>
+        <h2>Aprenda sobre o tema</h2>
+        <p>
+          O curso é composto por videoaulas específicas e de fácil entendimento
+        </p>
+      </div>
+      <div class="rotina">
+        <div>4</div>
+        <h2>Aprenda sobre o tema</h2>
+        <p>
+          O curso é composto por videoaulas específicas e de fácil entendimento
+        </p>
+      </div>
+    </Section>
+    <Section
+      estilo="claro"
+      tag="Depoimentos"
+      titulo="Conheça a opinião dos nossos alunos"
+      subtitulo="LorenIpsum dolor sit amet consectetur adipisicing elit. Quaerat consectetur facilis molestias repudiandae reiciendis temporibus suscipit."
+    >
+      <div class="depoimentos">
+        <CardDepoimentos />
+      </div>
+    </Section>
+    <Capa
+      title="Garanta"
+      linha="true"
+      destaque=" sua Vaga!"
+      botao="Inscreva-se agora"
+    >
+      <p class="txt-capa" slot="conteudo">
+        A caminhada até a aprovação no ITA exige uma preparação exclusiva.
+      </p>
+      <ul class="capa-itens" slot="conteudo">
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 480 480"
+          >
+            <path
+              fill="#fff"
+              d="M111.69 47.84a16 16 0 0 0-11 4.85l-62.6 62.6a16.01 16.01 0 0 0 .03 25.46l62.57 62.56a16.01 16.01 0 1 0 22.62-22.62L86.62 144H304c62.04 0 112 49.96 112 112s-49.96 112-112 112h-64a16.02 16.02 0 0 0-11.46 27.4A16.02 16.02 0 0 0 240 400h64c73.67 0 132.4-56.52 140.75-128H448v-16c0-79.34-64.66-144-144-144H86.62l36.7-36.69a16 16 0 0 0-11.63-27.47ZM48 368a16 16 0 1 0 0 32 16 16 0 0 0 0-32Zm64 0a16 16 0 1 0 0 32 16 16 0 0 0 0-32Zm64 0a16 16 0 1 0 0 32 16 16 0 0 0 0-32Z"
+            ></path>
+          </svg>
+           Garantimos seu dinheiro de volta por até 7 dias
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 480 480">
+            <path fill="#fff" d="M352 16H128a32 32 0 0 0-32 32v384a32 32 0 0 0 32 32h224a32 32 0 0 0 32-32V48a32 32 0 0 0-32-32Zm-72 16a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm-64 0h32a8 8 0 0 1 0 16h-32a8 8 0 0 1 0-16Zm136 400H128V48h48l6.62 6.62c6 6 14.15 9.38 22.63 9.38h69.49a32 32 0 0 0 22.62-9.38L304 48h48v384Z"/>
+          </svg>
+           Estude do seu jeito e em qualquer dispositivo
+        </li>
+      </ul>
+      <h1 class="valor" slot="conteudo">R$ 1.480,00</h1>
+      <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
+    </Capa>
+    <Section estilo="claro" tag="" titulo="Perguntas frequentes">
+      <Accordeon />
+    </Section>
+  </main>
+</Layout>
+
+<script>
+  import { Swiper } from "swiper";
+  import { Pagination, Mousewheel } from "swiper/modules";
+  import "swiper/css";
+  import "swiper/css/pagination";
+
+  new Swiper(".swiper-professores", {
+    slidesPerView: 1.4,
+    spaceBetween: 20,
+    direction: "vertical",
+    centeredSlides: true,
+    mousewheel: true,
+    modules: [Pagination, Mousewheel],
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+
+<style scoped>
+  .swiper {
+    min-height: 27rem;
+  }
+  .swiper-container {
+    margin-top: 2rem;
+    padding: 0 3rem;
+  }
+  .swiper-container .swiper-slide {
+    width: 18rem;
+    height: 28rem;
+    height: auto;
+    place-self: center;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 1.2rem -0.6rem rgba(0, 0, 0, 0.15);
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 5rem;
+    height: 5rem;
+    background: var(--clr-ice);
+    border-radius: 5rem;
+    box-shadow: 0 0.1rem 2rem hsl(0, 0%, 60%);
+    margin: -2.8rem 1rem;
+  }
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+  }
+  .swiper-professores {
+    height: -webkit-fill-available;
+    position: absolute;
+  }
+  .tema {
+    width: -webkit-fill-available;
+    text-align: left;
+    background: var(--clr-dblue);
+    padding: 2rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(0.4rem);
+  }
+  .tema h2 {
+    color: var(--clr-green);
+    margin-bottom: 1rem;
+  }
+  .rotina {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    max-width: 16rem;
+    padding-top: 1.6rem;
+  }
+  .rotina:before {
+    content: "";
+    position: absolute;
+    width: -webkit-fill-available;
+    height: 0.08rem;
+    background: var(--clr-green);
+    top: 53%;
+    z-index: -1;
+  }
+  .rotina div:first-child {
+    background: var(--clr-blue);
+    border-radius: 100rem;
+    font-family: var(--font-black);
+    font-size: 3rem;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    border: 0.2rem solid var(--clr-green);
+    filter: drop-shadow(-0.4rem -0.4rem 0.4rem hsl(215, 100%, 30%))
+      drop-shadow(0.4rem 0.4rem 0.4rem hsl(195, 100%, 24%));
+  }
+  .rotina h2 {
+    color: var(--clr-green);
+    margin: 0.6rem;
+  }
+  .img-capa-material {
+    position: relative;
+    bottom: 0rem;
+  }
+  .capa-itens {
+    list-style: none;
+    padding: 0.4rem 0;
+  }
+  .capa-itens li {
+    font-family: var(--font-light);
+    font-weight: 600;
+    margin: 1.2rem 0 0 0;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+  }
+  .capa-itens svg {
+    width: 2rem;
+    margin-right: 0.8rem;
+  }
+  .valor {
+    font-family: var(--font-black);
+    color: var(--clr-yellow);
+    margin-top: 2.4rem;
+  }
+</style>

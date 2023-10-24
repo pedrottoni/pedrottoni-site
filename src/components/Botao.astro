@@ -6,11 +6,15 @@ const { texto, estilo } = Astro.props;
 <button class={estilo}>{texto}</button>
 <style scoped>
   button {
-    font-family: GothamSSm-Bold;
+    font-family: var(--font-bold);
     text-transform: uppercase;
-    background: linear-gradient(276deg, #24ac9d -0.02%, #42f5e1 85.16%);
+    background: linear-gradient(
+      276deg,
+      hsl(173, 65%, 41%) -0.02%,
+      hsl(173, 90%, 61%) 85.16%
+    );
     border: none;
-    border-radius: 0.8rem;
+    border-radius: 0.6rem;
     color: #333;
     cursor: pointer;
     filter: drop-shadow(0rem 0rem 1rem hsla(215, 100%, 25%, 0.6))
@@ -20,7 +24,11 @@ const { texto, estilo } = Astro.props;
     transition: all 0.5s ease;
   }
   button:hover {
-    background: linear-gradient(180deg, #24ac9d -0.02%, #42f5e1 85.16%);
+    background: linear-gradient(
+      180deg,
+      hsl(173, 65%, 41%) -0.02%,
+      hsl(173, 90%, 61%) 85.16%
+    );
     filter: drop-shadow(-0.6rem -0.4rem 0.9rem hsl(215, 100%, 25%))
       drop-shadow(0.6rem 0.4rem 0.9rem hsl(195, 63%, 24%));
   }
@@ -28,37 +36,72 @@ const { texto, estilo } = Astro.props;
   .claro {
     color: hsl(210, 33%, 99%);
     filter: none;
-    background: linear-gradient(276deg, #24ac9d -0.02%, #3b6fb5 85.16%);
+    background: linear-gradient(
+      276deg,
+      hsl(173, 65%, 41%) -0.02%,
+      hsl(214, 51%, 47%) 85.16%
+    );
   }
   .claro:hover {
-    background: linear-gradient(180deg, #24ac9d -0.02%, #3b6fb5 85.16%);
+    background: linear-gradient(
+      180deg,
+      hsl(173, 65%, 41%) -0.02%,
+      hsl(214, 51%, 47%) 85.16%
+    );
     filter: none;
   }
   .outline-claro {
     color: hsl(210, 33%, 99%);
-    background: transparent;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    background-image: linear-gradient(hsl(226, 80%, 14%), hsl(226, 80%, 14%)),
+      linear-gradient(90deg, hsl(173, 65%, 41%) -0.02%, hsl(214, 51%, 47%));
+    border: 2px solid transparent !important;
     filter: none;
-    border: 1px solid hsl(210, 33%, 99%);
   }
   .outline-claro:hover {
-    background: hsl(210, 33%, 99%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    background-image: linear-gradient(hsl(226, 80%, 14%), hsl(226, 80%, 14%)),
+      linear-gradient(90deg, hsl(173, 65%, 41%) -0.02%, hsl(214, 51%, 47%));
+    border: 2px solid transparent !important;
   }
   .outline-escuro {
-    color: hsl(215, 51%, 47%);
-    background: transparent;
+    color: var(--clr-blue);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    background-image: linear-gradient(hsl(210, 33%, 99%), hsl(210, 33%, 99%)),
+      linear-gradient(90deg, hsl(173, 65%, 41%) -0.02%, hsl(214, 51%, 47%));
+    border: 2px solid transparent !important;
     filter: none;
-    border: 2px solid hsl(215, 51%, 47%);
   }
   .outline-escuro:hover {
-    background: #3b6eb4;
+    color: hsl(210, 33%, 99%);
+    background: var(--clr-blue);
     filter: none;
   }
   .grande {
-    padding: 1.1rem 1rem;
+    padding: 1.1rem 1.6rem;
     font-size: 1rem;
   }
   .pequeno {
     padding: 0.8rem 0.8rem;
     font-size: 0.8rem;
+  }
+  .video {
+    padding: 0.8rem 0.8rem;
+    color: var(--clr-blue);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    background-image: linear-gradient(hsl(210, 33%, 99%), hsl(210, 33%, 99%)),
+      linear-gradient(90deg, hsl(173, 65%, 41%) -0.02%, hsl(214, 51%, 47%));
+    /* background: transparent; */
+    border: 2px solid transparent !important;
+    filter: none;
+  }
+  .video:hover {
+    color: hsl(210, 33%, 99%);
+    background: var(--clr-blue);
+    filter: none;
   }
 </style>

@@ -1,9 +1,42 @@
 ---
-
+import { Image } from "astro:assets";
+import logo from "../img/logo catalise.png";
 ---
 
 <footer class="container">
-    <h1>footer</h1>
+  <div>
+    <a href="/">
+      <Image src={logo} alt="Logo do Catálise" class="logo" width="200"/>
+    </a>
+  </div>
+  <div>
+    <span>Copyright 2022 © Catálise</span>
+    <span>Termos e condições</span>
+    <span>Política de privacidade</span>
+    <span>Contato</span>
+    <span>Redes sociais</span>
+    <span>Segurança</span>
+    <span>Localização</span>
+    <span>Mapa do site</span>
+  </div>
+  <div>
+    <span>Instagram</span>
+    <span>Facebook</span>
+    <span>Twitter</span>
 </footer>
 
-<style scoped></style>
+<style scoped>
+    footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        margin: 8rem auto;
+        color: var(--clr-white);
+        border-top: 0.1rem solid var(--clr-ice);
+        padding-top: 6rem;
+    }
+    footer div {
+        display: flex;
+        flex-direction: column;
+    }
+</style>

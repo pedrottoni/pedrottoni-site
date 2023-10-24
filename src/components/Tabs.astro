@@ -1,0 +1,203 @@
+---
+
+---
+
+<div class="wrapper">
+  <div class="tabs-container">
+    <ul aria-labelledby="tabs-title">
+      <li><a id="tab-1" href="#metodologia01">Metodologia01</a></li>
+      <li><a id="tab-2" href="#metodologia02">Metodologia02</a></li>
+      <li><a id="tab-3" href="#metodologia03">Metodologia03</a></li>
+      <li><a id="tab-4" href="#metodologia04">Metodologia04</a></li>
+    </ul>
+
+    <div class="tabs__panels flow">
+      <div id="metodologia01" aria-labelledby="tab-1">
+        <img src="/imagens/Aprovado Arnóbio Tomaz.png" alt="metodologia" />
+        <div class="texto">
+          <h1>Textinho bacana 01</h1>
+          <p>
+            A marketing company can use targeted advertising to reach specific
+            audiences based on demographics, interests, and behaviors. This can
+            increase the effectiveness of advertising campaigns and improve
+            return on investment.
+          </p>
+        </div>
+      </div>
+      <div id="metodologia02" aria-labelledby="tab-2">
+        <img src="/imagens/Aprovado Arnóbio Tomaz.png" alt="metodologia" />
+        <div class="texto">
+          <h1>Textinho bacana 02</h1>
+          <p>
+            A marketing company can use targeted advertising to reach specific
+            audiences based on demographics, interests, and behaviors. This can
+            increase the effectiveness of advertising campaigns and improve
+            return on investment.
+          </p>
+        </div>
+      </div>
+      <div id="metodologia03" aria-labelledby="tab-3">
+        <img src="/imagens/Aprovado Arnóbio Tomaz.png" alt="metodologia" />
+        <div class="texto">
+          <h1>Textinho bacana 03</h1>
+          <p>
+            A marketing company can use targeted advertising to reach specific
+            audiences based on demographics, interests, and behaviors. This can
+            increase the effectiveness of advertising campaigns and improve
+            return on investment.
+          </p>
+        </div>
+      </div>
+      <div id="metodologia04" aria-labelledby="tab-4">
+        <img src="/imagens/Aprovado Arnóbio Tomaz.png" alt="metodologia" />
+        <div class="texto">
+          <h1>Textinho bacana 04</h1>
+          <p>
+            A marketing company can use targeted advertising to reach specific
+            audiences based on demographics, interests, and behaviors. This can
+            increase the effectiveness of advertising campaigns and improve
+            return on investment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const tabsContainer = document.querySelector(".tabs-container");
+  const tabsList = tabsContainer.querySelector("ul");
+  const tabButtons = tabsList.querySelectorAll("a");
+  const tabPanels = tabsContainer.querySelectorAll(".tabs__panels > div");
+
+  tabsList.setAttribute("role", "tablist");
+
+  tabsList.querySelectorAll("li").forEach((listitem) => {
+    listitem.setAttribute("role", "presentation");
+  });
+
+  tabButtons.forEach((tab, index) => {
+    tab.setAttribute("role", "tab");
+    if (index === 0) {
+      tab.setAttribute("aria-selected", "true");
+      // we'll add something here
+    } else {
+      tab.setAttribute("tabindex", "-1");
+      tabPanels[index].setAttribute("hidden", "");
+    }
+  });
+
+  tabPanels.forEach((panel) => {
+    panel.setAttribute("role", "tabpanel");
+    panel.setAttribute("tabindex", "0");
+  });
+
+  tabsContainer.addEventListener("click", (e) => {
+    const clickedTab = e.target.closest("a");
+    if (!clickedTab) return;
+    e.preventDefault();
+
+    switchTab(clickedTab);
+  });
+
+  tabsContainer.addEventListener("keydown", (e) => {
+    switch (e.key) {
+      case "ArrowLeft":
+        moveLeft();
+        break;
+      case "ArrowRight":
+        moveRight();
+        break;
+      case "Home":
+        e.preventDefault();
+        switchTab(tabButtons[0]);
+        break;
+      case "End":
+        e.preventDefault();
+        switchTab(tabButtons[tabButtons.length - 1]);
+        break;
+    }
+  });
+
+  function moveLeft() {
+    const currentTab = document.activeElement;
+    if (!currentTab.parentElement.previousElementSibling) {
+      switchTab(tabButtons[tabButtons.length - 1]);
+    } else {
+      switchTab(
+        currentTab.parentElement.previousElementSibling.querySelector("a")
+      );
+    }
+  }
+
+  function moveRight() {
+    const currentTab = document.activeElement;
+    if (!currentTab.parentElement.nextElementSibling) {
+      switchTab(tabButtons[0]);
+    } else {
+      switchTab(currentTab.parentElement.nextElementSibling.querySelector("a"));
+    }
+  }
+
+  function switchTab(newTab) {
+    const activePanelId = newTab.getAttribute("href");
+    const activePanel = tabsContainer.querySelector(activePanelId);
+
+    tabButtons.forEach((button) => {
+      button.setAttribute("aria-selected", false);
+      button.setAttribute("tabindex", "-1");
+    });
+
+    tabPanels.forEach((panel) => {
+      panel.setAttribute("hidden", true);
+    });
+
+    activePanel.removeAttribute("hidden", false);
+
+    newTab.setAttribute("aria-selected", true);
+    newTab.setAttribute("tabindex", "0");
+    newTab.focus();
+  }
+</script>
+
+<style scoped>
+  [role="tablist"] {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    border-bottom: 0.15rem solid var(--clr-lblue);
+}
+[aria-selected="true"] {
+    text-decoration-thickness: 0.25em;
+    text-underline-offset: 0.5em;
+    color: var(--clr-green);
+    padding-bottom: 1.7rem;
+    border-bottom: .4rem solid var(--clr-green);
+  }
+
+  .tabs__panels.flow {
+    margin-top: 3rem;
+  }
+  .tabs__panels.flow > div {
+    height: 24rem;
+  }
+  .tabs__panels.flow > div > img {
+    float: left;
+    width: calc(50% - 2rem);
+    margin: 0 2rem 0 0;
+    border-radius: 1rem;
+  }
+  .tabs__panels.flow > div > div {
+    float: left;
+    width: 50%;
+    height: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+</style>

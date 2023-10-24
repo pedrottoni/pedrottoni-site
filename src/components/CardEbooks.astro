@@ -6,38 +6,55 @@ const { capa, tag, material } = Astro.props;
 
 <div class="card">
   <div class="capa">
-    <img src={capa} alt="Capa da material" class="capa" />
+    <img
+      src={capa}
+      alt="Capa da material"
+      class="capa"
+      width="300"
+      height="244"
+    />
   </div>
   <div class="texto">
-    <span>{tag}</span>
+    <span class={tag.toLowerCase()}>{tag}</span>
     <h1>{material}</h1>
     <Botao estilo="outline-claro pequeno" texto="Textinho bacana" />
   </div>
 </div>
 
-<style scoped define:vars={{ capa }}>
+<style scoped>
   .card {
     overflow: hidden;
   }
   .capa {
-    width: 100%;
-    height: auto
+    margin-left: 1.7rem;
+    width: 80%;
+    height: auto;
   }
   .texto {
     display: flex;
     flex-direction: column;
     place-items: center;
     place-content: center;
-    padding: 1rem 3rem 3rem 3rem;
+    padding: 1rem 1rem 4rem 1rem;
   }
   span {
-    color: hsl(0, 0%, 100%);
-    font-family: GothamSSm-Bold;
+    font-family: var(--font-bold);
+    font-size: 0.9rem;
+  }
+  .ebook {
+    color: hsl(52, 93%, 52%);
+  }
+  .bizuário {
+    color: hsl(215, 99%, 65%);
+  }
+  .miscelânea {
+    color: var(--clr-green);
   }
   h1 {
-    font-family: GothamSSm-Black;
-    font-size: 1.4rem;
+    font-family: var(--font-book);
+    font-size: 1.1rem;
     margin-top: 0.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
   }
 </style>

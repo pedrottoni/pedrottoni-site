@@ -1,39 +1,46 @@
 ---
 import { Image } from "astro:assets";
 import metodologia from "../img/imagem destaque 01.svg";
+const {
+  img,
+  titulo1,
+  titulo2,
+  titulo3,
+  titulo4,
+  texto1,
+  texto2,
+  texto3,
+  texto4,
+} = Astro.props;
 ---
 
 <section>
   <div class="destaque">
-    <Image src={metodologia} alt="metodologia" class="imagem" />
-    <h1>Metodologia</h1>
+    {img && <Image src={metodologia} alt="metodologia" class="imagem" />}
+    <h1>{titulo1}</h1>
     <p>
-      A metodologia da Catálise é uma estratégia de ensino que visa aprimorar a
-      capace daqueles.
+      {texto1}
     </p>
   </div>
   <div class="destaque">
-    <Image src={metodologia} alt="metodologia" class="imagem" />
-    <h1>Metodologia</h1>
+    {img && <Image src={metodologia} alt="metodologia" class="imagem" />}
+    <h1>{titulo2}</h1>
     <p>
-      A metodologia da Catálise é uma estratégia de ensino que visa aprimorar a
-      capace daqueles.
+      {texto2}
     </p>
   </div>
   <div class="destaque">
-    <Image src={metodologia} alt="metodologia" class="imagem" />
-    <h1>Metodologia</h1>
+    {img && <Image src={metodologia} alt="metodologia" class="imagem" />}
+    <h1>{titulo3}</h1>
     <p>
-      A metodologia da Catálise é uma estratégia de ensino que visa aprimorar a
-      capace daqueles.
+      {texto3}
     </p>
   </div>
   <div class="destaque">
-    <Image src={metodologia} alt="metodologia" class="imagem" />
-    <h1>Metodologia</h1>
+    {img && <Image src={metodologia} alt="metodologia" class="imagem" />}
+    <h1>{titulo4}</h1>
     <p>
-      A metodologia da Catálise é uma estratégia de ensino que visa aprimorar a
-      capace daqueles.
+      {texto4}
     </p>
   </div>
 </section>
@@ -46,26 +53,28 @@ import metodologia from "../img/imagem destaque 01.svg";
     place-items: center;
     place-content: space-between;
     width: 100%;
+    z-index: 2;
+    margin-top: -2rem;
   }
   .destaque {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
   }
   .imagem {
-    width: 50%;
+    width: 25%;
     height: auto;
-    margin-bottom: 1.8rem;
+    margin-bottom: 1.2rem;
+    margin-left: -1rem;
   }
   h1 {
-    font-family: "GothamSSm-Book";
+    font-family: var(--font-book);
     font-size: 1.2rem;
-    line-height: 0;
-    margin-bottom: 1.5rem;
+    color: var(--clr-green);
+    margin-top: 0;
+    margin-bottom: 1.2rem;
   }
   p {
-    text-align: center;
   }
   @media screen and (min-width: 425px) {
     section {

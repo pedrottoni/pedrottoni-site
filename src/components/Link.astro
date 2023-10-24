@@ -6,7 +6,7 @@ const { texto, estilo } = Astro.props;
 <a class={estilo}>{texto}</a>
 <style scoped>
   a {
-    font-family: GothamSSm-Bold;
+    font-family: var(--font-bold);
     text-transform: uppercase;
     border: none;
     border-radius: 0.8rem;
@@ -24,7 +24,7 @@ const { texto, estilo } = Astro.props;
   }
 
   .claro {
-    color: hsl(210, 33%, 99%);
+    color: hsl(52, 93%, 52%);
     filter: none;
   }
   .claro:hover {

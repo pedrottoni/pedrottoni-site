@@ -8,10 +8,9 @@
   <span class="linha"></span>
 </div>
 <script>
-    document.querySelector('.menuMobile').addEventListener('click', () => {
-        document.querySelector('.links').classList.toggle('desktop');
-      });
-
+  document.querySelector(".menuMobile").addEventListener("click", () => {
+    document.querySelector(".links").classList.toggle("desktop");
+  });
 </script>
 <style>
   .menuMobile {
@@ -22,7 +21,7 @@
     display: block;
     width: 1.5rem;
     height: 0.2rem;
-    background-color: hsl(136, 100%, 35%);
+    background-color: var(--clr-green);
     margin: 0.5rem auto;
   }
   @media screen and (min-width: 768px) {

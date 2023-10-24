@@ -1,21 +1,28 @@
 ---
-import { Image } from "astro:assets";
-import capa from "../img/capa catalise.png";
 import Botao from "./Botao.astro";
 
-const { title, destaque, texto } = Astro.props;
+const { estilo, title, destaque, botao, linha } = Astro.props;
 ---
 
-<section>
+<section class={estilo && estilo}>
   <div>
     <h1>
       {title}
+      {linha && <br />}
       <span class="destaque">{destaque}</span>
     </h1>
-    <p>{texto}</p>
-    <Botao estilo="grande" texto="Textinho bacana" />
+    <slot name="conteudo" />
+    {
+      botao && !estilo ? (
+        <Botao estilo="grande mt-3" texto={botao} />
+      ) : botao && estilo ? (
+        <Botao estilo="claro grande mt-3" texto={botao} />
+      ) : null
+    }
   </div>
-  <Image src={capa} alt="Capa do Catálise" class="capa" />
+  <div class="capa">
+    <slot name="imagem" />
+  </div>
 </section>
 
 <style scoped>
@@ -23,30 +30,59 @@ const { title, destaque, texto } = Astro.props;
     display: flex;
     place-items: center;
     place-content: space-between;
-    margin-top: 3rem;
+    margin-top: 2rem;
     width: 100%;
-  }
-  .capa {
-    display: none;
-    filter: drop-shadow(-2rem -2rem 4rem hsl(215, 100%, 25%))
-      drop-shadow(2rem 2rem 4rem hsl(195, 63%, 24%));
+    z-index: 2;
   }
   h1 {
-    font-family: GothamSSm-Black;
+    font-family: var(--font-black);
     text-transform: uppercase;
     margin-bottom: 1.2rem;
   }
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
+  .capa {
+    display: none;
+    filter: drop-shadow(-8rem -8rem 8rem hsl(215, 100%, 30%))
+      drop-shadow(8rem 8rem 8rem hsl(195, 100%, 24%));
   }
   .destaque {
     font-size: 3.6rem;
     font-weight: 900;
     color: transparent;
-    -webkit-text-stroke: 0.15rem hsl(52, 93%, 52%);
+    -webkit-text-stroke: 0.15rem var(--clr-yellow);
   }
-
+  .claro {
+    background: linear-gradient(
+      80deg,
+      hsl(226, 100%, 97%),
+      hsl(200, 100%, 80%)
+    );
+    border-radius: 2rem;
+    width: calc(100% + 6rem);
+    padding: 5rem 0rem 5rem 6rem;
+    color: var(--clr-black);
+    filter: drop-shadow(-4rem -4rem 6rem hsl(215, 100%, 30%))
+      drop-shadow(4rem 4rem 6rem hsl(195, 100%, 24%));
+    overflow: hidden;
+    z-index: 1;
+  }
+  .claro h1 {
+    font-size: 2.8rem;
+    text-transform: none;
+  }
+  .claro p {
+    font-family: var(--font-light);
+    font-weight: 600;
+  }
+  .claro span {
+    font-size: 2.8rem;
+    color: var(--clr-black);
+    -webkit-text-stroke: 0;
+  }
+  .claro .capa {
+    filter: none;
+    position: absolute;
+    right: 0;
+  }
   @media screen and (min-width: 768px) {
     div {
       width: clamp(24rem, 40vw, 30rem);

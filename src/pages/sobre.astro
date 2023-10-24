@@ -1,9 +1,178 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Capa from "../components/Capa.astro";
+import Section from "../components/Section.astro";
+import Tabs from "../components/Tabs.astro";
 ---
 
-<Layout title="sobre">
-  <main></main>
+<Layout title="sobre" description="Nossa historia">
+  <main class="container">
+    <Capa
+      title="Outra frase bacana"
+      destaque=" Aqui!"
+      texto="Acreditamos que a educação é a chave para desbloquear o potencial de toda pessoa e, com tecnologia, ética e excelência, estamos dedicados a prepará-los para os desafios que os aguardam."
+    />
+    <Section
+      estilo="centro"
+      tag="Metodologia Catálise"
+      titulo="Uma frase bacana"
+    >
+      <Tabs />
+    </Section>
+    <Section
+      estilo="claro"
+      titulo="Uma frase bacana aqui"
+      subtitulo="um texto bacana aqui A marketing company can use targeted advertising to reach specific audiences based on demographics"
+      botao="Conheça nossas turmas"
+    >
+      <img
+        src="/imagens/itaime fundo.png"
+        alt="metodologia"
+        width="660"
+        height="400"
+      />
+    </Section>
+    <Section
+      estilo="centro"
+      tag="Nossa história"
+      titulo="Mais outra frase bacana"
+      subtitulo="um texto bacana aqui A marketing company can use targeted advertising to reach specific audiences based on demographics"
+    >
+      <section class="design-section">
+        <div class="timeline">
+          <div class="timeline-empty"></div>
+          <div class="timeline-middle">
+            <div class="timeline-circle"></div>
+          </div>
+          <div class="timeline-component timeline-content">
+            <img src="/imagens/Aprovado Arnóbio Tomaz.png" alt="metodologia" />
+            <div class="texto">
+              <span>1877</span>
+              <h1>História legal</h1>
+              <p>
+                um texto bacana aqui A marketing company can use targeted
+                advertising to reach specific audiences based on demographics
+              </p>
+            </div>
+          </div>
+          <div class="timeline-component timeline-content">
+            <div class="texto">
+              <span>2073</span>
+              <h1>Mais outra história legal</h1>
+              <p>
+                um texto bacana aqui A marketing company can use targeted
+                advertising to reach specific audiences based on demographics
+              </p>
+            </div>
+            <img src="/imagens/Aprovado Arnóbio Tomaz.png" alt="metodologia" />
+          </div>
+          <div class="timeline-middle">
+            <div class="timeline-circle"></div>
+          </div>
+          <div class="timeline-empty"></div>
+          <div class="timeline-empty"></div>
+          <div class="timeline-middle">
+            <div class="timeline-circle"></div>
+          </div>
+          <div class="timeline-component timeline-content">
+            <img src="/imagens/Aprovado Arnóbio Tomaz.png" alt="metodologia" />
+            <div class="texto">
+              <span>3002</span>
+              <h1>Mais outra história legal</h1>
+              <p>
+                um texto bacana aqui A marketing company can use targeted
+                advertising to reach specific audiences based on demographics
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </Section>
+  </main>
 </Layout>
 
-<style scoped></style>
+<script></script>
+<style scoped>
+  .design-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;
+  }
+
+  .design {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .timeline {
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .timeline-content {
+    color: white;
+    padding: 1.75rem;
+    transition: 0.4s ease;
+    overflow-wrap: break-word !important;
+    margin: 1rem;
+  }
+
+  .timeline-component {
+    margin: 0 0 0 0;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .timeline-component img {
+    width: 50%;
+    border-radius: 1rem;
+  }
+  .timeline-component .texto {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+  .timeline-component .texto span {
+    color: var(--clr-yellow);
+    font-family: var(--font-bold);
+  }
+  .timeline-component .texto h1 {
+    font-family: var(--font-bold);
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .timeline {
+      display: grid;
+      grid-template-columns: 1fr 3px 1fr;
+    }
+    .timeline-middle {
+      position: relative;
+      background: var(--clr-lblue);
+      width: 3px;
+      height: 100%;
+    }
+    .main-middle {
+      opacity: 0;
+    }
+    .timeline-circle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--clr-green);
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+  }
+</style>
