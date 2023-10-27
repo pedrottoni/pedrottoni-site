@@ -1,0 +1,39 @@
+---
+import perguntas from "../../scripts/perguntas.json";
+const perguntinhas = [
+  {
+    turma: [
+      {
+        title: "/acreche",
+        text: "A Creche",
+      },
+      {
+        title: "/projetos",
+        text: "Projetos",
+      },
+    ],
+  },
+  {
+    material: [
+      {
+        title: "/transparencia",
+        text: "Transparência",
+      },
+      {
+        title: "/contato",
+        text: "Contato",
+      },
+      {
+        title: "/nossosonho",
+        text: "Doação",
+      },
+    ],
+  },
+];
+---
+
+<section>
+  {perguntinhas.map((item) => item.turma?.map((t) => <div>{t.title}</div>))}
+  {perguntas.map((item) => item.turma?.map((t) => <div>{t.title}</div>))}
+</section>
+<style scoped></style>

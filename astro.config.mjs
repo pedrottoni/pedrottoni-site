@@ -4,10 +4,10 @@ import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "static",
+  /* output: "static",
   build: {
     client: './client'
-  }
-  //output: "server",
-  //adapter: vercel()
+  } */
+  output: "server",
+  adapter: vercel()
 });

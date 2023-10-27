@@ -37,7 +37,7 @@ const { estilo, title, destaque, botao, linha } = Astro.props;
   h1 {
     font-family: var(--font-black);
     text-transform: uppercase;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.1rem;
   }
   .capa {
     display: none;
@@ -45,7 +45,7 @@ const { estilo, title, destaque, botao, linha } = Astro.props;
       drop-shadow(8rem 8rem 8rem hsl(195, 100%, 24%));
   }
   .destaque {
-    font-size: 3.6rem;
+    font-size: clamp(2.3rem, 3.7vw, 3.5rem);
     font-weight: 900;
     color: transparent;
     -webkit-text-stroke: 0.15rem var(--clr-yellow);
@@ -66,7 +66,7 @@ const { estilo, title, destaque, botao, linha } = Astro.props;
     z-index: 1;
   }
   .claro h1 {
-    font-size: 2.8rem;
+    font-size: clamp(2.4rem, 4vw, 2.8rem);
     text-transform: none;
   }
   .claro p {
@@ -85,7 +85,7 @@ const { estilo, title, destaque, botao, linha } = Astro.props;
   }
   @media screen and (min-width: 768px) {
     div {
-      width: clamp(24rem, 40vw, 30rem);
+      width: clamp(24rem, 40vw, 35rem);
     }
     .capa {
       display: unset;
