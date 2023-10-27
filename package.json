@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^5.0.1",
+    "@astrojs/vercel": "^5.1.0",
     "astro": "^3.2.2",
     "gsap": "^3.12.2",
     "swiper": "^10.3.1"
