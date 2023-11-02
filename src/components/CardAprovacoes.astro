@@ -1,110 +1,167 @@
 ---
-const { capa, tag, aprovado, video } = Astro.props;
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+interface Props {
+  aprovados: CollectionEntry<"alunos">;
+  page: string;
+}
+
+const { aprovados, page } = Astro.props;
 //grande, pequeno
 ---
 
-<div class="card">
-  <div class="capa">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 104 104"
-      class="play-interno"
-    >
-      <g filter="url(#filter0_b_1_145)">
-        <circle cx="51.75" cy="51.76" r="51.63" fill="#42F5E1" fill-opacity=".7"
-        ></circle>
-      </g>
-      <path
-        fill="#FBFCFD"
-        d="M71.11 47.35a4.98 4.98 0 0 1 0 8.58L45.1 71.23a4.98 4.98 0 0 1-7.5-4.28V36.33a4.98 4.98 0 0 1 7.5-4.3l26 15.33Z"
-      ></path>
-      <defs>
-        <filter
-          id="filter0_b_1_145"
-          width="109.9"
-          height="109.9"
-          x="-3.2"
-          y="-3.19"
-          color-interpolation-filters="sRGB"
-          filterUnits="userSpaceOnUse"
-        >
-          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-          <feGaussianBlur in="BackgroundImageFix" stdDeviation="1.66"
-          ></feGaussianBlur>
-          <feComposite
-            in2="SourceAlpha"
-            operator="in"
-            result="effect1_backgroundBlur_1_145"></feComposite>
-          <feBlend
-            in="SourceGraphic"
-            in2="effect1_backgroundBlur_1_145"
-            result="shape"></feBlend>
-        </filter>
-      </defs>
-    </svg>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 123 123"
-      class="play-externo"
-    >
-      <g filter="url(#filter0_b_536_2)">
-        <circle
-          cx="61.5"
-          cy="61.5"
-          r="60"
-          stroke="#42F5E1"
-          stroke-opacity=".2"
-          stroke-width="3"></circle>
-      </g>
-      <defs>
-        <filter
-          id="filter0_b_536_2"
-          width="129.64"
-          height="129.64"
-          x="-3.32"
-          y="-3.32"
-          color-interpolation-filters="sRGB"
-          filterUnits="userSpaceOnUse"
-        >
-          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-          <feGaussianBlur in="BackgroundImageFix" stdDeviation="1.66"
-          ></feGaussianBlur>
-          <feComposite
-            in2="SourceAlpha"
-            operator="in"
-            result="effect1_backgroundBlur_536_2"></feComposite>
-          <feBlend
-            in="SourceGraphic"
-            in2="effect1_backgroundBlur_536_2"
-            result="shape"></feBlend>
-        </filter>
-      </defs>
-    </svg>
-    <img
-      src={capa + ".png"}
-      alt="Capa da material"
-      class="capa"
-      width="640"
-      height="240"
-    />
-  </div>
-  <div class="texto">
-    <img
-      src={capa + " mini" + ".png"}
-      alt="Capa da material"
-      class="capa"
-      width="140"
-      height="80"
-    />
-    <div>
-      <span>{tag}</span>
-      <h1>{aprovado}</h1>
-    </div>
-  </div>
-</div>
+{
+  (
+    <div class="swiper swiper-aprovacoes">
+      <div class="swiper-wrapper">
+        {aprovados.data.content.map((aprovado) => (
+          <div class="swiper-slide">
+            <a href={aprovado.video} class="card">
+              <div class="capa">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 104 104"
+                  class="play-interno"
+                >
+                  <g filter="url(#filter0_b_1_145)">
+                    <circle
+                      cx="51.75"
+                      cy="51.76"
+                      r="51.63"
+                      fill="#42F5E1"
+                      fill-opacity=".7"
+                    />
+                  </g>
+                  <path
+                    fill="#FBFCFD"
+                    d="M71.11 47.35a4.98 4.98 0 0 1 0 8.58L45.1 71.23a4.98 4.98 0 0 1-7.5-4.28V36.33a4.98 4.98 0 0 1 7.5-4.3l26 15.33Z"
+                  />
+                  <defs>
+                    <filter
+                      id="filter0_b_1_145"
+                      width="109.9"
+                      height="109.9"
+                      x="-3.2"
+                      y="-3.19"
+                      color-interpolation-filters="sRGB"
+                      filterUnits="userSpaceOnUse"
+                    >
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feGaussianBlur
+                        in="BackgroundImageFix"
+                        stdDeviation="1.66"
+                      />
+                      <feComposite
+                        in2="SourceAlpha"
+                        operator="in"
+                        result="effect1_backgroundBlur_1_145"
+                      />
+                      <feBlend
+                        in="SourceGraphic"
+                        in2="effect1_backgroundBlur_1_145"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 123 123"
+                  class="play-externo"
+                >
+                  <g filter="url(#filter0_b_536_2)">
+                    <circle
+                      cx="61.5"
+                      cy="61.5"
+                      r="60"
+                      stroke="#42F5E1"
+                      stroke-opacity=".2"
+                      stroke-width="3"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      id="filter0_b_536_2"
+                      width="129.64"
+                      height="129.64"
+                      x="-3.32"
+                      y="-3.32"
+                      color-interpolation-filters="sRGB"
+                      filterUnits="userSpaceOnUse"
+                    >
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feGaussianBlur
+                        in="BackgroundImageFix"
+                        stdDeviation="1.66"
+                      />
+                      <feComposite
+                        in2="SourceAlpha"
+                        operator="in"
+                        result="effect1_backgroundBlur_536_2"
+                      />
+                      <feBlend
+                        in="SourceGraphic"
+                        in2="effect1_backgroundBlur_536_2"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
+                <Image
+                  src={aprovado.capa}
+                  alt={aprovado.nome}
+                  class="capa"
+                  width="640"
+                  height="240"
+                />
+              </div>
+              <div class="texto">
+                <Image
+                  src={aprovado.foto}
+                  alt={aprovado.nome}
+                  class="capa"
 
+                />
+                <div>
+                  <span>{aprovado.tag}</span>
+                  <h1>{aprovado.nome}</h1>
+                </div>
+              </div>
+            </a>
+          </div>
+        ))}
+        </div>
+        <div class="swiper-scrollbar" />
+    </div>
+  )
+}
+<script>
+  import { Swiper } from "swiper";
+  import { Pagination, Mousewheel, Scrollbar } from "swiper/modules";
+  import "swiper/css";
+  import "swiper/css/pagination";
+  import "swiper/css/scrollbar";
+
+  new Swiper(".swiper-aprovacoes", {
+    modules: [Pagination, Mousewheel, Scrollbar],
+    slidesPerView: 1.4,
+    spaceBetween: 32,
+    direction: "vertical",
+    centeredSlides: true,
+    mousewheel: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    scrollbar: {
+      el: ".swiper-scrollbar",
+      draggable: true,
+    },
+  });
+</script>
 <style scoped>
   .card {
     overflow: hidden;
@@ -113,7 +170,7 @@ const { capa, tag, aprovado, video } = Astro.props;
   }
   .capa {
     height: auto;
-    margin-bottom: -1.4rem;
+    margin-bottom: -1.3rem;
     filter: brightness(0.9);
     transition: all 0.8s ease;
   }
@@ -170,5 +227,28 @@ const { capa, tag, aprovado, video } = Astro.props;
     font-family: var(--font-bold);
     font-size: 1.2rem;
     margin-top: 0.3rem;
+  }
+  .swiper {
+  }
+  .swiper-aprovacoes {
+    height: -webkit-fill-available;
+    position: absolute;
+    overflow: visible;
+  }
+  .swiper-slide {
+    place-self: center;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0.5rem 0.5rem 1.2rem -0.6rem rgba(0, 0, 0, 0.15);
+  }
+  .swiper-scrollbar {
+    background: none;
+    cursor: grab;
+  }
+  .swiper-vertical > .swiper-scrollbar,
+  .swiper-scrollbar.swiper-scrollbar-vertical {
+    right: -1.4rem;
+    top: 5rem;
+    height: 80%;
   }
 </style>

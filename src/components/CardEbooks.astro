@@ -1,41 +1,199 @@
 ---
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
 import Botao from "./Botao.astro";
-const { capa, tag, material } = Astro.props;
-//grande, pequeno
+
+interface Props {
+  materiais: CollectionEntry<"produtos">;
+  swiper?: boolean;
+  page: string;
+}
+
+const { materiais, swiper, page } = Astro.props;
+
+const principal = materiais.data.content.filter(
+  (item) => item.page === "principal"
+);
+const volume = materiais.data.content.filter(
+  (item) => item.page === "volume"
+);
 ---
 
-<div class="card">
-  <div class="capa">
-    <img
-      src={capa}
-      alt="Capa da material"
-      class="capa"
-      width="300"
-      height="244"
-    />
-  </div>
-  <div class="texto">
-    <span class={tag.toLowerCase()}>{tag}</span>
-    <h1>{material}</h1>
-    <Botao estilo="outline-claro pequeno" texto="Textinho bacana" />
-  </div>
-</div>
+{
+  !swiper && page === "principal"
+    ? principal.map((material) => (
+        <div class="card">
+          <div class="capa">
+            <Image src={material.img} alt="Capa da material" width="240" />
+          </div>
+          <div class="texto">
+            <span class={material.tag.toLowerCase()}>{material.tag}</span>
+            <h1>{material.nome}</h1>
+            <Botao estilo="outline-claro pequeno" texto="Textinho bacana" />
+          </div>
+        </div>
+      ))
+    : !swiper && page === "volume"
+    ? volume.map((material) => (
+        <div class="card">
+          <div class="capa">
+            <Image src={material.img} alt="Capa da material" width="230" />
+          </div>
+          <div class="texto">
+            <span class={material.tag.toLowerCase()}>{material.tag}</span>
+            <h1>{material.nome}</h1>
+            <Botao estilo="outline-claro pequeno" texto="Textinho bacana" />
+          </div>
+        </div>
+      ))
+    : !swiper &&
+      materiais.data.content.map((material) => (
+        <div class="card">
+          <div class="capa">
+            <Image src={material.img} alt="Capa da material" width="230" />
+          </div>
+          <div class="texto">
+            <span class={material.tag.toLowerCase()}>{material.tag}</span>
+            <h1>{material.nome}</h1>
+            <Botao estilo="outline-claro pequeno" texto="Textinho bacana" />
+          </div>
+        </div>
+      ))
+}
+{
+  swiper && page === "principal" ? (
+    <div class="Swiper swiper-materiais">
+      <div class="swiper-wrapper">
+        {principal.map((material) => (
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="capa">
+                <Image src={material.img} alt="Capa da material" width="230" />
+              </div>
+              <div class="texto">
+                <span class={material.tag.toLowerCase()}>{material.tag}</span>
+                <h1>{material.nome}</h1>
+                <Botao estilo="outline-claro pequeno" texto="Textinho bacana" />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="swiper-button-next" />
+      <div class="swiper-button-prev" />
+    </div>
+  ) : swiper && page === "volume" ? (
+    <div class="Swiper swiper-materiais">
+      <div class="swiper-wrapper">
+        {volume.map((material) => (
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="capa">
+                <Image src={material.img} alt="Capa da material" width="230" />
+              </div>
+              <div class="texto">
+                <span class={material.tag.toLowerCase()}>{material.tag}</span>
+                <h1>{material.nome}</h1>
+                <Botao estilo="outline-claro pequeno" texto="Textinho bacana" />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="swiper-button-next" />
+      <div class="swiper-button-prev" />
+    </div>
+  ) : (
+    swiper && (
+      <div class="Swiper swiper-materiais">
+        <div class="swiper-wrapper">
+          {materiais.data.content.map((material) => (
+            <div class="swiper-slide">
+              <div class="card">
+                <div class="capa">
+                  <Image
+                    src={material.img}
+                    alt="Capa da material"
+                    width="230"
+                  />
+                </div>
+                <div class="texto">
+                  <span class={material.tag.toLowerCase()}>{material.tag}</span>
+                  <h1>{material.nome}</h1>
+                  <Botao
+                    estilo="outline-claro pequeno"
+                    texto="Textinho bacana"
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="swiper-button-next" />
+        <div class="swiper-button-prev" />
+      </div>
+    )
+  )
+}
+<script>
+  import Swiper from "swiper";
+  import "swiper/css";
+  import "swiper/css/navigation";
 
+  import { Navigation } from "swiper/modules";
+
+  const swiper = new Swiper(".swiper-materiais", {
+    modules: [Navigation],
+    speed: 300,
+    simulateTouch: false,
+    slidesPerView: 4,
+    spaceBetween: 24,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
 <style scoped>
-  .card {
+  .swiper-materiais {
+    position: relative;
     overflow: hidden;
+    padding: 1rem 0;
+    width: -webkit-fill-available;
   }
-  .capa {
-    margin-left: 1.7rem;
-    width: 80%;
-    height: auto;
+  .swiper-slide {
+    width: 18rem;
+    place-self: center;
+    border-radius: 1rem;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: hsla(0, 0%, 100%, 0.8);
+    border-radius: 5rem;
+    margin: -2.5rem 0rem;
+    box-shadow: 0rem 0rem 1rem 0.3rem hsl(0deg 0% 0% / 27.06%);
+    backdrop-filter: blur(0.3rem);
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 1.8rem;
+    font-weight: 900;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    overflow: hidden;
   }
   .texto {
     display: flex;
     flex-direction: column;
     place-items: center;
     place-content: center;
-    padding: 1rem 1rem 4rem 1rem;
+    padding: 1rem;
   }
   span {
     font-family: var(--font-bold);
@@ -44,7 +202,7 @@ const { capa, tag, material } = Astro.props;
   .ebook {
     color: hsl(52, 93%, 52%);
   }
-  .bizuário {
+  .bizuários {
     color: hsl(215, 99%, 65%);
   }
   .miscelânea {

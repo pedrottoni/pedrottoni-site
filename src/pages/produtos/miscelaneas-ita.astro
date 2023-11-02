@@ -1,21 +1,20 @@
 ---
+import { getEntry } from "astro:content";
 import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 
 import Capa from "../../components/Capa.astro";
 import Destaques from "../../components/Destaques.astro";
 import Section from "../../components/Section.astro";
-import CardAprovacoes from "../../components/CardAprovacoes.astro";
 import Accordeon from "../../components/Accordeon.astro";
-import Cardserv from "../../components/Cardserv.astro";
-import CardDepoimentos from "../../components/CardDepoimentos.astro";
 
 import capa from "../../img/miscelaneas-ita.png";
-import materiais from "../../img/materiais.png";
-import OutrosMateriais from "../../components/Outros-materiais.astro";
 
-const textoCapa =
-  "A caminhada até a aprovação no ITA exige uma preparação exclusiva. Sabendo disso, gostaríamos de dizer que você terá a chance de fazer parte da Turma ITA do Catálise em 2023.";
+import CardEbooks from "../../components/CardEbooks.astro";
+import MateriaisValor from "../../components/MateriaisValor.astro";
+
+const materiais = await getEntry("produtos", "materiais");
+const perguntas = await getEntry("alunos", "perguntas");
 ---
 
 <Layout title="Turma ITA/IME" description="Catálise - turma ITA/IME">
@@ -120,33 +119,13 @@ const textoCapa =
       </ul>
       <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
     </Capa>
-    <Capa
-      title="Miscelânea"
-      linha="true"
-      destaque=" completa"
-      botao="Compre agora"
-    >
-      <p class="txt-capa" slot="conteudo">
-        A caminhada até a aprovação no ITA exige uma preparação exclusiva.
-      </p>
-      <h1 class="valor" slot="conteudo">R$ 1.480,00</h1>
-      <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
-    </Capa>
-    <Section
-      estilo="claro"
-      tag="Depoimentos"
-      titulo="Conheça a opinião dos nossos alunos"
-      subtitulo="LorenIpsum dolor sit amet consectetur adipisicing elit. Quaerat consectetur facilis molestias repudiandae reiciendis temporibus suscipit."
-    >
-      <div class="depoimentos">
-        <CardDepoimentos />
-      </div>
-    </Section>
-    <Section tag="" titulo="Conheça outros materiais" colunas="col4">
-      <OutrosMateriais />
-    </Section>
+    <MateriaisValor />
+
     <Section estilo="claro" tag="" titulo="Perguntas frequentes">
-      <Accordeon />
+      <Accordeon perguntas={perguntas} page="" />
+    </Section>
+    <Section tag="" titulo="Outros materiais" colunas="col4">
+      <CardEbooks materiais={materiais} page="principal" swiper />
     </Section>
   </main>
 </Layout>
@@ -271,10 +250,5 @@ const textoCapa =
   .capa-itens svg {
     width: 2rem;
     margin-right: 0.8rem;
-  }
-  .valor {
-    font-family: var(--font-black);
-    color: var(--clr-yellow);
-    margin-top: 2.4rem;
   }
 </style>

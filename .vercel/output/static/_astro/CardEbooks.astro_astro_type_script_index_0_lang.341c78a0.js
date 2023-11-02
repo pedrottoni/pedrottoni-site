@@ -1,0 +1,1 @@
+import{S as e,N as i}from"./navigation.5abcd372.js";new e(".swiper-materiais",{modules:[i],speed:300,simulateTouch:!1,slidesPerView:4,spaceBetween:24,navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}});

@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import Capa from "./Capa.astro";
+
+import capa from "../img/miscelaneas-ita.png";
+---
+
+<Capa title="Miscelânea" linha="true" destaque=" completa" botao="Compre agora">
+  <p class="txt-capa" slot="conteudo">
+    A caminhada até a aprovação no ITA exige uma preparação exclusiva.
+  </p>
+  <h1 class="valor" slot="conteudo">R$ 1.480,00</h1>
+  <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
+</Capa>
+<script></script>
+<style scoped>
+  .valor {
+    font-family: var(--font-black);
+    color: var(--clr-yellow);
+    margin-top: 2.4rem;
+  }
+</style>

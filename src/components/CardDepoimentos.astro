@@ -1,135 +1,43 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 
-import aluno1 from "../img/capa catalise.png";
+interface Props {
+  depoimentos: CollectionEntry<"alunos">;
+  page: string;
+}
+
+const { depoimentos, page } = Astro.props;
 ---
 
-<swiper-container
-  class="mySwiper"
-  pagination="true"
-  pagination-clickable="true"
-  effect="cards"
->
-  <swiper-slide>
-    <div class="aluno">
-      <Image src={aluno1} alt="Capa do Catálise" slot="imagem" width="100" />
-      <div>
-        <span>Kauã Victor</span>
-        <span>Aprovado para a 2° fase do IME</span>
-      </div>
-    </div>
-    <p>
-      "O Catálise me guiou demais na minha aprovação com listas e simulados,
-      fico feliz de ter aceitado a proposta e confiado nesses mentores incríveis
-      que são o Amós e o Fernandão! Os encontros semanais foram essenciais e a
-      conexão que eu tive com meus colegas de mentoria foi um passo a mais na
-      minha aprovação! Agora é focar cada vez mais e confiar que a 2º fase do
-      IME é vapo!"
-    </p>
-  </swiper-slide>
-  <swiper-slide>
-    <div class="aluno">
-      <Image src={aluno1} alt="Capa do Catálise" slot="imagem" width="100" />
-      <div>
-        <span>Kauã Victor</span>
-        <span>Aprovado para a 2° fase do IME</span>
-      </div>
-    </div>
-    <p>
-      "O Catálise me guiou demais na minha aprovação com listas e simulados,
-      fico feliz de ter aceitado a proposta e confiado nesses mentores incríveis
-      que são o Amós e o Fernandão! Os encontros semanais foram essenciais e a
-      conexão que eu tive com meus colegas de mentoria foi um passo a mais na
-      minha aprovação! Agora é focar cada vez mais e confiar que a 2º fase do
-      IME é vapo!"
-    </p>
-  </swiper-slide>
-  <swiper-slide>
-    <div class="aluno">
-      <Image src={aluno1} alt="Capa do Catálise" slot="imagem" width="100" />
-      <div>
-        <span>Kauã Victor</span>
-        <span>Aprovado para a 2° fase do IME</span>
-      </div>
-    </div>
-    <p>
-      "O Catálise me guiou demais na minha aprovação com listas e simulados,
-      fico feliz de ter aceitado a proposta e confiado nesses mentores incríveis
-      que são o Amós e o Fernandão! Os encontros semanais foram essenciais e a
-      conexão que eu tive com meus colegas de mentoria foi um passo a mais na
-      minha aprovação! Agora é focar cada vez mais e confiar que a 2º fase do
-      IME é vapo!"
-    </p>
-  </swiper-slide>
-  <swiper-slide>
-    <div class="aluno">
-      <Image src={aluno1} alt="Capa do Catálise" slot="imagem" width="100" />
-      <div>
-        <span>Kauã Victor</span>
-        <span>Aprovado para a 2° fase do IME</span>
-      </div>
-    </div>
-    <p>
-      "O Catálise me guiou demais na minha aprovação com listas e simulados,
-      fico feliz de ter aceitado a proposta e confiado nesses mentores incríveis
-      que são o Amós e o Fernandão! Os encontros semanais foram essenciais e a
-      conexão que eu tive com meus colegas de mentoria foi um passo a mais na
-      minha aprovação! Agora é focar cada vez mais e confiar que a 2º fase do
-      IME é vapo!"
-    </p>
-  </swiper-slide>
-  <swiper-slide>
-    <div class="aluno">
-      <Image src={aluno1} alt="Capa do Catálise" slot="imagem" width="100" />
-      <div>
-        <span>Kauã Victor</span>
-        <span>Aprovado para a 2° fase do IME</span>
-      </div>
-    </div>
-    <p>
-      "O Catálise me guiou demais na minha aprovação com listas e simulados,
-      fico feliz de ter aceitado a proposta e confiado nesses mentores incríveis
-      que são o Amós e o Fernandão! Os encontros semanais foram essenciais e a
-      conexão que eu tive com meus colegas de mentoria foi um passo a mais na
-      minha aprovação! Agora é focar cada vez mais e confiar que a 2º fase do
-      IME é vapo!"
-    </p>
-  </swiper-slide>
-  <swiper-slide>
-    <div class="aluno">
-      <Image src={aluno1} alt="Capa do Catálise" slot="imagem" width="100" />
-      <div>
-        <span>Kauã Victor</span>
-        <span>Aprovado para a 2° fase do IME</span>
-      </div>
-    </div>
-    <p>
-      "O Catálise me guiou demais na minha aprovação com listas e simulados,
-      fico feliz de ter aceitado a proposta e confiado nesses mentores incríveis
-      que são o Amós e o Fernandão! Os encontros semanais foram essenciais e a
-      conexão que eu tive com meus colegas de mentoria foi um passo a mais na
-      minha aprovação! Agora é focar cada vez mais e confiar que a 2º fase do
-      IME é vapo!"
-    </p>
-  </swiper-slide>
-  <swiper-slide>
-    <div class="aluno">
-      <Image src={aluno1} alt="Capa do Catálise" slot="imagem" width="100" />
-      <div>
-        <span>Kauã Victor</span>
-        <span>Aprovado para a 2° fase do IME</span>
-      </div>
-    </div>
-    <p>
-      "O Catálise me guiou demais na minha aprovação com listas e simulados,
-      fico feliz de ter aceitado a proposta e confiado nesses mentores incríveis
-      que são o Amós e o Fernandão! Os encontros semanais foram essenciais e a
-      conexão que eu tive com meus colegas de mentoria foi um passo a mais na
-      minha aprovação! Agora é focar cada vez mais e confiar que a 2º fase do
-      IME é vapo!"
-    </p>
-  </swiper-slide>
-</swiper-container>
+{
+  (
+    <swiper-container
+      class="mySwiper"
+      pagination="true"
+      pagination-clickable="true"
+      effect="cards"
+    >
+      {depoimentos.data.content.map((depoimento) => (
+        <swiper-slide>
+          <div class="aluno">
+            <Image
+              src={depoimento.foto}
+              alt={depoimento.nome}
+              width="120"
+              height="90"
+            />
+            <div>
+              <span>{depoimento.nome}</span>
+              <span>{depoimento.sobre}</span>
+            </div>
+          </div>
+          <p>{depoimento.depoimento}</p>
+        </swiper-slide>
+      ))}
+    </swiper-container>
+  )
+}
 
 <script>
   import { register } from "swiper/element/bundle";

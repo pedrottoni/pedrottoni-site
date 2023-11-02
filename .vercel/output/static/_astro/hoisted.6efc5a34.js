@@ -1,0 +1,1 @@
+import"./Accordeon.astro_astro_type_script_index_0_lang.2eb35f25.js";import"./CardDepoimentos.astro_astro_type_script_index_0_lang.85d87d64.js";import"./hoisted.6a516877.js";import"./navigation.5abcd372.js";import"./mousewheel.27dae326.js";import"./pagination.8a1279f1.js";import"./scrollbar.9ed7a3fe.js";

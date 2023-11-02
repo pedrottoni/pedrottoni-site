@@ -1,0 +1,76 @@
+{
+  "content": [
+    {
+      "depoimento": "''Venho de um ensino médio feito quase todo em uma escola técnica e a escolha por essas provas foi realmente difícil. É o meu 1º ano estudando para vestibulares de alto nível como o ITA e o IME, mas ao lado do Catálise pude desenvolver meu conhecimento da melhor forma para que eu conseguisse um bom resultado em provas de alto nível.''",
+      "nome": "José Williams",
+      "foto": "../../img/alunos-small/José Williams.png",
+      "sobre": "Aprovado na 1ª Fase do IME no 1º ano de cursinho",
+      "turma": "IME",
+      "page": ["home", "IME"]
+    },
+    {
+      "depoimento": "''O catálise me guiou demais na minha aprovação com listas e simulados, fico feliz de ter aceitado a proposta e confiado nesses mentores incríveis que são o Amós e o Fernandão! Os encontros semanais foram essenciais e a conexão que eu tive com meus colegas de mentoria foi um passo a mais na minha aprovação!''",
+      "nome": "Kauã Victor",
+      "foto": "../../img/alunos-small/Kauã Victor.png",
+      "sobre": "Aprovado para a fase do IME",
+      "turma": "IME",
+      "page": ["home", "IME"]
+    },
+    {
+      "depoimento": "''Agradeço ao time do Catálise por me proporcionar todas as condições necessárias para que eu pudesse alcançar essas aprovações. Os materiais fornecidos estão sendo fundamentais para o meu avanço nos estudos. Além disso, o contato direto com vários iteanos faz com que eu tenha certeza de que escolhi o melhor lugar para a minha preparação.''",
+      "nome": "Beatriz Saraiva",
+      "foto": "../../img/alunos-small/Beatriz Saraiva.png",
+      "sobre": "Aprovada na EEAR, AFA, EFFOM e Escola Naval",
+      "turma": "EEAR, AFA, EFFOM, Escola Naval",
+      "page": ["home", "IME"]
+    },
+    {
+      "depoimento": "''Sem o Catálise eu não teria me mantido tão focada nos estudos esse ano. Ir sempre nas aulas ao vivo me ajudou bastante a permanecer disciplinada e acredito que esse seja um dos maiores diferenciais do Catálise porque foi um cursinho que nunca me deixou na mão. Os plantões de dúvidas também foram muito importantes.''",
+      "nome": "Paloma Maciel",
+      "foto": "../../img/alunos-small/Paloma Maciel.png",
+      "sobre": "Aprovada na EFOMM",
+      "turma": "EFOMM",
+      "page": ["home", "IME"]
+    },
+    {
+      "depoimento": "''Posso descrever o Catálise em duas palavras: excelência e compromisso, pois existe excelência de ensino e compromisso com a nossa aprovação. O contato próximo com os diretores e coordenadores fazem total diferença. O cronograma de estudos e a trilha das matérias auxiliam muito na organização, tanto diária quanto a longo prazo.''",
+      "nome": "Brenda Baroni",
+      "foto": "../../img/alunos-small/Brenda Baroni.png",
+      "sobre": "Aluna da Turma ITA",
+      "turma": "ITA",
+      "page": ["home", "IME"]
+    },
+    {
+      "depoimento": "''Assinar o Catálise sem dúvidas foi a melhor escolha que eu fiz. Como o time é formado por várias pessoas que já passaram pelo ITA ou entendem o vestibular, o direcionamento, o ensino e a didática são excelentes. As aulas, as listas e os simulados são simplesmente excepcionais. Sem contar o plantão de dúvidas que é FORA DA CURVA.''",
+      "nome": "Gabriel Caxeado",
+      "foto": "../../img/alunos-small/Gabriel Caxeado.png",
+      "sobre": "Aluno da Turma ITA",
+      "turma": "ITA",
+      "page": ["home", "IME"]
+    },
+    {
+      "depoimento": "''Conheci o catálise em 2022 e entrei apenas na turma de revisão. Lá consegui dar um gás insano e cresci muito nesses 2 meses de revisão por conta dos materiais, aulas e principalmente com o Plantão de dúvidas. Em 2023 graças a Deus tive a oportunidade de continuar com o Catálise que é de LONGE o melhor curso on-line ( já fiz outros).''",
+      "nome": "João Keska",
+      "foto": "../../img/alunos-small/João Keska.png",
+      "sobre": "Aluno da Turma ITA",
+      "turma": "ITA",
+      "page": ["home", "IME"]
+    },
+    {
+      "depoimento": "''O Catálise está sendo um grande diferencial na minha preparação. Os professores são muito qualificados e atenciosos, a plataforma é de fácil navegação, as listas possuem exercícios de todos os níveis e as aulas abordam os conteúdos desde a base até o aprofundamento. O Catálise é muito mais que um curso, é um ponto essencial rumo à aprovação!''",
+      "nome": "Juliana Cidade",
+      "foto": "../../img/alunos-small/Juliana Cidade.png",
+      "sobre": "Aluna da Turma ITA",
+      "turma": "ITA",
+      "page": ["home", "IME"]
+    },
+    {
+      "depoimento": "''Minha experiência com o curso superou MUITO as minhas expectativas. Aulas gravadas bem divididas, dinâmicas e muito didáticas, a trilha de estudos e o calendário ajudavam DEMAIS a nortear junto com a infinidade de aulas e listas do mais básico ao mais avançado. É inexplicável a sensação de vir praticamente do zero e ver como evolui.''",
+      "nome": "Luís Eduardo Pereira",
+      "foto": "../../img/alunos-small/Luís Eduardo Pereira.png",
+      "sobre": "Aluno da Turma ITA",
+      "turma": "ITA",
+      "page": ["home", "IME"]
+    }
+  ]
+}

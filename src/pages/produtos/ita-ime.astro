@@ -13,20 +13,18 @@ import CardDepoimentos from "../../components/CardDepoimentos.astro";
 import capa from "../../img/turma itaime.png";
 import materiais from "../../img/materiais.png";
 
-const textoCapa =
-  "A caminhada até a aprovação no ITA exige uma preparação exclusiva. Sabendo disso, gostaríamos de dizer que você terá a chance de fazer parte da Turma ITA do Catálise em 2023.";
+import { getEntry } from "astro:content";
+const perguntas = await getEntry("alunos", "perguntas");
+const depoimentos = await getEntry("alunos", "depoimentos");
+const aprovados = await getEntry("alunos", "aprovados");
 ---
 
 <Layout title="Turma ITA/IME" description="Catálise - turma ITA/IME">
   <main class="container">
-    <Capa
-      title="ITA IME"
-      destaque=" 2023"
-      texto={textoCapa}
-      botao="Compre agora"
-    >
+    <Capa title="ITA IME" destaque=" 2024" botao="Compre agora">
       <p class="txt-capa" slot="conteudo">
-        {textoCapa}
+        Faça parte da nossa turma ITA e prepare-se para decolar com a gente rumo
+        ao sucesso!
       </p>
       <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
     </Capa>
@@ -215,36 +213,11 @@ const textoCapa =
     </Section>
     <Section
       estilo="claro aprovacoes"
-      tag="Professores da turma"
-      titulo="Aquele extinho bem bacana"
-      subtitulo="LorenIpsum dolor sit amet consectetur adipisicing elit. Quaerat consectetur facilis molestias repudiandae reiciendis temporibus suscipit."
+      tag="Aprovações"
+      titulo="Conheça nossos aprovados para o ITA"
+      subtitulo="Assista as inspiradoras jornadas de nossos alunos aprovados no ITA. Eles acreditaram no sonho, perseveraram e conquistaram o topo. O próximo pode ser você!"
     >
-      <div class="swiper swiper-professores">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <CardAprovacoes
-              capa="/imagens/Aprovado João Matheus"
-              tag="Física Básica"
-              aprovado="Nome do professor"
-            />
-          </div>
-          <div class="swiper-slide">
-            <CardAprovacoes
-              capa="/imagens/Aprovado Arnóbio Tomaz"
-              tag="Física Básica"
-              aprovado="Nome do professor"
-            />
-          </div>
-          <div class="swiper-slide">
-            <CardAprovacoes
-              capa="/imagens/Aprovado Bruno Mentor"
-              tag="Física Básica"
-              aprovado="Nome do professor"
-            />
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
+      <CardAprovacoes aprovados={aprovados} page="" />
     </Section>
     <Section tag="" titulo="Rotina de estudos" colunas="col4">
       <div class="rotina">
@@ -279,11 +252,11 @@ const textoCapa =
     <Section
       estilo="claro"
       tag="Depoimentos"
-      titulo="Conheça a opinião dos nossos alunos"
-      subtitulo="LorenIpsum dolor sit amet consectetur adipisicing elit. Quaerat consectetur facilis molestias repudiandae reiciendis temporibus suscipit."
+      titulo="Conheça a experiência dos nossos alunos"
+      subtitulo="Descubra como o Catálise impactou a vida de nossos Alunos"
     >
       <div class="depoimentos">
-        <CardDepoimentos />
+        <CardDepoimentos depoimentos={depoimentos} page="" />
       </div>
     </Section>
     <Capa
@@ -310,8 +283,15 @@ const textoCapa =
            Garantimos seu dinheiro de volta por até 7 dias
         </li>
         <li>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 480 480">
-            <path fill="#fff" d="M352 16H128a32 32 0 0 0-32 32v384a32 32 0 0 0 32 32h224a32 32 0 0 0 32-32V48a32 32 0 0 0-32-32Zm-72 16a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm-64 0h32a8 8 0 0 1 0 16h-32a8 8 0 0 1 0-16Zm136 400H128V48h48l6.62 6.62c6 6 14.15 9.38 22.63 9.38h69.49a32 32 0 0 0 22.62-9.38L304 48h48v384Z"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 480 480"
+          >
+            <path
+              fill="#fff"
+              d="M352 16H128a32 32 0 0 0-32 32v384a32 32 0 0 0 32 32h224a32 32 0 0 0 32-32V48a32 32 0 0 0-32-32Zm-72 16a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm-64 0h32a8 8 0 0 1 0 16h-32a8 8 0 0 1 0-16Zm136 400H128V48h48l6.62 6.62c6 6 14.15 9.38 22.63 9.38h69.49a32 32 0 0 0 22.62-9.38L304 48h48v384Z"
+            ></path>
           </svg>
            Estude do seu jeito e em qualquer dispositivo
         </li>
@@ -320,63 +300,14 @@ const textoCapa =
       <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
     </Capa>
     <Section estilo="claro" tag="" titulo="Perguntas frequentes">
-      <Accordeon />
+      <Accordeon perguntas={perguntas} page="" />
     </Section>
   </main>
 </Layout>
 
-<script>
-  import { Swiper } from "swiper";
-  import { Pagination, Mousewheel } from "swiper/modules";
-  import "swiper/css";
-  import "swiper/css/pagination";
-
-  new Swiper(".swiper-professores", {
-    slidesPerView: 1.4,
-    spaceBetween: 20,
-    direction: "vertical",
-    centeredSlides: true,
-    mousewheel: true,
-    modules: [Pagination, Mousewheel],
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
-</script>
+<script></script>
 
 <style scoped>
-  .swiper {
-    min-height: 27rem;
-  }
-  .swiper-container {
-    margin-top: 2rem;
-    padding: 0 3rem;
-  }
-  .swiper-container .swiper-slide {
-    width: 18rem;
-    height: 28rem;
-    height: auto;
-    place-self: center;
-    border-radius: 1rem;
-    box-shadow: 0.5rem 0.5rem 1.2rem -0.6rem rgba(0, 0, 0, 0.15);
-  }
-  .swiper-button-prev,
-  .swiper-button-next {
-    width: 5rem;
-    height: 5rem;
-    background: var(--clr-ice);
-    border-radius: 5rem;
-    box-shadow: 0 0.1rem 2rem hsl(0, 0%, 60%);
-    margin: -2.8rem 1rem;
-  }
-  .swiper-button-prev:after,
-  .swiper-button-next:after {
-  }
-  .swiper-professores {
-    height: -webkit-fill-available;
-    position: absolute;
-  }
   .tema {
     width: -webkit-fill-available;
     text-align: left;

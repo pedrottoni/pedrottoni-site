@@ -1,0 +1,144 @@
+{
+  "content": [
+    {
+      "img": "../../img/materiais-card/ebook biblia para o ita.png",
+      "tag": "Ebook",
+      "nome": "A Biblia para o ITA",
+      "link": "/produtos/biblia-ita",
+      "page": "principal"
+    },
+    {
+      "img": "../../img/materiais-card/ebook bizuario fisico quimica.png",
+      "tag": "Bizuários",
+      "nome": "Bizuários de Química",
+      "link": "/produtos/bizuarios",
+      "page": "principal"
+    },
+    {
+      "img": "../../img/materiais-card/ebook miscelanea ita.png",
+      "tag": "Miscelânea",
+      "nome": "ITA",
+      "link": "/produtos/miscelanea-ita",
+      "page": "principal"
+    },
+    {
+      "img": "../../img/materiais-card/ebook miscelanea ime.png",
+      "tag": "Miscelânea",
+      "nome": "IME",
+      "link": "/produtos/miscelanea-ime",
+      "page": "principal"
+    },
+    {
+      "img": "../../img/materiais-card/ebook miscelanea afa.png",
+      "tag": "Miscelânea",
+      "nome": "AFA",
+      "link": "/produtos/miscelanea-afa",
+      "page": "principal"
+    },
+    {
+      "img": "../../img/materiais-card/ebook miscelanea eear.png",
+      "tag": "Miscelânea",
+      "nome": "EEAR",
+      "link": "/produtos/miscelanea-eear",
+      "page": "principal"
+    },
+    {
+      "img": "../../img/materiais-card/ebook bizuario quimica geral 1.png",
+      "tag": "Bizuários",
+      "nome": "Quimica Geral 1",
+      "link": "/produtos/bizuarios",
+      "page": "volume"
+    },
+    {
+      "img": "../../img/materiais-card/ebook bizuario quimica geral 2.png",
+      "tag": "Bizuários",
+      "nome": "Quimica Geral 2",
+      "link": "/produtos/bizuarios",
+      "page": "volume"
+    },
+    {
+      "img": "../../img/materiais-card/ebook bizuario fisico quimica.png",
+      "tag": "Bizuários",
+      "nome": "Físico Quimica",
+      "link": "/produtos/bizuarios",
+      "page": "volume"
+    },
+    {
+      "img": "../../img/materiais-card/ebook bizuario reacoes organicas.png",
+      "tag": "Bizuários",
+      "nome": "Reações Orgânicas",
+      "link": "/produtos/bizuarios",
+      "page": "volume"
+    },
+    {
+      "img": "../../img/materiais-card/ebook miscelanea matematica ita.png",
+      "tag": "Miscelânea",
+      "nome": "Matemática ITA",
+      "link": "/produtos/miscelanea-ita",
+      "page": "volume"
+    },
+    {
+      "img": "../../img/materiais-card/ebook miscelanea fisica ita.png",
+      "tag": "Miscelânea",
+      "nome": "Física ITA",
+      "link": "/produtos/miscelanea-ita",
+      "page": "volume"
+    },
+    {
+      "img": "../../img/materiais-card/ebook miscelanea quimica ita.png",
+      "tag": "Miscelânea",
+      "nome": "Química ITA",
+      "link": "/produtos/miscelanea-ita",
+      "page": "volume"
+    },
+    {
+      "img": "../../img/materiais-card/ebook miscelanea matematica ime.png",
+      "tag": "Miscelânea",
+      "nome": "Matemática IME",
+      "link": "/produtos/miscelanea-ime",
+      "page": "volume"
+    },
+    {
+      "img": "../../img/materiais-card/ebook miscelanea fisica ime.png",
+      "tag": "Miscelânea",
+      "nome": "Física IME",
+      "link": "/produtos/miscelanea-ime",
+      "page": "volume"
+    },
+    {
+      "img": "../../img/materiais-card/ebook miscelanea quimica ime.png",
+      "tag": "Miscelânea",
+      "nome": "Química IME",
+      "link": "/produtos/miscelanea-ime",
+      "page": "volume"
+    },
+    {
+      "img": "../../img/materiais-card/ebook miscelanea matematica afa.png",
+      "tag": "Miscelânea",
+      "nome": "Matemática AFA",
+      "link": "/produtos/miscelanea-afa",
+      "page": "volume"
+    },
+    {
+      "img": "../../img/materiais-card/ebook miscelanea fisica afa.png",
+      "tag": "Miscelânea",
+      "nome": "Física AFA",
+      "link": "/produtos/miscelanea-afa",
+      "page": "volume"
+    },
+    {
+      "img": "../../img/materiais-card/ebook miscelanea matematica eear.png",
+      "tag": "Miscelânea",
+      "nome": "Matemática EEAR",
+      "link": "/produtos/miscelanea-eear",
+      "page": "volume"
+    },
+    {
+      "img": "../../img/materiais-card/ebook miscelanea fisica eear.png",
+      "tag": "Miscelânea",
+      "nome": "Física EEAR",
+      "link": "/produtos/miscelanea-eear",
+      "page": "volume"
+    }
+  ]
+}

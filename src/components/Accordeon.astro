@@ -1,20 +1,29 @@
 ---
-const { titulo, texto } = Astro.props;
-import perguntas from "../../scripts/perguntas.json";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  perguntas: CollectionEntry<"alunos">;
+  page: string;
+}
+
+const { perguntas, page } = Astro.props;
+
+const principal = perguntas.data.content.filter(
+  (item) => item.page === "principal"
+);
+const volume = perguntas.data.content.filter((item) => item.page === "volume");
 ---
 
 <div class="accordion">
   {
-    perguntas.map((item) =>
-      item.turma?.map((t) => (
-        <details>
-          <summary>{t.title}</summary>
-          <div class="content">
-            <p>{t.text}</p>
-          </div>
-        </details>
-      ))
-    )
+    perguntas.data.content.map((item) => (
+      <details>
+        <summary>{item.title}</summary>
+        <div class="content">
+          <p>{item.text}</p>
+        </div>
+      </details>
+    ))
   }
 </div>
 
@@ -149,8 +158,10 @@ import perguntas from "../../scripts/perguntas.json";
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    width: 80%;
+    width: 100%;
     transition: all 0.4s ease;
+    left: -4rem;
+    position: relative;
   }
   .accordion :hover {
   }
@@ -159,7 +170,8 @@ import perguntas from "../../scripts/perguntas.json";
     overflow: hidden;
   }
   summary {
-    font-family: var(--font-bold);
+    font-family: var(--font-book);
+    font-weight: 600;
     font-size: 1.2rem;
     cursor: pointer;
     padding-bottom: 1rem;

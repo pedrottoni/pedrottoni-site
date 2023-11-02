@@ -1,17 +1,26 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "../layouts/Layout.astro";
 import Capa from "../components/Capa.astro";
 import Section from "../components/Section.astro";
 import Tabs from "../components/Tabs.astro";
+
+import capa from "../img/capa catalise.png";
 ---
 
 <Layout title="sobre" description="Nossa historia">
   <main class="container">
     <Capa
-      title="Outra frase bacana"
-      destaque=" Aqui!"
-      texto="Acreditamos que a educação é a chave para desbloquear o potencial de toda pessoa e, com tecnologia, ética e excelência, estamos dedicados a prepará-los para os desafios que os aguardam."
-    />
+    title="Uma frase bacana"
+    destaque=" Aqui!"
+    botao="Conheça nossas turmas"
+  >
+    <p class="txt-capa" slot="conteudo">
+      Acreditamos que a educação é a chave para desbloquear o potencial de toda pessoa e, com tecnologia, ética e excelência, estamos dedicados a prepará-los para os desafios que os aguardam.
+    </p>
+    <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
+  </Capa>
     <Section
       estilo="centro"
       tag="Metodologia Catálise"
@@ -45,7 +54,7 @@ import Tabs from "../components/Tabs.astro";
             <div class="timeline-circle"></div>
           </div>
           <div class="timeline-component timeline-content">
-            <img src="/imagens/Aprovado Arnóbio Tomaz.png" alt="metodologia" />
+            <img src="/imagens/itaime fundo.png" alt="metodologia" />
             <div class="texto">
               <span>1877</span>
               <h1>História legal</h1>
@@ -64,7 +73,7 @@ import Tabs from "../components/Tabs.astro";
                 advertising to reach specific audiences based on demographics
               </p>
             </div>
-            <img src="/imagens/Aprovado Arnóbio Tomaz.png" alt="metodologia" />
+            <img src="/imagens/itaime fundo.png" alt="metodologia" />
           </div>
           <div class="timeline-middle">
             <div class="timeline-circle"></div>
@@ -75,7 +84,7 @@ import Tabs from "../components/Tabs.astro";
             <div class="timeline-circle"></div>
           </div>
           <div class="timeline-component timeline-content">
-            <img src="/imagens/Aprovado Arnóbio Tomaz.png" alt="metodologia" />
+            <img src="/imagens/itaime fundo.png" alt="metodologia" />
             <div class="texto">
               <span>3002</span>
               <h1>Mais outra história legal</h1>

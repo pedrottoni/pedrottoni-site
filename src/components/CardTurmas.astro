@@ -1,27 +1,211 @@
 ---
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
 import Botao from "./Botao.astro";
-const { capa, estilo, tag, turma } = Astro.props;
-//grande, pequeno
+interface Props {
+  turmas: CollectionEntry<"produtos">;
+  estilo: string;
+  swiper?: boolean;
+  page: string;
+}
+
+const { turmas, estilo, swiper, page } = Astro.props;
+
+const principal = turmas.data.content.filter(
+  (item) => item.page === "principal"
+);
+const volume = turmas.data.content.filter((item) => item.page === "volume");
 ---
 
-<div class={"card " + estilo}>
-  <div class="capa">
-    <img
-      src={capa}
-      alt="Capa da turma"
-      class={tag.toLowerCase()}
-      width="373"
-      height="252"
-    />
-  </div>
-  <div class="texto">
-    <span class={tag.toLowerCase()}>{tag}</span>
-    <h1>{turma}</h1>
-    <Botao estilo="outline-escuro pequeno mt-2" texto="Textinho bacana" />
-  </div>
-</div>
+{
+  !swiper && page === "principal"
+    ? principal.map((material) => (
+        <div class={"card " + estilo}>
+          <div class="capa">
+            <Image
+              src={material.img}
+              alt="Capa da turma"
+              class={material.tag.toLowerCase()}
+            />
+          </div>
+          <div class="texto">
+            <span class={material.tag.toLowerCase()}>{material.tag}</span>
+            <h1>{material.nome}</h1>
+            <Botao estilo="outline-escuro pequeno mt-2" texto="Conheça mais" />
+          </div>
+        </div>
+      ))
+    : !swiper && page === "volume"
+    ? volume.map((material) => (
+        <div class={"card " + estilo}>
+          <div class="capa">
+            <Image
+              src={material.img}
+              alt="Capa da turma"
+              class={material.tag.toLowerCase()}
+            />
+          </div>
+          <div class="texto">
+            <span class={material.tag.toLowerCase()}>{material.tag}</span>
+            <h1>{material.nome}</h1>
+            <Botao estilo="outline-escuro pequeno mt-2" texto="Conheça mais" />
+          </div>
+        </div>
+      ))
+    : !swiper &&
+      turmas.data.content.map((material) => (
+        <div class={"card " + estilo}>
+          <div class="capa">
+            <Image
+              src={material.img}
+              alt="Capa da turma"
+              class={material.tag.toLowerCase()}
+            />
+          </div>
+          <div class="texto">
+            <span class={material.tag.toLowerCase()}>{material.tag}</span>
+            <h1>{material.nome}</h1>
+            <Botao estilo="outline-escuro pequeno mt-2" texto="Conheça mais" />
+          </div>
+        </div>
+      ))
+}
+{
+  swiper && page === "principal" ? (
+    <div class="Swiper swiper-turmas">
+      <div class="swiper-wrapper">
+        {principal.map((material) => (
+          <div class="swiper-slide">
+            <div class={"card " + estilo}>
+              <div class="capa">
+                <Image
+                  src={material.img}
+                  alt="Capa da turma"
+                  class={material.tag.toLowerCase()}
+                />
+              </div>
+              <div class="texto">
+                <span class={material.tag.toLowerCase()}>{material.tag}</span>
+                <h1>{material.nome}</h1>
+                <Botao
+                  estilo="outline-escuro pequeno mt-2"
+                  texto="Conheça mais"
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="swiper-button-next" />
+      <div class="swiper-button-prev" />
+    </div>
+  ) : swiper && page === "volume" ? (
+    <div class="Swiper swiper-turmas">
+      <div class="swiper-wrapper">
+        {volume.map((material) => (
+          <div class="swiper-slide">
+            <div class={"card " + estilo}>
+              <div class="capa">
+                <Image
+                  src={material.img}
+                  alt="Capa da turma"
+                  class={material.tag.toLowerCase()}
+                />
+              </div>
+              <div class="texto">
+                <span class={material.tag.toLowerCase()}>{material.tag}</span>
+                <h1>{material.nome}</h1>
+                <Botao
+                  estilo="outline-escuro pequeno mt-2"
+                  texto="Conheça mais"
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="swiper-button-next" />
+      <div class="swiper-button-prev" />
+    </div>
+  ) : (
+    swiper && (
+      <div class="Swiper swiper-turmas">
+        <div class="swiper-wrapper">
+          {turmas.data.content.map((material) => (
+            <div class="swiper-slide">
+              <div class={"card " + estilo}>
+                <div class="capa">
+                  <Image
+                    src={material.img}
+                    alt="Capa da turma"
+                    class={material.tag.toLowerCase()}
+                  />
+                </div>
+                <div class="texto">
+                  <span class={material.tag.toLowerCase()}>{material.tag}</span>
+                  <h1>{material.nome}</h1>
+                  <Botao
+                    estilo="outline-escuro pequeno mt-2"
+                    texto="Conheça mais"
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="swiper-button-next" />
+        <div class="swiper-button-prev" />
+      </div>
+    )
+  )
+}
+<script>
+  import Swiper from "swiper";
+  import "swiper/css";
+  import "swiper/css/navigation";
 
+  import { Navigation } from "swiper/modules";
+
+  const swiper = new Swiper(".swiper-turmas", {
+    modules: [Navigation],
+    slidesPerView: "auto",
+    spaceBetween: 24,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
 <style scoped>
+  .swiper-turmas {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 0;
+  }
+  .swiper-wrapper {
+    max-width: 52rem;
+    min-height: 27rem;
+  }
+  .swiper-slide {
+    width: 18rem;
+    place-self: center;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 1.2rem -0.6rem rgba(0, 0, 0, 0.15);
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 5rem;
+    height: 5rem;
+    background: var(--clr-ice);
+    border-radius: 5rem;
+    box-shadow: 0 0.1rem 2rem hsl(0, 0%, 60%);
+    margin: -2.8rem 1rem;
+  }
+  .swiper-button-disabled {
+    display: none;
+    opacity: 0;
+  }
   .card {
     background-color: var(--clr-white);
     border-radius: 1rem;

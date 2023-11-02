@@ -1,0 +1,28 @@
+{
+  "content": [
+    {
+      "nome": "Arnóbio Tomaz",
+      "foto": "../../img/alunos-small/João Matheus.png",
+      "capa": "../../img/aprovados/João Matheus.png",
+      "tag": "Aprovado ITA",
+      "video": "https://www.youtube.com/watch?v=PfUoOOk2I6M",
+      "page": ["home", "IME"]
+    },
+    {
+      "nome": "João Matheus",
+      "foto": "../../img/alunos-small/Arnóbio Tomaz.png",
+      "capa": "../../img/aprovados/Arnóbio Tomaz.png",
+      "tag": "Aprovado ITA",
+      "video": "https://www.youtube.com/watch?v=bQN5xA-bhuQ",
+      "page": ["home", "IME"]
+    },
+    {
+      "nome": "Bruno Mentor",
+      "foto": "../../img/alunos-small/Bruno Mentor.png",
+      "capa": "../../img/aprovados/Bruno Mentor.png",
+      "tag": "Aprovado ITA",
+      "video": "https://www.youtube.com/watch?v=I677RCydEsc",
+      "page": ["home", "IME"]
+    }
+  ]
+}

@@ -24,6 +24,10 @@ const { title, description } = Astro.props;
       rel="stylesheet"
       type="text/css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -34,6 +38,7 @@ const { title, description } = Astro.props;
     <Footer />
   </body>
 </html>
+
 <style is:global>
   /*
 https://www.onlinewebfonts.com/search?q=GothamSSm
@@ -74,6 +79,9 @@ font-family: "GothamSSm-Black";
     --fs-700: clamp(1.94rem, calc(1.54rem + 2.03vw), 3.11rem);
     --fs-800: clamp(2.33rem, calc(1.7rem + 3.15vw), 4.14rem);
     --fs-900: clamp(2.8rem, calc(1.85rem + 4.74vw), 5.52rem);
+
+    --swiper-scrollbar-size: 0.4rem;
+    --swiper-scrollbar-drag-bg-color: var(--clr-blue);
   }
 
   html {
@@ -165,4 +173,6 @@ font-family: "GothamSSm-Black";
     flex-direction: column;
     align-items: center;
   }
+
+
 </style>

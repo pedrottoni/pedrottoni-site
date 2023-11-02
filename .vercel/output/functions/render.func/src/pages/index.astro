@@ -1,4 +1,6 @@
 ---
+import { getEntry } from "astro:content";
+
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
@@ -12,8 +14,10 @@ import CardDepoimentos from "../components/CardDepoimentos.astro";
 
 import capa from "../img/capa catalise.png";
 
-const texto =
-  "Acreditamos que a educação é a chave para desbloquear o potencial de toda pessoa e, com tecnologia, ética e excelência, estamos dedicados a prepará-los para os desafios que os aguardam.";
+const turmas = await getEntry("produtos", "turmas");
+const materiais = await getEntry("produtos", "materiais");
+const depoimentos = await getEntry("alunos", "depoimentos");
+const aprovados = await getEntry("alunos", "aprovados");
 ---
 
 <Layout title="Catálise" description="Catálise cursos">
@@ -29,58 +33,29 @@ const texto =
       botao="Conheça nossas turmas"
     >
       <p class="txt-capa" slot="conteudo">
-        {texto}
+        Explore nossos produtos e siga em direção ao sonho da aprovação.
       </p>
       <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
     </Capa>
     <Destaques
       img
-      titulo1="Embasamento Completo"
-      texto1="Matemática Básica, Física Básica e Produtividade nos estudos, que irá te preparar de forma exclusiva para o ITA."
-      titulo2="Microlearning"
-      texto2="Aulas divididas por frentes, disponibilizadas em Módulos e no formato 'Microlearning', que te levarão até o nível do ITA."
-      titulo3="Listas de Exercícios"
-      texto3="Após cada aula e ao final do assunto, que te ajudarão a fixar o conteúdo e a se preparar para as provas."
-      titulo4="Plantão de dúvidas"
-      texto4="Te dará suporte de Segunda a Sexta para tirar todas as suas dúvidas e garantir que você esteja sempre preparado."
+      titulo1="Metodologia Microlearning"
+      texto1="Aulas curtas, completas e focadas com em média 25 minutos. Abordagem eficaz para garantir que o seu aprendizado seja fixado."
+      titulo2="Listas de exercícios"
+      texto2="Após a aula aprimore-se com listas abrangentes até o nível avançado. corrija com resoluções escritas e vídeos explicativos."
+      titulo3="Plantão de dúvidas"
+      texto3="Tire suas dúvidas de Física, Química e Matemática ao vivo por chamada do Google Meet. Agende e converse com um professor."
+      titulo4="Simulados com correção"
+      texto4="7 ciclos de simulados: 1 de embasamento, 6 modelos ITA (1ª e 2ª fase), com gabarito, resolução e correção de todas matérias."
     />
     <Section
       estilo="claro"
       tag="Turmas"
       titulo="Conheça nossas turmas"
-      subtitulo="LorenIpsum dolor sit amet consectetur adipisicing elit. Quaerat consectetur facilis molestias repudiandae reiciendis temporibus suscipit."
+      subtitulo="Embarque conosco nesta jornada de preparação, do nível básico ao avançado. Vamos juntos rumo a sua aprovação!"
       botao="Conheça nossas turmas"
     >
-      <div class="swiper swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <CardTurmas
-              estilo="grande"
-              tag="Turma"
-              turma="ITA/IME"
-              capa="/imagens/itaime.png"
-            />
-          </div>
-          <div class="swiper-slide">
-            <CardTurmas
-              estilo="grande"
-              tag="Turma"
-              turma="PRÉ ITA/IME"
-              capa="/imagens/itaime.png"
-            />
-          </div>
-          <div class="swiper-slide">
-            <CardTurmas
-              estilo="grande"
-              tag="Revisão"
-              turma="ITA/IME"
-              capa="/imagens/itaime.png"
-            />
-          </div>
-        </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
+      <CardTurmas estilo="grande" turmas={turmas} page="" swiper />
     </Section>
     <Section
       estilo=""
@@ -88,111 +63,44 @@ const texto =
       titulo="Os melhores materiais para sua preparação"
       subtitulo=""
       link="Conheça nossos materiais"
-      colunas="col4"
+      colunas="col3"
     >
-      <CardEbooks
-        capa="/imagens/ebook biblia para o ita.png"
-        tag="Ebook"
-        material="A Biblia para o ITA"
-      />
-      <CardEbooks
-        capa="/imagens/ebook miscelanea ita.png"
-        tag="Miscelânea"
-        material="Miscelâneas ITA"
-      />
-      <CardEbooks
-        capa="/imagens/ebook miscelanea ime.png"
-        tag="Miscelânea"
-        material="Miscelâneas IME"
-      />
-      <CardEbooks
-        capa="/imagens/ebook miscelanea afa.png"
-        tag="Miscelânea"
-        material="Miscelâneas AFA"
-      />
-      <CardEbooks
-        capa="/imagens/ebook bizuario quimica geral 1.png"
-        tag="Bizuário"
-        material="Química Geral 1"
-      />
-      <CardEbooks
-        capa="/imagens/ebook bizuario quimica geral 2.png"
-        tag="Bizuário"
-        material="Química Geral 2"
-      />
-      <CardEbooks
-        capa="/imagens/ebook bizuario fisico quimica.png"
-        tag="Bizuário"
-        material="Físico Química"
-      />
-      <CardEbooks
-        capa="/imagens/ebook bizuario reacoes organicas.png"
-        tag="Bizuário"
-        material="Reações Orgânicas"
-      />
+      <CardEbooks materiais={materiais} page="principal" />
     </Section>
     <Section
       estilo="claro aprovacoes"
       tag="Aprovações"
-      titulo="Um textinho motivacional bacana"
-      subtitulo="LorenIpsum dolor sit amet consectetur adipisicing elit. Quaerat consectetur facilis molestias repudiandae reiciendis temporibus suscipit."
+      titulo="Conheça nossos aprovados para o ITA"
+      subtitulo="Assista as inspiradoras jornadas de nossos alunos aprovados no ITA. Eles acreditaram no sonho, perseveraram e conquistaram o topo. O próximo pode ser você!"
     >
-      <div class="swiper swiper-aprovacoes">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <CardAprovacoes
-              capa="/imagens/Aprovado João Matheus"
-              tag="Aprovado ITA"
-              aprovado="João Matheus"
-            />
-          </div>
-          <div class="swiper-slide">
-            <CardAprovacoes
-              capa="/imagens/Aprovado Arnóbio Tomaz"
-              tag="Aprovado ITA"
-              aprovado="Arnóbio Tomaz "
-            />
-          </div>
-          <div class="swiper-slide">
-            <CardAprovacoes
-              capa="/imagens/Aprovado Bruno Mentor"
-              tag="Aprovado ITA"
-              aprovado="Bruno Mentor"
-            />
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
+      <CardAprovacoes aprovados={aprovados} page="" />
     </Section>
     <Capa
-      title="Uma frase bacana"
-      destaque=" Aqui!"
+      title="Faça parte"
+      destaque=" do Catálise!"
       botao="Conheça nossas turmas"
+      linha
     >
       <p class="txt-capa" slot="conteudo">
-        {texto}
+        O melhor preparatório online para o ITA, IME e EEAR!
       </p>
       <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
     </Capa>
     <Section
       estilo="claro"
       tag="Depoimentos"
-      titulo="Conheça a opinião dos nossos alunos"
-      subtitulo="LorenIpsum dolor sit amet consectetur adipisicing elit. Quaerat consectetur facilis molestias repudiandae reiciendis temporibus suscipit."
+      titulo="Conheça a experiência dos nossos alunos"
+      subtitulo="Descubra como o Catálise impactou a vida de nossos Alunos"
     >
       <div class="depoimentos">
-        <CardDepoimentos />
+        <CardDepoimentos depoimentos={depoimentos} page="" />
       </div>
     </Section>
   </main>
 </Layout>
+
 <script>
   import { gsap } from "gsap";
-  import { Swiper } from "swiper";
-  import { Navigation, Pagination, Mousewheel } from "swiper/modules";
-  import "swiper/css";
-  import "swiper/css/navigation";
-  import "swiper/css/pagination";
   gsap.fromTo(
     ".box",
     {
@@ -207,61 +115,9 @@ const texto =
       scale: 1,
     }
   );
-  new Swiper(".swiper-container", {
-    slidesPerView: "auto",
-    spaceBetween: 20,
-    modules: [Navigation],
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-  new Swiper(".swiper-aprovacoes", {
-    slidesPerView: 1.4,
-    spaceBetween: 20,
-    direction: "vertical",
-    centeredSlides: true,
-    mousewheel: true,
-    modules: [Pagination, Mousewheel],
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
 </script>
 <style>
   .testeGsap {
     display: none;
-  }
-  .swiper {
-    min-height: 27rem;
-  }
-  .swiper-container {
-    margin-top: 1rem;
-    padding: 0 3rem;
-  }
-  .swiper-container .swiper-slide {
-    width: 18rem;
-    height: 28rem;
-    height: auto;
-    place-self: center;
-    border-radius: 1rem;
-    box-shadow: 0.5rem 0.5rem 1.2rem -0.6rem rgba(0, 0, 0, 0.15);
-  }
-  .swiper-button-prev,
-  .swiper-button-next {
-    width: 5rem;
-    height: 5rem;
-    background: var(--clr-ice);
-    border-radius: 5rem;
-    box-shadow: 0 0.1rem 2rem hsl(0, 0%, 60%);
-    margin: -2.8rem 1rem;
-  }
-  .swiper-button-prev:after,
-  .swiper-button-next:after {
-  }
-  .swiper-aprovacoes {
-    height: -webkit-fill-available;
-    position: absolute;
   }
 </style>
