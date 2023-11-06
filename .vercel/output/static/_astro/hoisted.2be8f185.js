@@ -1,1 +1,0 @@
-import{S as e,P as i,M as r}from"./CardDepoimentos.astro_astro_type_script_index_0_lang.755549ef.js";import"./hoisted.6a516877.js";new e(".swiper-professores",{slidesPerView:1.4,spaceBetween:20,direction:"vertical",centeredSlides:!0,mousewheel:!0,modules:[i,r],pagination:{el:".swiper-pagination",clickable:!0}});

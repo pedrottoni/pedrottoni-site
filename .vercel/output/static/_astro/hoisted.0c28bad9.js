@@ -1,0 +1,1 @@
+import{S as e,N as t}from"./navigation.5abcd372.js";import"./CardEbooks.astro_astro_type_script_index_0_lang.341c78a0.js";import"./hoisted.6a516877.js";new e(".swiper-turmas",{modules:[t],slidesPerView:"auto",spaceBetween:24,navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}});

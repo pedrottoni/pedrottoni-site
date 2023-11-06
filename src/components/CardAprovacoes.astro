@@ -8,7 +8,6 @@ interface Props {
 }
 
 const { aprovados, page } = Astro.props;
-//grande, pequeno
 ---
 
 {
@@ -119,12 +118,7 @@ const { aprovados, page } = Astro.props;
                 />
               </div>
               <div class="texto">
-                <Image
-                  src={aprovado.foto}
-                  alt={aprovado.nome}
-                  class="capa"
-
-                />
+                <Image src={aprovado.foto} alt={aprovado.nome} class="capa" />
                 <div>
                   <span>{aprovado.tag}</span>
                   <h1>{aprovado.nome}</h1>
@@ -133,8 +127,8 @@ const { aprovados, page } = Astro.props;
             </a>
           </div>
         ))}
-        </div>
-        <div class="swiper-scrollbar" />
+      </div>
+      <div class="swiper-scrollbar" />
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import"./CardEbooks.astro_astro_type_script_index_0_lang.341c78a0.js";import"./hoisted.7e4c8c76.js";import"./CardDepoimentos.astro_astro_type_script_index_0_lang.85d87d64.js";import"./hoisted.6a516877.js";import"./navigation.5abcd372.js";import"./mousewheel.27dae326.js";import"./pagination.8a1279f1.js";import"./scrollbar.9ed7a3fe.js";function mt(f){if(f===void 0)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return f}function Ei(f,t){f.prototype=Object.create(t.prototype),f.prototype.constructor=f,f.__proto__=t}/*!
+import"./hoisted.0c28bad9.js";import"./CardEbooks.astro_astro_type_script_index_0_lang.341c78a0.js";import"./CardDepoimentos.astro_astro_type_script_index_0_lang.85d87d64.js";import"./hoisted.6a516877.js";import"./navigation.5abcd372.js";import"./mousewheel.27dae326.js";import"./pagination.8a1279f1.js";import"./scrollbar.9ed7a3fe.js";function mt(f){if(f===void 0)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return f}function Ei(f,t){f.prototype=Object.create(t.prototype),f.prototype.constructor=f,f.__proto__=t}/*!
  * GSAP 3.12.2
  * https://greensock.com
  *

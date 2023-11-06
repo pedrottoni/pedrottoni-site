@@ -11,6 +11,7 @@ import Cardserv from "../../components/Cardserv.astro";
 import CardDepoimentos from "../../components/CardDepoimentos.astro";
 
 import capa from "../../img/turma itaime.png";
+import beneficios from "../../img/beneficios.png";
 import materiais from "../../img/materiais.png";
 
 import { getEntry } from "astro:content";
@@ -118,7 +119,13 @@ const aprovados = await getEntry("alunos", "aprovados");
            Simulados 100% focados no ITA
         </li>
       </ul>
-      <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
+      <Image
+        src={beneficios}
+        alt="Capa do Catálise"
+        class="img-capa-material"
+        slot="imagem"
+        width=800
+      />
     </Capa>
     <Section
       estilo="centro"
@@ -171,7 +178,7 @@ const aprovados = await getEntry("alunos", "aprovados");
     <Capa
       estilo="claro"
       title="Material didático"
-      botao="Conheça outros materiais"
+      botao="Conheça nossos materiais"
     >
       <p class="txt-capa-claro" slot="conteudo">
         Checklist para cada assunto + Bizuários de Química, que te ajudarão a
