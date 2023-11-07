@@ -1,7 +1,7 @@
 ---
 import Botao from "./Botao.astro";
 
-const { estilo, title, destaque, botao, linha } = Astro.props;
+const { estilo, title, destaque, botao, link, linha } = Astro.props;
 ---
 
 <section class={estilo && estilo}>
@@ -14,9 +14,9 @@ const { estilo, title, destaque, botao, linha } = Astro.props;
     <slot name="conteudo" />
     {
       botao && !estilo ? (
-        <Botao estilo="grande mt-3" texto={botao} />
+        <Botao estilo="grande mt-3" texto={botao} link={link} />
       ) : botao && estilo ? (
-        <Botao estilo="claro grande mt-3" texto={botao} />
+        <Botao estilo="claro grande mt-3" texto={botao} link={link} />
       ) : null
     }
   </div>
@@ -43,6 +43,7 @@ const { estilo, title, destaque, botao, linha } = Astro.props;
     display: none;
     filter: drop-shadow(-8rem -8rem 8rem hsl(215, 100%, 30%))
       drop-shadow(8rem 8rem 8rem hsl(195, 100%, 24%));
+      z-index: -1;
   }
   .destaque {
     font-size: clamp(2.3rem, 3.7vw, 3.5rem);

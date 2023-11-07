@@ -9,6 +9,7 @@ import Section from "../../components/Section.astro";
 import Accordeon from "../../components/Accordeon.astro";
 
 import capa from "../../img/miscelaneas-ita.png";
+import beneficios from "../../img/beneficios.png";
 
 import CardEbooks from "../../components/CardEbooks.astro";
 import MateriaisValor from "../../components/MateriaisValor.astro";
@@ -117,7 +118,14 @@ const perguntas = await getEntry("alunos", "perguntas");
            Simulados 100% focados no ITA
         </li>
       </ul>
-      <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
+      <Image
+        src={beneficios}
+        alt="Capa do Catálise"
+        class="img-capa-material"
+        slot="imagem"
+        width="770"
+        quality="max"
+      />
     </Capa>
     <MateriaisValor />
 

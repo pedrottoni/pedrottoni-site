@@ -3,10 +3,18 @@ const { texto, estilo } = Astro.props;
 //claro, outline-claro, outline-escuro, grande, pequeno
 ---
 
-<a class={estilo}>{texto}</a>
+<a class={estilo}
+  >{texto}
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 278 278">
+    <path
+      d="M248.08.27a26.25 26.25 0 0 1 29.67 29.57v154.1a26.24 26.24 0 1 1-52.48 0V89.85L45.17 269.93a26.23 26.23 0 1 1-37.1-37.1l180.1-180.08h-94.1a26.24 26.24 0 1 1 0-52.48h154Z"
+      clip-rule="evenodd"></path>
+  </svg>
+</a>
 <style scoped>
   a {
-    font-family: var(--font-bold);
+    font-family: var(--font-book);
+    font-weight: 600;
     text-transform: uppercase;
     border: none;
     border-radius: 0.8rem;
@@ -24,18 +32,27 @@ const { texto, estilo } = Astro.props;
   }
 
   .claro {
-    color: hsl(52, 93%, 52%);
+    color: var(--clr-white);
     filter: none;
   }
   .claro:hover {
     filter: none;
+    color: var(--clr-green);
+  }
+  .claro:hover svg {
+    fill: var(--clr-green);
+    transform: translateX(0.2rem) translateY(-0.2rem);
   }
   .grande {
-    padding: 1.1rem 1rem;
-    font-size: 1rem;
+    font-size: .8rem;
   }
   .pequeno {
-    padding: 0.8rem 0.8rem;
-    font-size: 0.8rem;
+    font-size: 0..6rem;
+  }
+  svg {
+    width: .9rem;
+    margin: 0 0rem -0.1rem 0.6rem;
+    fill: var(--clr-white);
+    transition: all 0.5s ease;
   }
 </style>

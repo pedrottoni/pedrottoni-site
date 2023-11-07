@@ -31,6 +31,7 @@ const aprovados = await getEntry("alunos", "aprovados");
       title="Uma frase bacana"
       destaque=" Aqui!"
       botao="Conheça nossas turmas"
+      link="/produtos"
     >
       <p class="txt-capa" slot="conteudo">
         Explore nossos produtos e siga em direção ao sonho da aprovação.
@@ -51,18 +52,18 @@ const aprovados = await getEntry("alunos", "aprovados");
     <Section
       estilo="claro"
       tag="Turmas"
-      titulo="Conheça nossas turmas"
+      titulo="Prepare-se nas melhores turmas"
       subtitulo="Embarque conosco nesta jornada de preparação, do nível básico ao avançado. Vamos juntos rumo a sua aprovação!"
       botao="Conheça nossas turmas"
+      link="/produtos"
     >
       <CardTurmas estilo="grande" turmas={turmas} page="" swiper />
     </Section>
     <Section
-      estilo=""
+      estilo="centro"
       tag="Materiais"
       titulo="Os melhores materiais para sua preparação"
       subtitulo=""
-      link="Conheça nossos materiais"
       colunas="col3"
     >
       <CardEbooks materiais={materiais} page="principal" />
@@ -70,7 +71,7 @@ const aprovados = await getEntry("alunos", "aprovados");
     <Section
       estilo="claro aprovacoes"
       tag="Aprovações"
-      titulo="Conheça nossos aprovados para o ITA"
+      titulo="Conheça nossos aprovados no ITA"
       subtitulo="Assista as inspiradoras jornadas de nossos alunos aprovados no ITA. Eles acreditaram no sonho, perseveraram e conquistaram o topo. O próximo pode ser você!"
     >
       <CardAprovacoes aprovados={aprovados} page="" />
@@ -78,19 +79,21 @@ const aprovados = await getEntry("alunos", "aprovados");
     <Capa
       title="Faça parte"
       destaque=" do Catálise!"
-      botao="Conheça nossas turmas"
+      botao="Conheça nossos produtos"
+      link="/produtos"
       linha
     >
       <p class="txt-capa" slot="conteudo">
-        O melhor preparatório online para o ITA, IME e EEAR!
+        Junte-se aos nosso aprovados no melhor preparatório online para os processos
+        seletivos do ITA, IME e EEAR!
       </p>
       <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
     </Capa>
     <Section
       estilo="claro"
       tag="Depoimentos"
-      titulo="Conheça a experiência dos nossos alunos"
-      subtitulo="Descubra como o Catálise impactou a vida de nossos Alunos"
+      titulo="Compartilhe a experiência dos nossos alunos"
+      subtitulo="Descubra as transformações incríveis que o Catálise trouxe para a vida de nossos alunos e como nossa metodologia de ensino fez a diferença em suas jornadas. "
     >
       <div class="depoimentos">
         <CardDepoimentos depoimentos={depoimentos} page="" />

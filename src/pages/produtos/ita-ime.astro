@@ -24,8 +24,7 @@ const aprovados = await getEntry("alunos", "aprovados");
   <main class="container">
     <Capa title="ITA IME" destaque=" 2024" botao="Compre agora">
       <p class="txt-capa" slot="conteudo">
-        Faça parte da nossa turma ITA e prepare-se para decolar com a gente rumo
-        ao sucesso!
+        Descubra o caminho da aprovação com nossa turma ITA/IME! Aqui você vai aprender tudo o que precisa para conquistar os seus sonhos!
       </p>
       <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
     </Capa>
@@ -124,7 +123,8 @@ const aprovados = await getEntry("alunos", "aprovados");
         alt="Capa do Catálise"
         class="img-capa-material"
         slot="imagem"
-        width=800
+        width=770
+        quality="max"
       />
     </Capa>
     <Section
@@ -179,6 +179,7 @@ const aprovados = await getEntry("alunos", "aprovados");
       estilo="claro"
       title="Material didático"
       botao="Conheça nossos materiais"
+      link="/produtos"
     >
       <p class="txt-capa-claro" slot="conteudo">
         Checklist para cada assunto + Bizuários de Química, que te ajudarão a

@@ -11,8 +11,8 @@ import Link from "./Link.astro";
       <h1>{titulo}</h1>
       <p>{subtitulo}</p>
     </div>
-    {botao && <Botao estilo="claro grande mt-3" texto={botao} />}
-    {link && <Link estilo="claro grande" texto={link} />}
+    {botao && <Botao estilo="claro grande mt-3" texto={botao} link={link} />}
+    {link && !botao && <Link estilo="claro grande" texto={link} />}
   </div>
   <div class={"conteudo " + colunas}>
     <slot />
@@ -45,6 +45,7 @@ import Link from "./Link.astro";
   }
   .col3 {
     grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    row-gap: 4rem;
   }
   .col4 {
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
@@ -53,7 +54,7 @@ import Link from "./Link.astro";
   .claro {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 4rem;
+    gap: 3rem;
     place-items: center;
     place-content: center;
     background: linear-gradient(
@@ -102,7 +103,7 @@ import Link from "./Link.astro";
   }
   .centro > div:first-child {
     display: block;
-    max-width: 41rem;
+    max-width: 39rem;
   }
   .centro > div:first-child div:first-child {
     max-width: 100%;
@@ -117,7 +118,7 @@ import Link from "./Link.astro";
     line-height: 2.5;
   }
   h1 {
-    font-size: 2.8rem;
+    font-size: clamp(2.2rem, 3.5vw, 2.7rem);
   }
   .claro h1 {
     font-family: var(--font-black);

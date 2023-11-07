@@ -15,9 +15,7 @@ const { materiais, swiper, page } = Astro.props;
 const principal = materiais.data.content.filter(
   (item) => item.page === "principal"
 );
-const volume = materiais.data.content.filter(
-  (item) => item.page === "volume"
-);
+const volume = materiais.data.content.filter((item) => item.page === "volume");
 ---
 
 {
@@ -25,12 +23,16 @@ const volume = materiais.data.content.filter(
     ? principal.map((material) => (
         <div class="card">
           <div class="capa">
-            <Image src={material.img} alt="Capa da material" width="240" />
+            <Image src={material.img} alt="Capa da material" width="220" />
           </div>
           <div class="texto">
             <span class={material.tag.toLowerCase()}>{material.tag}</span>
             <h1>{material.nome}</h1>
-            <Botao estilo="outline-claro pequeno" texto="Textinho bacana" />
+            <Botao
+              estilo="outline-claro pequeno"
+              texto="Saiba mais"
+              link={material.link}
+            />
           </div>
         </div>
       ))
@@ -43,7 +45,11 @@ const volume = materiais.data.content.filter(
           <div class="texto">
             <span class={material.tag.toLowerCase()}>{material.tag}</span>
             <h1>{material.nome}</h1>
-            <Botao estilo="outline-claro pequeno" texto="Textinho bacana" />
+            <Botao
+              estilo="outline-claro pequeno"
+              texto="Saiba mais"
+              link={material.link}
+            />
           </div>
         </div>
       ))
@@ -56,7 +62,11 @@ const volume = materiais.data.content.filter(
           <div class="texto">
             <span class={material.tag.toLowerCase()}>{material.tag}</span>
             <h1>{material.nome}</h1>
-            <Botao estilo="outline-claro pequeno" texto="Textinho bacana" />
+            <Botao
+              estilo="outline-claro pequeno"
+              texto="Saiba mais"
+              link={material.link}
+            />
           </div>
         </div>
       ))
@@ -74,7 +84,11 @@ const volume = materiais.data.content.filter(
               <div class="texto">
                 <span class={material.tag.toLowerCase()}>{material.tag}</span>
                 <h1>{material.nome}</h1>
-                <Botao estilo="outline-claro pequeno" texto="Textinho bacana" />
+                <Botao
+                  estilo="outline-claro pequeno"
+                  texto="Saiba mais"
+                  link={material.link}
+                />
               </div>
             </div>
           </div>
@@ -95,7 +109,11 @@ const volume = materiais.data.content.filter(
               <div class="texto">
                 <span class={material.tag.toLowerCase()}>{material.tag}</span>
                 <h1>{material.nome}</h1>
-                <Botao estilo="outline-claro pequeno" texto="Textinho bacana" />
+                <Botao
+                  estilo="outline-claro pequeno"
+                  texto="Saiba mais"
+                  link={material.link}
+                />
               </div>
             </div>
           </div>
@@ -123,7 +141,8 @@ const volume = materiais.data.content.filter(
                   <h1>{material.nome}</h1>
                   <Botao
                     estilo="outline-claro pequeno"
-                    texto="Textinho bacana"
+                    texto="Saiba mais"
+                    link={material.link}
                   />
                 </div>
               </div>

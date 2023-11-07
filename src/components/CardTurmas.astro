@@ -32,7 +32,7 @@ const volume = turmas.data.content.filter((item) => item.page === "volume");
           <div class="texto">
             <span class={material.tag.toLowerCase()}>{material.tag}</span>
             <h1>{material.nome}</h1>
-            <Botao estilo="outline-escuro pequeno mt-2" texto="Conheça mais" />
+            <Botao estilo="outline-escuro pequeno mt-2" texto="Saiba mais" link={material.link} />
           </div>
         </div>
       ))
@@ -49,7 +49,7 @@ const volume = turmas.data.content.filter((item) => item.page === "volume");
           <div class="texto">
             <span class={material.tag.toLowerCase()}>{material.tag}</span>
             <h1>{material.nome}</h1>
-            <Botao estilo="outline-escuro pequeno mt-2" texto="Conheça mais" />
+            <Botao estilo="outline-escuro pequeno mt-2" texto="Saiba mais" link={material.link} />
           </div>
         </div>
       ))
@@ -66,7 +66,7 @@ const volume = turmas.data.content.filter((item) => item.page === "volume");
           <div class="texto">
             <span class={material.tag.toLowerCase()}>{material.tag}</span>
             <h1>{material.nome}</h1>
-            <Botao estilo="outline-escuro pequeno mt-2" texto="Conheça mais" />
+            <Botao estilo="outline-escuro pequeno mt-2" texto="Saiba mais" link={material.link} />
           </div>
         </div>
       ))
@@ -90,7 +90,8 @@ const volume = turmas.data.content.filter((item) => item.page === "volume");
                 <h1>{material.nome}</h1>
                 <Botao
                   estilo="outline-escuro pequeno mt-2"
-                  texto="Conheça mais"
+                  texto="Saiba mais"
+                  link={material.link}
                 />
               </div>
             </div>
@@ -118,7 +119,8 @@ const volume = turmas.data.content.filter((item) => item.page === "volume");
                 <h1>{material.nome}</h1>
                 <Botao
                   estilo="outline-escuro pequeno mt-2"
-                  texto="Conheça mais"
+                  texto="Saiba mais"
+                  link={material.link}
                 />
               </div>
             </div>
@@ -147,7 +149,8 @@ const volume = turmas.data.content.filter((item) => item.page === "volume");
                   <h1>{material.nome}</h1>
                   <Botao
                     estilo="outline-escuro pequeno mt-2"
-                    texto="Conheça mais"
+                    texto="Saiba mais"
+                    link={material.link}
                   />
                 </div>
               </div>
@@ -247,7 +250,7 @@ const volume = turmas.data.content.filter((item) => item.page === "volume");
     color: var(--clr-lblue);
   }
   .revisão {
-    color: var(--clr-green);
+    color: var(--clr-dgreen);
   }
   h1 {
     color: hsl(200, 9%, 13%);
