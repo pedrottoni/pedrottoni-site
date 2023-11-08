@@ -32,7 +32,11 @@ const volume = turmas.data.content.filter((item) => item.page === "volume");
           <div class="texto">
             <span class={material.tag.toLowerCase()}>{material.tag}</span>
             <h1>{material.nome}</h1>
-            <Botao estilo="outline-escuro pequeno mt-2" texto="Saiba mais" link={material.link} />
+            <Botao
+              estilo="outline-escuro pequeno mt-2"
+              texto="Saiba mais"
+              link={material.link}
+            />
           </div>
         </div>
       ))
@@ -49,7 +53,11 @@ const volume = turmas.data.content.filter((item) => item.page === "volume");
           <div class="texto">
             <span class={material.tag.toLowerCase()}>{material.tag}</span>
             <h1>{material.nome}</h1>
-            <Botao estilo="outline-escuro pequeno mt-2" texto="Saiba mais" link={material.link} />
+            <Botao
+              estilo="outline-escuro pequeno mt-2"
+              texto="Saiba mais"
+              link={material.link}
+            />
           </div>
         </div>
       ))
@@ -66,7 +74,11 @@ const volume = turmas.data.content.filter((item) => item.page === "volume");
           <div class="texto">
             <span class={material.tag.toLowerCase()}>{material.tag}</span>
             <h1>{material.nome}</h1>
-            <Botao estilo="outline-escuro pequeno mt-2" texto="Saiba mais" link={material.link} />
+            <Botao
+              estilo="outline-escuro pequeno mt-2"
+              texto="Saiba mais"
+              link={material.link}
+            />
           </div>
         </div>
       ))
@@ -200,10 +212,20 @@ const volume = turmas.data.content.filter((item) => item.page === "volume");
   .swiper-button-prev {
     width: 5rem;
     height: 5rem;
-    background: var(--clr-ice);
+    background: var(--clr-white);
     border-radius: 5rem;
     box-shadow: 0 0.1rem 2rem hsl(0, 0%, 60%);
     margin: -2.8rem 1rem;
+  }
+  .swiper-button-next:after,
+  .swiper-rtl .swiper-button-prev:after {
+    font-weight: 600;
+    padding-left: 0.4rem;
+  }
+  .swiper-button-prev:after,
+  .swiper-rtl .swiper-button-next:after {
+    font-weight: 600;
+    padding-right: 0.4rem;
   }
   .swiper-button-disabled {
     display: none;
@@ -253,13 +275,13 @@ const volume = turmas.data.content.filter((item) => item.page === "volume");
     color: var(--clr-dgreen);
   }
   h1 {
-    color: hsl(200, 9%, 13%);
+    color: var(--clr-black);
     font-family: var(--font-black);
     font-size: 1.3rem;
     margin-top: 0.5rem;
   }
   .pequeno {
-    background-color: hsl(215, 60%, 96%);
+    background-color: var(--clr-ice);
     position: relative;
     display: grid;
     grid-template-columns: 1fr 0fr;
