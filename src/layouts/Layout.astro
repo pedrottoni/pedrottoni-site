@@ -38,14 +38,9 @@ const { title, description } = Astro.props;
     <Footer />
   </body>
 </html>
-
 <style is:global>
   /*
 https://www.onlinewebfonts.com/search?q=GothamSSm
-font-family: "GothamSSm-Book";
-font-family: "GothamSSm-Bold";
-font-family: "GothamSSm-Light";
-font-family: "GothamSSm-Black";
 */
   :root {
     --font-light: GothamSSm-Light;
@@ -60,7 +55,7 @@ font-family: "GothamSSm-Black";
     --clr-gray: hsla(215, 20%, 40%, 0.5);
     --clr-dgray: hsla(215, 100%, 10%, 0.5);
     --clr-green: hsl(173, 90%, 61%);
-    --clr-dgreen: hsl(173,65%,41%);
+    --clr-dgreen: hsl(173, 65%, 41%);
     --clr-yellow: hsl(52, 93%, 52%);
     --clr-blue: hsl(214, 51%, 47%);
     --clr-dblue: hsla(214, 51%, 47%, 0.3);
@@ -137,6 +132,9 @@ font-family: "GothamSSm-Black";
   ul li {
     line-height: 1.6rem;
   }
+  button {
+    cursor: pointer;
+  }
 
   .container {
     max-width: 1200px;
@@ -175,6 +173,89 @@ font-family: "GothamSSm-Black";
     flex-direction: column;
     align-items: center;
   }
+  .breadcrumbs {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    opacity: 0.8;
+    padding-top: 0.7rem;
+    font-size: smaller;
+  }
+  .breadcrumbs__item {
+    color: var(--clr-ice);
+  }
+  .breadcrumbs__item:hover,
+  .breadcrumbs__item a:hover {
+    color: var(--clr-green);
+  }
+  .breadcrumbs__item:last-child {
+    color: var(--clr-green);
+  }
+  .modal {
+    background: linear-gradient(
+      80deg,
+      hsl(226, 100%, 97%),
+      hsl(200, 100%, 80%)
+    );
+    min-width: 32vw;
+    overflow: hidden;
+  }
+  :where(.modal) {
+    border: none !important;
+  }
+  .modal__inner {
+  }
 
+  .modal__content {
+    gap: 1.5rem;
+    padding: 1rem;
+    overflow: auto;
+    max-height: 72vh;
+    position: relative;
+  }
+  .modal__content h3 {
+    font-family: var(--font-bold);
+    font-size: 1.8rem;
+    color: var(--font-black);
+    margin: .12rem 0;
+  }
+  .modal__content h2 {
+    font-family: var(--font-book);
+    margin-top: 1rem;
+    color: var(--font-black);
+  }
+  .modal__close button {
+    color: var(--clr-black) !important;
+    background-color: hsl(213, 52%, 96%, 0.4) !important;
+    width: unset !important;
+    padding: 0.6rem 0.8rem !important;
+    position: absolute;
+    font-weight: 600;
+    top: 0;
+    right: 0;
+    font-size: 1.2rem;
+    line-height: 1 !important;
+    border-radius: 100rem !important;
+    margin: 1.8rem !important;
+    border: 0.12rem solid var(--clr-dblue) !important;
+    transition: all 0.2s ease-in-out !important;
+  }
 
+  .modal__close:hover button,
+  .modal__close:focus button {
+    text-decoration: none !important;
+    color: var(--clr-lblue) !important;
+    border: 0.12rem solid var(--clr-lblue) !important;
+  }
+  ::-webkit-scrollbar-track {
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--clr-lblue);
+    border-radius: 0.18rem;
+  }
 </style>

@@ -1,58 +1,58 @@
 {
   "content": [
     {
-      "title": "Como funciona o “Prazo de Garantia”?",
-      "text": "O Prazo de Garantia é o período que você tem para pedir o reembolso integral do valor pago pela sua compra, caso o produto não seja satisfatório. Assim que solicitado, seu reembolso é processado automaticamente pela Hotmart em até 5 dias. Para pagamentos com boleto bancário, você precisa preencher uma conta bancária para receber o dinheiro. Passados os 5 dias, o valor poderá ser identificado em sua conta em até 7 dias úteis. Já o estorno da fatura do cartão de crédito varia de acordo com o meio de pagamento e pode ocorrer na fatura atual ou na seguinte.",
+      "title": "Quais são as formas de pagamento?",
+      "text": "Você poderá efetuar o pagamento da forma que achar melhor: cartão de crédito, no PIX, no boleto, em dois cartões ou uma parte no PIX e outra parte no cartão.",
+      "page": ["TURMAS", "MATERIAIS"]
+    },
+    {
+      "title": "Existe alguma taxa de cancelamento do curso?",
+      "text": "Você pode cancelar, sem qualquer tipo de taxa, até 7 dias corridos após a confirmação do pagamento. Isso pode ser feito pelo próprio sistema de pagamento. Porém, recomendamos que acione a gente pelo nosso contato de suporte, para ajustar a situação da melhor forma possível. Após os 7 dias, não há como cancelar o valor pago, mesmo que ainda tenham parcelas a vencer no caso de pagamento com cartão de crédito.",
+      "page": ["MATERIAIS", "TURMAS"]
+    },
+    {
+      "title": "A Turma ITA do Catálise é presencial ou online?",
+      "text": "O Catálise trabalha com um método 100% online. Dessa forma, você vai poder estudar de onde quiser e quando quiser. Além disso, você não terá gastos consideráveis com alojamento, transporte e alimentação fora de casa.",
+      "page": ["TURMAS"]
+    },
+    {
+      "title": "Quando receberei o acesso ao curso?",
+      "text": "Após seu pagamento ser confirmado, você receberá em seu Whatsapp o seu acesso a nossa plataforma e demais ferramentas.",
+      "page": ["TURMAS"]
+    },
+    {
+      "title": "Até quando terei acesso ao curso?",
+      "text": "Você terá acesso a todo o conteúdo da nossa TURMA ITA até dezembro de 2024.",
+      "page": ["TURMAS"]
+    },
+    {
+      "title": "Posso acessar de um dispositivo móvel ou apenas pelo computador?",
+      "text": "Nossa plataforma pode ser acessada de qualquer dispositivo. Caso não consiga em algum específico, experimente mudar de navegador e/ou entre em contato com o nosso suporte.",
+      "page": ["TURMAS"]
+    },
+    {
+      "title": "Posso emprestar minha conta para um colega ou dividir acesso?",
+      "text": "Não. A conta é individual e restrita ao aluno que efetuou a matrícula no curso. Fazendo isso, você estará violando termos de uso e correrá o risco de perder o acesso ao curso. Além disso, nosso curso te proporciona todo uma acompanhamento de desempenho individualizado, o que perderia o sentido nessa situação, prejudicando seus resultados.",
+      "page": ["TURMAS"]
+    },
+    {
+      "title": "Eu vou começar a estudar agora e não tenho base. Conseguirei acompanhar a Turma ITA do Catálise?",
+      "text": "Sim! O foco do curso é direcionar o aluno desde o nível zero até o nível que o vestibular do ITA exige. As aulas, listas de exercícios e simulados são do nível zero até o nível ITA.",
       "page": ["home", "IME"]
     },
     {
-      "title": "O que é e como funciona o Certificado de Conclusão digital?",
-      "text": "Alguns cursos online oferecem um certificado digital de conclusão. Alunos podem emitir esse certificado ao final do curso ou entrando em contato com o Autor ou Autora. Esses certificados podem ser compartilhados em redes sociais como o LinkedIn e inseridos em informações curriculares.",
+      "title": "Sempre estudei em curso presencial. A Turma ITA online do Catálise serve para mim?",
+      "text": "O Catálise é um curso que, além de entregar todas as aulas que você precisa para passar no ITA, possui diferenciais para que você se adapte o mais rápido possível. Você terá acesso a acompanhamento pedagógico, comunidade com os outros alunos, relatório com a análise do seu desempenho nos simulados, plantão de dúvidas individual e muito mais. Toda a tecnologia que o online pode proporcionar para que você acelere os seus estudos.",
       "page": ["home", "IME"]
     },
     {
-      "title": "Quais diferenciais os produtos podem ter?",
-      "text": "Os produtos na Hotmart têm diferenciais que mudam de acordo com o tipo de produto e a disponibilidade. Por exemplo, produtos do tipo 'Cursos online' podem ou não oferecer certificado digital de conclusão. Caso o certificado esteja disponível, alunos podem emiti-lo dentro do curso ou entrando em contato com o(a) Autor(a). Os certificados podem ser compartilhados em redes sociais como o LinkedIn e inseridos em informações curriculares. A garantia também é um diferencial dos nossos produtos e pode variar de 7, 15 ou 30 dias, de acordo com o oferecido pelo Autor(a). Para ver os diferenciais disponíveis neste produto, basta checar a seção Diferenciais.",
+      "title": "Eu já faço cursinho presencial. Ainda assim devo me matricular no Catálise?",
+      "text": "Com toda certeza! Você terá acesso a muitas ferramentas de suporte em seus estudos, como por exemplo contato diário com uma equipe de coordenação formada por alunos do ITA, o plantão de dúvidas individual, 7 ciclos de simulados modelo ITA, as mentorias em grupo, as provas antigas do ITA separadas por assunto, o acesso a toda plataforma para você estudar onde e quando quiser, a comunidade VIP de alunos para tirar dúvidas e discutir exercícios e muito mais.",
       "page": ["home", "IME"]
     },
     {
-      "title": "Como acesso meu produto?",
-      "text": "Você receberá o acesso a Turma ITA/IME 2023 por email. Pode ser um curso online, um ebook, uma série de videoaulas, um serviço, evento, etc. O conteúdo será acessado ou baixado através de um computador, celular, tablet ou outro dispositivo digital. Você também pode acessar o produto comprado nesta página: 01 - Faça login clicando em Entrar 02 - Acesse o menu lateral, clique em Minha conta 03 - Clique em Minhas compras Em 'Minhas compras' estarão todos os produtos que você já comprou!",
-      "page": ["home", "IME"]
-    },
-    {
-      "title": "Tenho interesse neste curso, como posso comprar?",
-      "text": "Para comprar este curso, clique no botão “Comprar”. Lembre-se de que nem todos os cursos estarão sempre disponíveis para compra. É possível que o Autor ou Autora esteja preparando uma nova turma ainda sem inscrições abertas.",
-      "page": ["home", "IME"]
-    },
-    {
-      "title": "Quem avaliou Miscelâneas ITA - Provas antigas de exatas do ITA divididas por assunto?",
-      "text": "Todas as avaliações mostradas aqui foram feitas por pessoas reais que compraram e deram sua opinião sobre o produto. Quando alguém compra um produto através da Hotmart, a pessoa recebe um convite para avaliar o conteúdo dele. A nota nesta página é o resultado da média das avaliações feitas por estes compradores, que vai de 1 a 5 estrelas.",
-      "page": ["home", "IME"]
-    },
-    {
-      "title": "Como funciona o “Prazo de Garantia”?",
-      "text": "O Prazo de Garantia é o período que você tem para pedir o reembolso integral do valor pago pela sua compra, caso o produto não seja satisfatório. Assim que solicitado, seu reembolso é processado automaticamente pela Hotmart em até 5 dias. Para pagamentos com boleto bancário, você precisa preencher uma conta bancária para receber o dinheiro. Passados os 5 dias, o valor poderá ser identificado em sua conta em até 7 dias úteis. Já o estorno da fatura do cartão de crédito varia de acordo com o meio de pagamento e pode ocorrer na fatura atual ou na seguinte.",
-      "page": ["home", "IME"]
-    },
-    {
-      "title": "Quais diferenciais os produtos podem ter?",
-      "text": "Os produtos na Hotmart têm diferenciais que mudam de acordo com o tipo de produto e a disponibilidade. Por exemplo, produtos do tipo 'Cursos online' podem ou não oferecer certificado digital de conclusão. Caso o certificado esteja disponível, alunos podem emiti-lo dentro do curso ou entrando em contato com o(a) Autor(a). Os certificados podem ser compartilhados em redes sociais como o LinkedIn e inseridos em informações curriculares. A garantia também é um diferencial dos nossos produtos e pode variar de 7, 15 ou 30 dias, de acordo com o oferecido pelo Autor(a). Para ver os diferenciais disponíveis neste produto, basta checar a seção Diferenciais.",
-      "page": ["home", "IME"]
-    },
-    {
-      "title": "Como acesso meu produto?",
-      "text": "Você receberá o acesso a Miscelâneas ITA - Provas antigas de exatas do ITA divididas por assunto por email. Pode ser um curso online, um ebook, uma série de videoaulas, um serviço, evento, etc. O conteúdo será acessado ou baixado através de um computador, celular, tablet ou outro dispositivo digital. Você também pode acessar o produto comprado nesta página: 01 - Faça login clicando em Entrar        02 - Acesse o menu lateral, clique em Minha conta 03 - Clique em Minhas compras Em 'Minhas compras' estarão todos os produtos que você já comprou!",
-      "page": ["home", "IME"]
-    },
-    {
-      "title": "Tenho interesse neste produto, como posso comprar?",
-      "text": "Um produto disponível para compra apresenta o valor do produto, junto as formas de pagamento. Para comprar este produto, clique no botão “Comprar”. Lembre-se de que nem todos os produtos estarão sempre disponíveis para compra. É possível que o Autor ou Autora esteja preparando uma nova turma ainda sem inscrições abertas.",
-      "page": ["home", "IME"]
-    },
-    {
-      "title": "Quais diferenciais os produtos podem ter?",
-      "text": "Os produtos na Hotmart têm diferenciais que mudam de acordo com o tipo de produto e a disponibilidade. Por exemplo, produtos do tipo 'Cursos online' podem ou não oferecer certificado digital de conclusão. Caso o certificado esteja disponível, alunos podem emiti-lo dentro do curso ou entrando em contato com o(a) Autor(a). Os certificados podem ser compartilhados em redes sociais como o LinkedIn e inseridos em informações curriculares. A garantia também é um diferencial dos nossos produtos e pode variar de 7, 15 ou 30 dias, de acordo com o oferecido pelo Autor(a). Para ver os diferenciais disponíveis neste produto, basta checar a seção Diferenciais.",
+      "title": "O meu objetivo é o IME. A Turma ITA-IME do Catálise serve para mim de verdade?",
+      "text": "Com toda certeza! Nosso conteúdo também é pensado para quem quer IME. Na nossa plataforma você terá aulas e listas de exercício de todos os assuntos que caem no vestibular do IME. Além disso, você terá acesso a ebooks com todas as provas de física, química e matemática de 2010 até 2022 separadas por assunto, com gabarito e resolução de todas as questões.",
       "page": ["home", "IME"]
     }
   ]

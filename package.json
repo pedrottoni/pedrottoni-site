@@ -14,5 +14,8 @@
     "astro": "^3.2.2",
     "gsap": "^3.12.2",
     "swiper": "^10.3.1"
+  },
+  "devDependencies": {
+    "accessible-astro-components": "^2.3.1"
   }
 }

@@ -1,14 +1,13 @@
 ---
-import { getEntry } from "astro:content";
-import Teste from "../components/Teste.astro";
-
 import Layout from "../layouts/Layout.astro";
-import Accordeon from "../components/Accordeon.astro";
+import {
+  Accordion,
+  AccordionItem,
+  Breadcrumbs,
+  BreadcrumbsItem,
+  Modal,
+} from "accessible-astro-components";
 
-import CardEbooks from "../components/CardEbooks.astro";
-
-const perguntas = await getEntry("alunos", "perguntas");
-const material = await getEntry("produtos", "materiais");
 /*
 
 */
@@ -16,8 +15,22 @@ const material = await getEntry("produtos", "materiais");
 
 <Layout title="Catálise" description="Catálise cursos">
   <main class="container">
-    <Teste />
-    <Accordeon page="" perguntas={perguntas} />    <CardEbooks page="" materiais={material} />
+    <button id="modal1-trigger">Modal 1</button>
+    <button id="modal2-trigger">Modal 2</button>
+
+    <Modal triggerId="modal1-trigger" title="Modal 1">
+      <p>Why hello, I be the <strong>first</strong> Modal.</p>
+    </Modal>
+    <Modal triggerId="modal2-trigger" title="Modal 2" closeText="Cancel">
+      <p>Ah yes, and I be the <strong>second</strong> Modal.</p>
+      <!--
+        calls the closeModal function, you can also use this
+        as a callback in your own function
+      -->
+      <button onclick="closeModal()">Confirm action</button>
+    </Modal>
   </main>
+  <style scoped>
+
+  </style>
 </Layout>
-<style scoped></style>

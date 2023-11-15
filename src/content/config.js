@@ -9,7 +9,7 @@ const collectionProdutos = defineCollection({
         img: image(),
         tag: z.string(),
         nome: z.string(),
-        link: z.string(),
+        link: z.string().optional(),
         page: z.string(),
       })
     ),

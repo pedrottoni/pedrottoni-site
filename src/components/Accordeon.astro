@@ -4,9 +4,10 @@ import type { CollectionEntry } from "astro:content";
 interface Props {
   perguntas: CollectionEntry<"alunos">;
   page: string;
+  estilo?: string;
 }
 
-const { perguntas, page } = Astro.props;
+const { perguntas, page, estilo } = Astro.props;
 
 const principal = perguntas.data.content.filter(
   (item) => item.page === "principal"
@@ -17,7 +18,7 @@ const volume = perguntas.data.content.filter((item) => item.page === "volume");
 <div class="accordion">
   {
     perguntas.data.content.map((item) => (
-      <details>
+      <details class={estilo}>
         <summary>{item.title}</summary>
         <div class="content">
           <p>{item.text}</p>
@@ -160,7 +161,6 @@ const volume = perguntas.data.content.filter((item) => item.page === "volume");
     gap: 2rem;
     width: 100%;
     transition: all 0.4s ease;
-    left: -4rem;
     position: relative;
   }
   .accordion :hover {
@@ -172,7 +172,7 @@ const volume = perguntas.data.content.filter((item) => item.page === "volume");
   summary {
     font-family: var(--font-book);
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
     padding-bottom: 1rem;
     border-bottom: 0.1rem solid var(--clr-gray);
@@ -207,5 +207,9 @@ const volume = perguntas.data.content.filter((item) => item.page === "volume");
   }
   details[open] > summary:after {
     transform: rotate(0deg) translateX(-0.9rem) translateY(0.3rem);
+  }
+  .grande {
+    font-size: 1.4rem;
+    text-align: left;
   }
 </style>

@@ -2,6 +2,12 @@
 import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 
+import {
+  Breadcrumbs,
+  BreadcrumbsItem,
+  Modal,
+} from "accessible-astro-components";
+
 import Capa from "../../components/Capa.astro";
 import Destaques from "../../components/Destaques.astro";
 import Section from "../../components/Section.astro";
@@ -18,28 +24,28 @@ import { getEntry } from "astro:content";
 const perguntas = await getEntry("alunos", "perguntas");
 const depoimentos = await getEntry("alunos", "depoimentos");
 const aprovados = await getEntry("alunos", "aprovados");
+const destaques = await getEntry("produtos", "destaques");
 ---
 
 <Layout title="Turma ITA/IME" description="Catálise - turma ITA/IME">
+  <Breadcrumbs>
+    <BreadcrumbsItem href="/produtos" label="Nossos produtos" />
+    <BreadcrumbsItem currentPage={true} label="ITA-IME" />
+  </Breadcrumbs>
   <main class="container">
-    <Capa title="ITA IME" destaque=" 2024" botao="Compre agora">
+    <Capa title="ITA IME" destaque=" 2024" botao="Quero me matricular">
       <p class="txt-capa" slot="conteudo">
-        Descubra o caminho da aprovação com nossa turma ITA/IME! Aqui você vai aprender tudo o que precisa para conquistar os seus sonhos!
+        Descubra o caminho da aprovação com nossa turma ITA-IME! Aqui você vai
+        aprender tudo o que precisa para conquistar os seus sonhos!
       </p>
       <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
     </Capa>
-    <Destaques
-      img
-      titulo1="Embasamento Completo"
-      texto1="Matemática Básica, Física Básica e Produtividade nos estudos, que irá te preparar de forma exclusiva para o ITA."
-      titulo2="Microlearning"
-      texto2="Aulas divididas por frentes, disponibilizadas em Módulos e no formato 'Microlearning', que te levarão até o nível do ITA."
-      titulo3="Listas de Exercícios"
-      texto3="Após cada aula e ao final do assunto, que te ajudarão a fixar o conteúdo e a se preparar para as provas."
-      titulo4="Plantão de dúvidas"
-      texto4="Te dará suporte de Segunda a Sexta para tirar todas as suas dúvidas e garantir que você esteja sempre preparado."
-    />
-    <Capa estilo="claro" title="Textinho bacana sobre a Turma ITA" texto="">
+    <Destaques destaques={destaques} page="ITA-IME" />
+    <Capa
+      estilo="claro"
+      title="Desvende os segredos da aprovação no ITA"
+      texto=""
+    >
       <ul class="capa-itens" slot="conteudo">
         <li>
           <svg
@@ -58,7 +64,7 @@ const aprovados = await getEntry("alunos", "aprovados");
               d="M37.5 29.5a10 10 0 0 0-9.96 9.95v60.34c-.05.37-.05.74 0 1.1v3.66a10 10 0 0 0 9.95 9.95h54.6a3.65 3.65 0 1 0 0-7.3h-54.6a2.6 2.6 0 0 1-2.65-2.65V104H92.1a3.65 3.65 0 0 0 3.65-3.65v-60.9a10 10 0 0 0-9.95-9.95H37.5Zm41.2 23.24-.46.2.46-.2a3.65 3.65 0 0 0-3.41-2.24h-27.3a3.65 3.65 0 1 0 0 7.3h27.3a3.65 3.65 0 0 0 3.41-2.24l-.46-.2.46.2a3.65 3.65 0 0 0 0-2.82ZM37.5 36.8h48.3a2.6 2.6 0 0 1 2.64 2.65V96.7h-53.6V39.45a2.6 2.6 0 0 1 2.65-2.65Z"
             ></path>
           </svg>
-           Mentorias em grupo e Momento Catálise
+           Aulas do básico ao avançado
         </li>
         <li>
           <svg
@@ -77,7 +83,7 @@ const aprovados = await getEntry("alunos", "aprovados");
               d="M37.5 29.5a10 10 0 0 0-9.96 9.95v60.34c-.05.37-.05.74 0 1.1v3.66a10 10 0 0 0 9.95 9.95h54.6a3.65 3.65 0 1 0 0-7.3h-54.6a2.6 2.6 0 0 1-2.65-2.65V104H92.1a3.65 3.65 0 0 0 3.65-3.65v-60.9a10 10 0 0 0-9.95-9.95H37.5Zm41.2 23.24-.46.2.46-.2a3.65 3.65 0 0 0-3.41-2.24h-27.3a3.65 3.65 0 1 0 0 7.3h27.3a3.65 3.65 0 0 0 3.41-2.24l-.46-.2.46.2a3.65 3.65 0 0 0 0-2.82ZM37.5 36.8h48.3a2.6 2.6 0 0 1 2.64 2.65V96.7h-53.6V39.45a2.6 2.6 0 0 1 2.65-2.65Z"
             ></path>
           </svg>
-           Aulões de Reforço
+           Mentoria com aprovados
         </li>
         <li>
           <svg
@@ -96,7 +102,7 @@ const aprovados = await getEntry("alunos", "aprovados");
               d="M37.5 29.5a10 10 0 0 0-9.96 9.95v60.34c-.05.37-.05.74 0 1.1v3.66a10 10 0 0 0 9.95 9.95h54.6a3.65 3.65 0 1 0 0-7.3h-54.6a2.6 2.6 0 0 1-2.65-2.65V104H92.1a3.65 3.65 0 0 0 3.65-3.65v-60.9a10 10 0 0 0-9.95-9.95H37.5Zm41.2 23.24-.46.2.46-.2a3.65 3.65 0 0 0-3.41-2.24h-27.3a3.65 3.65 0 1 0 0 7.3h27.3a3.65 3.65 0 0 0 3.41-2.24l-.46-.2.46.2a3.65 3.65 0 0 0 0-2.82ZM37.5 36.8h48.3a2.6 2.6 0 0 1 2.64 2.65V96.7h-53.6V39.45a2.6 2.6 0 0 1 2.65-2.65Z"
             ></path>
           </svg>
-           Comunidade VIP no Telegram
+           Curso de produtividade
         </li>
         <li>
           <svg
@@ -115,7 +121,7 @@ const aprovados = await getEntry("alunos", "aprovados");
               d="M37.5 29.5a10 10 0 0 0-9.96 9.95v60.34c-.05.37-.05.74 0 1.1v3.66a10 10 0 0 0 9.95 9.95h54.6a3.65 3.65 0 1 0 0-7.3h-54.6a2.6 2.6 0 0 1-2.65-2.65V104H92.1a3.65 3.65 0 0 0 3.65-3.65v-60.9a10 10 0 0 0-9.95-9.95H37.5Zm41.2 23.24-.46.2.46-.2a3.65 3.65 0 0 0-3.41-2.24h-27.3a3.65 3.65 0 1 0 0 7.3h27.3a3.65 3.65 0 0 0 3.41-2.24l-.46-.2.46.2a3.65 3.65 0 0 0 0-2.82ZM37.5 36.8h48.3a2.6 2.6 0 0 1 2.64 2.65V96.7h-53.6V39.45a2.6 2.6 0 0 1 2.65-2.65Z"
             ></path>
           </svg>
-           Simulados 100% focados no ITA
+           E muito mais!
         </li>
       </ul>
       <Image
@@ -123,68 +129,115 @@ const aprovados = await getEntry("alunos", "aprovados");
         alt="Capa do Catálise"
         class="img-capa-material"
         slot="imagem"
-        width=770
+        width="770"
         quality="max"
       />
     </Capa>
     <Section
       estilo="centro"
-      colunas="col3"
-      tag="Conteúdo"
+      colunas="col4"
+      tag="Conteúdo da turma"
       titulo="O que você aprenderá"
-      subtitulo="um texto bacana aqui A marketing company can use targeted advertising to reach specific audiences based on demographics"
+      subtitulo="Confira abaixo a lista de todos os assuntos que você aprenderá dentro da  nossa Turma ITA-IME"
     >
       <div class="tema">
-        <h2>Matemática<br />Básica</h2>
+        <h2>Matemática</h2>
         <ul>
-          <li>Matemática Básica</li>
-          <li>Matemática Básica</li>
-          <li>Matemática Básica</li>
+          <li>Aritmética</li>
+          <li>Álgebra</li>
+          <li>Geometria Básica</li>
+          <li>Geometria Básica</li>
         </ul>
+        <button id="modal-matematica_trigger" class="btn-tema">Veja mais</button
+        >
       </div>
       <div class="tema">
-        <h2>Física<br />Básica</h2>
+        <h2>Física</h2>
         <ul>
-          <li>Matemática Básica</li>
-          <li>Matemática Básica</li>
-          <li>Matemática Básica</li>
+          <li>Conceitos iniciais da física</li>
+          <li>Vetores</li>
+          <li>Cinemática</li>
+          <li>Dinâmica</li>
         </ul>
+        <button id="modal-fisica_trigger" class="btn-tema">Veja mais</button>
       </div>
       <div class="tema">
-        <h2>Produtividade<br />nos estudos</h2>
+        <h2>Química</h2>
         <ul>
-          <li>Matemática Básica</li>
-          <li>Matemática Básica</li>
-          <li>Matemática Básica</li>
+          <li>Introdução à Química</li>
+          <li>Separação de misturas</li>
+          <li>Modelos atômicos</li>
+          <li>Tabela periódica</li>
         </ul>
+        <button id="modal-quimica_trigger" class="btn-tema">Veja mais</button>
       </div>
       <div class="tema">
-        <h2>Matemática<br />Básica</h2>
+        <h2>Língua Portuguesa</h2>
         <ul>
-          <li>Matemática Básica</li>
-          <li>Matemática Básica</li>
-          <li>Matemática Básica</li>
+          <li>Aspectos do Texto</li>
+          <li>Tipologia Textual</li>
+          <li>Gêneros Textuais</li>
+          <li>Figuras de Linguagem</li>
         </ul>
+        <button id="modal-portugues_trigger" class="btn-tema">Veja mais</button>
       </div>
       <div class="tema">
-        <h2>Física<br />Básica</h2>
+        <h2>Literatura</h2>
+        <ul>
+          <li>Introdução à Literatura</li>
+          <li>Gêneros Literários</li>
+          <li>Trovadorismo</li>
+          <li>Humanismo</li>
+        </ul>
+        <button id="modal-literatura_trigger" class="btn-tema">Veja mais</button
+        >
+      </div>
+      <div class="tema">
+        <h2>Inglês</h2>
+        <ul>
+          <li>Present</li>
+          <li>Cognates and False Cognates</li>
+          <li>Connectives and Adjectives</li>
+          <li>Pronouns</li>
+        </ul>
+        <button id="modal-ingles_trigger" class="btn-tema">Veja mais</button>
+      </div>
+      <div class="tema">
+        <h2>Redação</h2>
+        <ul>
+          <li>Introdução à Produção textual</li>
+          <li>Critérios de Correção do ITA</li>
+          <li>Como uma coletânea</li>
+          <li>Tese e planejamento</li>
+        </ul>
+        <button id="modal-redacao_trigger" class="btn-tema">Veja mais</button>
+      </div>
+      <div class="tema">
+        <h2>Produtividade</h2>
         <ul>
           <li>Matemática Básica</li>
           <li>Matemática Básica</li>
           <li>Matemática Básica</li>
+          <li>Matemática Básica</li>
         </ul>
+        <button id="modal-produtividade_trigger" class="btn-tema"
+          >Veja mais</button
+        >
       </div>
     </Section>
-    <Capa
-      estilo="claro"
-      title="Material didático"
-      botao="Conheça nossos materiais"
-      link="/produtos"
-    >
-      <p class="txt-capa-claro" slot="conteudo">
-        Checklist para cada assunto + Bizuários de Química, que te ajudarão a
-        organizar seus estudos e a não perder nenhum conteúdo importante.
-      </p>
+    <Capa estilo="claro" title="Material didático">
+      <div slot="conteudo">
+        <p class="txt-capa-claro">
+          Entrando para a Turma ITA-IME você terá acesso a materiais didáticos
+          criados para auxiliar na sua aprendizagem:
+        </p>
+        <ul class="mt-2">
+          <li>Bizuários de Química para o ITA</li>
+          <li>Miscelâneas ITA, IME, AFA e EEAR</li>
+          <li>Checklists dos assuntos</li>
+          <li>Listas de Exercício do Básico ao Avançado</li>
+        </ul>
+      </div>
       <Image
         src={materiais}
         alt="Capa do Catálise"
@@ -195,9 +248,15 @@ const aprovados = await getEntry("alunos", "aprovados");
     <Section
       estilo="centro"
       colunas="col4"
-      tag="Mais serviços"
-      titulo="Textinho bacana"
+      tag="Apoio"
+      titulo="Nós pensamos em tudo!"
+      subtitulo="Veja o que mais você vai ter acesso para conquistar a sua tão sonhada aprovação"
     >
+      <Cardserv
+        capa="/icons/test.svg"
+        nome="Aulas de Redação"
+        sobre="Como a Redação vale 20% da sua média final e os alunos tem muitas dúvidas, nossas aulas de redação serão 100% AO VIVO."
+      />
       <Cardserv
         capa="/icons/test.svg"
         nome="Correção de Redações"
@@ -205,63 +264,92 @@ const aprovados = await getEntry("alunos", "aprovados");
       />
       <Cardserv
         capa="/icons/test.svg"
-        nome="Momento Catálise"
-        sobre="Bate papo com convidados especiais: alunos ou ex-alunos do ITA que estão trabalhando em grandes empresas.."
-      />
-      <Cardserv
-        capa="/icons/test.svg"
         nome="Apoio psicologico"
-        sobre="Teremos ao longo do ano encontros Ao Vivo pelo Google Meet para Rodas de Conversa com Psicóloga xxxxx xxxxx."
+        sobre="Teremos encontros Ao Vivo de Rodas de Conversa com nossa psicóloga, experiente em acompanhar vestibulandos do ITA."
       />
       <Cardserv
         capa="/icons/test.svg"
         nome="Guia de estudo"
-        sobre="Após cada simulado você receberá um relatório de desempenho com os assuntos que você precisa revisar."
+        sobre="Interaja com seus colegas, tire suas dúvidas e discutia sobre a matéria. Aqui criamos a interação que leva à aprovação."
       />
     </Section>
     <Section
       estilo="claro aprovacoes"
       tag="Aprovações"
-      titulo="Conheça nossos aprovados para o ITA"
+      titulo="Conheça nossos aprovados no ITA"
       subtitulo="Assista as inspiradoras jornadas de nossos alunos aprovados no ITA. Eles acreditaram no sonho, perseveraram e conquistaram o topo. O próximo pode ser você!"
     >
       <CardAprovacoes aprovados={aprovados} page="" />
     </Section>
-    <Section tag="" titulo="Rotina de estudos" colunas="col4">
+    <Section tag="" titulo="Rotina de estudos" colunas="col4 g4">
       <div class="rotina">
         <div>1</div>
-        <h2>Aprenda sobre o tema</h2>
+        <h2>Assista<br />aulas gravadas</h2>
         <p>
-          O curso é composto por videoaulas específicas e de fácil entendimento
+          Nossas aulas no modelo microlearning te levarão do básico até o
+          avançado.
         </p>
       </div>
       <div class="rotina">
         <div>2</div>
-        <h2>Aprenda sobre o tema</h2>
+        <h2>Faça exercícios<br />de fixação</h2>
         <p>
-          O curso é composto por videoaulas específicas e de fácil entendimento
+          Após cada aula você terá acesso a listas curtas sobre o assunto da
+          aula para fixação.
         </p>
       </div>
       <div class="rotina">
         <div>3</div>
-        <h2>Aprenda sobre o tema</h2>
+        <h2>Tire dúvidas no plantão individual</h2>
         <p>
-          O curso é composto por videoaulas específicas e de fácil entendimento
+          Nenhuma dúvida é simples demais. Tire suas dúvidas Ao Vivo com um
+          aluno do ITA.
         </p>
       </div>
       <div class="rotina">
         <div>4</div>
-        <h2>Aprenda sobre o tema</h2>
+        <h2>Faça exercícios de aprofundamento</h2>
         <p>
-          O curso é composto por videoaulas específicas e de fácil entendimento
+          Após finalizar um bloco de conteúdos passamos listas com nível cada
+          vez maior.
+        </p>
+      </div>
+      <div class="rotina">
+        <div>5</div>
+        <h2>Estude em grupo<br />com amigos</h2>
+        <p>
+          Conheça na nossa comunidade pessoas que caminham para a aprovação.
+        </p>
+      </div>
+      <div class="rotina">
+        <div>6</div>
+        <h2>Faça simulados modelo ITA</h2>
+        <p>
+          Nossos ciclos de simulados são cuidadosamente feitos para a sua
+          aprovação.
+        </p>
+      </div>
+      <div class="rotina">
+        <div>7</div>
+        <h2>Acompanhe o<br />seu desempenho</h2>
+        <p>
+          Saiba exatamente o que errou nos simulados e onde está o conteúdo para
+          revisar.
+        </p>
+      </div>
+      <div class="rotina">
+        <div>8</div>
+        <h2>Receba todo o<br />suporte necessário</h2>
+        <p>
+          Com nossos mentorias e apoio da coordenação tudo ficará mais fácil.
         </p>
       </div>
     </Section>
     <Section
       estilo="claro"
       tag="Depoimentos"
-      titulo="Conheça a experiência dos nossos alunos"
-      subtitulo="Descubra como o Catálise impactou a vida de nossos Alunos"
+      titulo="Compartilhe a experiência dos nossos alunos"
+      subtitulo="Descubra as transformações incríveis que o Catálise trouxe para a vida de nossos alunos e como nossa metodologia de ensino fez a diferença em suas jornadas."
     >
       <div class="depoimentos">
         <CardDepoimentos depoimentos={depoimentos} page="" />
@@ -271,10 +359,10 @@ const aprovados = await getEntry("alunos", "aprovados");
       title="Garanta"
       linha="true"
       destaque=" sua Vaga!"
-      botao="Inscreva-se agora"
+      botao="Quero me matricular"
     >
       <p class="txt-capa" slot="conteudo">
-        A caminhada até a aprovação no ITA exige uma preparação exclusiva.
+        Aproveite a oportunidade de ter a melhor preparação para o ITA e IME..
       </p>
       <ul class="capa-itens" slot="conteudo">
         <li>
@@ -304,12 +392,271 @@ const aprovados = await getEntry("alunos", "aprovados");
            Estude do seu jeito e em qualquer dispositivo
         </li>
       </ul>
-      <h1 class="valor" slot="conteudo">R$ 1.480,00</h1>
+      <h1 class="valor" slot="conteudo">R$ 1.997,00</h1>
       <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
     </Capa>
-    <Section estilo="claro" tag="" titulo="Perguntas frequentes">
-      <Accordeon perguntas={perguntas} page="" />
+    <Section estilo="claro centro" tag="" titulo="Perguntas frequentes">
+      <Accordeon perguntas={perguntas} estilo="grande" page="" />
     </Section>
+    <Modal
+      triggerId="modal-matematica_trigger"
+      title="Matemática"
+      closeText="X"
+    >
+      <h2>Frente 1</h2>
+      <ul>
+        <li>Aritmética</li>
+        <li>Álgebra</li>
+        <li>Geometria Básica</li>
+        <li>Conjuntos</li>
+        <li>Funções</li>
+        <li>Cálculo para ITA e IME</li>
+        <li>Congruência Linear</li>
+        <li>Outros tópicos avançados</li>
+      </ul>
+      <h2>Frente 2</h2>
+      <ul>
+        <li>Trigonometria</li>
+        <li>Números complexos</li>
+        <li>Números Binomiais</li>
+        <li>Polinômios</li>
+      </ul>
+      <h2>Frente 3</h2>
+      <ul>
+        <li>Geometria Plana</li>
+        <li>Geometria Analítica</li>
+        <li>Geometria Espacial</li>
+      </ul>
+      <h2>Frente 4</h2>
+      <ul>
+        <li>Sequências</li>
+        <li>Análise Combinatória</li>
+        <li>Probabilidade</li>
+        <li>Matrizes e Determinantes</li>
+        <li>Sistemas Lineares</li>
+      </ul>
+    </Modal>
+    <Modal triggerId="modal-fisica_trigger" title="Física" closeText="X">
+      <h2>Frente 1</h2>
+      <ul>
+        <li>Conceitos iniciais da física</li>
+        <li>Vetores</li>
+        <li>Cinemática</li>
+        <li>Dinâmica</li>
+        <li>Trabalho e Energia</li>
+        <li>Impulso e Quantidade de Movimento</li>
+        <li>Estática</li>
+        <li>Gravitação Universal</li>
+        <li>Mecânica Rotacional</li>
+        <li>Análise Dimensional</li>
+        <li>Física Moderna</li>
+      </ul>
+      <h2>Frente 2</h2>
+      <ul>
+        <li>Óptica Geométrica</li>
+        <li>Termometria</li>
+        <li>Dilatação</li>
+        <li>Calorimetria</li>
+        <li>Gases</li>
+        <li>Termodinâmica</li>
+        <li>Hidrostática</li>
+        <li>Hidrodinâmica</li>
+        <li>Movimento Harmônico Simples</li>
+        <li>Ondulatória</li>
+      </ul>
+      <h2>Frente 3</h2>
+      <ul>
+        <li>Eletrostática</li>
+        <li>Eletrodinâmica</li>
+        <li>Magnetismo</li>
+      </ul>
+    </Modal>
+    <Modal triggerId="modal-quimica_trigger" title="Química" closeText="X">
+      <h2>Frente 1</h2>
+      <ul>
+        <li>Introdução à Química</li>
+        <li>Separação de misturas</li>
+        <li>Modelos atômicos</li>
+        <li>Tabela periódica</li>
+        <li>Ligações químicas</li>
+        <li>Substâncias inorgânicas</li>
+        <li>Teorias modernas Ácido-Base</li>
+        <li>Reações inorgânicas</li>
+        <li>Gases</li>
+        <li>Sólidos e Cristalografia</li>
+        <li>Coloides</li>
+        <li>Soluções</li>
+        <li>Estequiometria</li>
+        <li>Termoquímica</li>
+        <li>Termodinâmica Química</li>
+        <li>Cinética Química</li>
+        <li>Equilíbrio Químico</li>
+        <li>Propriedades Coligativas</li>
+        <li>Oxirredução</li>
+        <li>Eletroquímica</li>
+        <li>Radioatividade</li>
+      </ul>
+      <h2>Frente 2</h2>
+      <ul>
+        <li>Substâncias Orgânicas</li>
+        <li>Isomeria</li>
+        <li>Reações Orgânicas</li>
+        <li>Polímeros</li>
+        <li>Bioquímica</li>
+      </ul>
+    </Modal>
+    <Modal
+      triggerId="modal-portugues_trigger"
+      title="Língua Português"
+      closeText="X"
+    >
+      <h2>Interpretação de Texto</h2>
+      <ul>
+        <li>Aspectos do Texto</li>
+        <li>Tipologia Textual</li>
+        <li>Gêneros Textuais</li>
+        <li>Figuras de Linguagem</li>
+        <li>Categorias de mundo</li>
+        <li>Temas e Figuras</li>
+        <li>Discurso e Interdiscursividade</li>
+        <li>Propaganda ideológica</li>
+        <li>Intertextualidade</li>
+        <li>Texto, Ideologia e Argumentação</li>
+        <li>Nível da expressão</li>
+        <li>Implícitos, ambiguidade e semântica</li>
+        <li>Variação linguística</li>
+        <li>Coesão</li>
+        <li>Coerência e Concisão</li>
+      </ul>
+      <h2>Gramática</h2>
+      <ul>
+        <li>Classes de palavras</li>
+        <li>Formação de palavras</li>
+        <li>Análise sintática</li>
+        <li>Crase</li>
+        <li>Pontuação</li>
+        <li>Colocação Pronomial</li>
+        <li>Ortografia</li>
+        <li>Verbos</li>
+        <li>Concordância</li>
+        <li>Acentuação</li>
+        <li>Partículas e Vícios de linguagem</li>
+      </ul>
+    </Modal>
+    <Modal
+      triggerId="modal-literatura_trigger"
+      title="Literatura"
+      closeText="X"
+    >
+      <ul>
+        <li>Introdução à Literatura</li>
+        <li>Gêneros Literários</li>
+        <li>Trovadorismo</li>
+        <li>Humanismo</li>
+        <li>Classicismo</li>
+        <li>Barroco</li>
+        <li>Arcadismo</li>
+        <li>Romantismo</li>
+        <li>Realismo</li>
+        <li>Naturalismo</li>
+        <li>Parnasianismo e simbolismo</li>
+        <li>Pré - Modernismo</li>
+        <li>Modernismo em Portugal</li>
+        <li>Modernismo no Brasil</li>
+        <li>Segunda geração do Modernismo no Brasil</li>
+        <li>O romance regionalista no Modernismo</li>
+        <li>João Guimarães Rosa</li>
+        <li>Clarice Lispector</li>
+        <li>João Cabral de Melo Neto</li>
+        <li>Concretismo</li>
+        <li>Ferreira Gullar</li>
+        <li>Lygia Fagundes Telles</li>
+        <li>Adélia Prado</li>
+        <li>O conto contemporâneo</li>
+        <li>O teatro do século XX</li>
+        <li>Obras específicas do edital do ITA</li>
+      </ul>
+    </Modal>
+    <Modal triggerId="modal-ingles_trigger" title="Inglês" closeText="X">
+      <ul>
+        <li>Present</li>
+        <li>Cognates and False Cognates</li>
+        <li>Connectives and Adjectives</li>
+        <li>Comparatives and Superlatives</li>
+        <li>Pronouns</li>
+        <li>Auxiliary Verbs</li>
+        <li>Punctuation Marks</li>
+        <li>Past</li>
+        <li>Reading Skills</li>
+        <li>Active and Passive Voice</li>
+        <li>Idioms</li>
+        <li>Phrasal Verbs and Prepositional Verbs</li>
+        <li>Linguistic Variation</li>
+        <li>Non Standard English</li>
+        <li>Conditional Sentences</li>
+        <li>Defining wishes Sentences</li>
+        <li>Verb Patterns</li>
+        <li>Suffixes and Prefixes</li>
+        <li>Leitura e Interpretação dos enunciados</li>
+        <li>Articles</li>
+        <li>Countable and Uncountable</li>
+        <li>Quantifiers</li>
+        <li>Future Tenses</li>
+        <li>Business English</li>
+        <li>Análise de Textos Jornalísticos</li>
+        <li>Modal Verbs</li>
+        <li>Passive voice and Participle verbs</li>
+        <li>Science Language</li>
+        <li>Relative Clauses</li>
+        <li>Reported Speech</li>
+        <li>Passive verbs</li>
+        <li>Verbal Tenses</li>
+      </ul>
+    </Modal>
+    <Modal triggerId="modal-redacao_trigger" title="Redação " closeText="X">
+      <ul>
+        <li>Introdução à Produção textual</li>
+        <li>Critérios de Correção do ITA</li>
+        <li>Como uma coletânea</li>
+        <li>Tese e planejamento</li>
+        <li>Planejamento da introdução</li>
+        <li>Planejamento do desenvolvimento</li>
+        <li>Planejamento da conclusão</li>
+        <li>Análise de parágrafos</li>
+        <li>Produção textual quinzenal</li>
+      </ul>
+    </Modal>
+    <Modal
+      triggerId="modal-produtividade_trigger"
+      title="Produtividade"
+      closeText="X"
+    >
+      <h2>Frente 1</h2>
+      <ul>
+        <li>Aritmética</li>
+        <li>Álgebra</li>
+        <li>Geometria Básica</li>
+      </ul>
+      <h2>Frente 2</h2>
+      <ul>
+        <li>Trigonometria</li>
+        <li>Números complexos</li>
+        <li>Números Binomiais</li>
+      </ul>
+      <h2>Frente 3</h2>
+      <ul>
+        <li>Geometria Plana</li>
+        <li>Geometria Analítica</li>
+        <li>Geometria Espacial</li>
+      </ul>
+      <h2>Frente 4</h2>
+      <ul>
+        <li>Sequências</li>
+        <li>Análise Combinatória</li>
+        <li>Probabilidade</li>
+        <li>Matrizes e Determinantes</li>
+      </ul>
+    </Modal>
   </main>
 </Layout>
 
@@ -320,13 +667,35 @@ const aprovados = await getEntry("alunos", "aprovados");
     width: -webkit-fill-available;
     text-align: left;
     background: var(--clr-dblue);
-    padding: 2rem;
+    padding: 1.4rem;
     border-radius: 1rem;
     backdrop-filter: blur(0.4rem);
   }
   .tema h2 {
     color: var(--clr-green);
     margin-bottom: 1rem;
+  }
+  .tema ul li {
+    font-size: 0.8rem;
+  }
+  .tema button {
+    font-family: var(--font-book);
+    font-size: 0.8rem;
+    background: none;
+    border: none;
+    color: var(--clr-yellow);
+    padding-top: 0.8rem;
+  }
+  .tema button::after {
+    content: "→";
+    margin-left: 0.3rem;
+    transition: 0.1s ease-in-out;
+  }
+  .tema button:hover {
+    color: var(--clr-green);
+  }
+  .tema button:hover::after {
+    margin-left: 0.4rem;
   }
   .rotina {
     display: flex;
@@ -338,7 +707,7 @@ const aprovados = await getEntry("alunos", "aprovados");
     padding-top: 1.6rem;
   }
   .rotina:before {
-    content: "";
+    /* content: ""; */
     position: absolute;
     width: -webkit-fill-available;
     height: 0.08rem;

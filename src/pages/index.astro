@@ -18,6 +18,7 @@ const turmas = await getEntry("produtos", "turmas");
 const materiais = await getEntry("produtos", "materiais");
 const depoimentos = await getEntry("alunos", "depoimentos");
 const aprovados = await getEntry("alunos", "aprovados");
+const destaques = await getEntry("produtos", "destaques");
 ---
 
 <Layout title="Catálise" description="Catálise cursos">
@@ -30,25 +31,16 @@ const aprovados = await getEntry("alunos", "aprovados");
     <Capa
       title="Uma frase bacana"
       destaque=" Aqui!"
-      botao="Conheça nossas turmas"
-      link="/produtos"
+      botao="Quero me matricular"
+      link="/produtos/ita-ime"
     >
       <p class="txt-capa" slot="conteudo">
         Explore nossos produtos e siga em direção ao sonho da aprovação.
       </p>
       <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
     </Capa>
-    <Destaques
-      img
-      titulo1="Metodologia Microlearning"
-      texto1="Aulas curtas, completas e focadas com em média 25 minutos. Abordagem eficaz para garantir que o seu aprendizado seja fixado."
-      titulo2="Listas de exercícios"
-      texto2="Após a aula aprimore-se com listas abrangentes até o nível avançado. corrija com resoluções escritas e vídeos explicativos."
-      titulo3="Plantão de dúvidas"
-      texto3="Tire suas dúvidas de Física, Química e Matemática ao vivo por chamada do Google Meet. Agende e converse com um professor."
-      titulo4="Simulados com correção"
-      texto4="7 ciclos de simulados: 1 de embasamento, 6 modelos ITA (1ª e 2ª fase), com gabarito, resolução e correção de todas matérias."
-    />
+    <Destaques destaques={destaques} page="principal" />
+
     <Section
       estilo="claro"
       tag="Turmas"
@@ -84,8 +76,8 @@ const aprovados = await getEntry("alunos", "aprovados");
       linha
     >
       <p class="txt-capa" slot="conteudo">
-        Junte-se aos nosso aprovados no melhor preparatório online para os processos
-        seletivos do ITA, IME e EEAR!
+        Junte-se aos nosso aprovados no melhor preparatório online para os
+        processos seletivos do ITA, IME e EEAR!
       </p>
       <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
     </Capa>
@@ -93,7 +85,7 @@ const aprovados = await getEntry("alunos", "aprovados");
       estilo="claro"
       tag="Depoimentos"
       titulo="Compartilhe a experiência dos nossos alunos"
-      subtitulo="Descubra as transformações incríveis que o Catálise trouxe para a vida de nossos alunos e como nossa metodologia de ensino fez a diferença em suas jornadas. "
+      subtitulo="Descubra as transformações incríveis que o Catálise trouxe para a vida de nossos alunos e como nossa metodologia de ensino fez a diferença em suas jornadas."
     >
       <div class="depoimentos">
         <CardDepoimentos depoimentos={depoimentos} page="" />
