@@ -1,0 +1,28 @@
+{
+  "content": [
+    {
+      "img": "../../img/destaques/aulas de redação.svg",
+      "tag": "Aulas de Redação",
+      "nome": "Como a Redação vale 20% da sua média final e os alunos tem muitas dúvidas, nossas aulas de redação serão 100% AO VIVO.",
+      "page": "ITA-IME"
+    },
+    {
+      "img": "../../img/destaques/correção de redação.svg",
+      "tag": "Correção de Redações",
+      "nome": "Você terá a correção de duas redações por mês de fevereiro até a prova do ITA, sem contar com as seis redações.",
+      "page": "ITA-IME"
+    },
+    {
+      "img": "../../img/destaques/apoio psicológico.svg",
+      "tag": "Apoio psicológico",
+      "nome": "Teremos encontros Ao Vivo de Rodas de Conversa com nossa psicóloga, experiente em acompanhar vestibulandos do ITA.",
+      "page": "ITA-IME"
+    },
+    {
+      "img": "../../img/destaques/guia de estudo.svg",
+      "tag": "Guia de estudo",
+      "nome": "Interaja com seus colegas, tire suas dúvidas e discutia sobre a matéria. Aqui criamos a interação que leva à aprovação.",
+      "page": "ITA-IME"
+    }
+  ]
+}

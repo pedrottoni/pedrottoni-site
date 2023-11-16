@@ -25,7 +25,7 @@
       "page": "principal"
     },
     {
-      "img": "../../img/destaques/metodologia microlearning.svg",
+      "img": "../../img/destaques/trilha de estudos.svg",
       "tag": "Trilha de Estudos",
       "nome": "Com a nossa trilha você seguirá uma sequência didática do básico ao avançado, sabendo quando estudar e como estudar cada assunto.",
       "page": "ITA-IME"
@@ -37,13 +37,13 @@
       "page": "ITA-IME"
     },
     {
-      "img": "../../img/destaques/metodologia microlearning.svg",
+      "img": "../../img/destaques/lista de exercícios2.svg",
       "tag": "Listas do Básico ao Avançado",
       "nome": "Após as aulas aprimore-se com listas de exercícios do básico ao avançado. Com elas você não vai precisar de nenhum outro material.",
       "page": "ITA-IME"
     },
     {
-      "img": "../../img/destaques/metodologia microlearning.svg",
+      "img": "../../img/destaques/relatório de desempenho.svg",
       "tag": "Relatório de desempenho",
       "nome": "Após o simulado receba um relatório de desempenho individual, acompanhe sua evolução por matéria e aprenda o que mais você precisar.",
       "page": "ITA-IME"

@@ -1,21 +1,27 @@
 ---
-const { capa, tag, nome, sobre } = Astro.props;
-//grande, pequeno
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+interface Props {
+  serv: CollectionEntry<"produtos">;
+  page: string;
+}
+
+const { serv, page } = Astro.props;
+const filtro = serv.data.content.filter((item) => item.page === page);
 ---
 
-<div class={"cardserv "}>
-  <div class="capa">
-    <img
-      src={capa}
-      alt="Capa da turma"
-      width="120"
-    />
-  </div>
-  <div class="texto">
-    <h2>{nome}</h2>
-    <p>{sobre}</p>
-  </div>
-</div>
+{
+  filtro.map((servs) => (
+    <div class={"cardserv"}>
+      <Image class="img" src={servs.img} alt={servs.tag} width="120" />
+      <div class="texto">
+        <h2>{servs.tag}</h2>
+        <p>{servs.nome}</p>
+      </div>
+    </div>
+  ))
+}
 
 <style scoped>
   .cardserv {
@@ -23,7 +29,7 @@ const { capa, tag, nome, sobre } = Astro.props;
     border-radius: 1rem;
     overflow: hidden;
   }
-  .capa {
+  .img {
     padding-top: 2rem;
   }
   .texto {

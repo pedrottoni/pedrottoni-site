@@ -25,6 +25,7 @@ const perguntas = await getEntry("alunos", "perguntas");
 const depoimentos = await getEntry("alunos", "depoimentos");
 const aprovados = await getEntry("alunos", "aprovados");
 const destaques = await getEntry("produtos", "destaques");
+const serv = await getEntry("produtos", "serv");
 ---
 
 <Layout title="Turma ITA/IME" description="Catálise - turma ITA/IME">
@@ -51,18 +52,12 @@ const destaques = await getEntry("produtos", "destaques");
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 144 144"
+            viewBox="0 0 132 144"
           >
             <path
               fill="#77DCF8"
-              fill-opacity=".6"
-              d="M128.35 55.45c12.87 7.23 12.87 25.87 0 33.1L34 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C6 4.51 21.45-4.62 34 2.43l94.35 53.02Z"
-            ></path>
-            <path
-              fill="#4D97FE"
-              stroke="#4D97FE"
-              d="M37.5 29.5a10 10 0 0 0-9.96 9.95v60.34c-.05.37-.05.74 0 1.1v3.66a10 10 0 0 0 9.95 9.95h54.6a3.65 3.65 0 1 0 0-7.3h-54.6a2.6 2.6 0 0 1-2.65-2.65V104H92.1a3.65 3.65 0 0 0 3.65-3.65v-60.9a10 10 0 0 0-9.95-9.95H37.5Zm41.2 23.24-.46.2.46-.2a3.65 3.65 0 0 0-3.41-2.24h-27.3a3.65 3.65 0 1 0 0 7.3h27.3a3.65 3.65 0 0 0 3.41-2.24l-.46-.2.46.2a3.65 3.65 0 0 0 0-2.82ZM37.5 36.8h48.3a2.6 2.6 0 0 1 2.64 2.65V96.7h-53.6V39.45a2.6 2.6 0 0 1 2.65-2.65Z"
-            ></path>
+              d="M122.35 55.45c12.87 7.23 12.87 25.87 0 33.1L28 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C0 4.51 15.45-4.62 28 2.43l94.35 53.02Z"
+              opacity=".7"></path>
           </svg>
            Aulas do básico ao avançado
         </li>
@@ -70,18 +65,12 @@ const destaques = await getEntry("produtos", "destaques");
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 144 144"
+            viewBox="0 0 132 144"
           >
             <path
               fill="#77DCF8"
-              fill-opacity=".6"
-              d="M128.35 55.45c12.87 7.23 12.87 25.87 0 33.1L34 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C6 4.51 21.45-4.62 34 2.43l94.35 53.02Z"
-            ></path>
-            <path
-              fill="#4D97FE"
-              stroke="#4D97FE"
-              d="M37.5 29.5a10 10 0 0 0-9.96 9.95v60.34c-.05.37-.05.74 0 1.1v3.66a10 10 0 0 0 9.95 9.95h54.6a3.65 3.65 0 1 0 0-7.3h-54.6a2.6 2.6 0 0 1-2.65-2.65V104H92.1a3.65 3.65 0 0 0 3.65-3.65v-60.9a10 10 0 0 0-9.95-9.95H37.5Zm41.2 23.24-.46.2.46-.2a3.65 3.65 0 0 0-3.41-2.24h-27.3a3.65 3.65 0 1 0 0 7.3h27.3a3.65 3.65 0 0 0 3.41-2.24l-.46-.2.46.2a3.65 3.65 0 0 0 0-2.82ZM37.5 36.8h48.3a2.6 2.6 0 0 1 2.64 2.65V96.7h-53.6V39.45a2.6 2.6 0 0 1 2.65-2.65Z"
-            ></path>
+              d="M122.35 55.45c12.87 7.23 12.87 25.87 0 33.1L28 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C0 4.51 15.45-4.62 28 2.43l94.35 53.02Z"
+              opacity=".7"></path>
           </svg>
            Mentoria com aprovados
         </li>
@@ -89,18 +78,12 @@ const destaques = await getEntry("produtos", "destaques");
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 144 144"
+            viewBox="0 0 132 144"
           >
             <path
               fill="#77DCF8"
-              fill-opacity=".6"
-              d="M128.35 55.45c12.87 7.23 12.87 25.87 0 33.1L34 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C6 4.51 21.45-4.62 34 2.43l94.35 53.02Z"
-            ></path>
-            <path
-              fill="#4D97FE"
-              stroke="#4D97FE"
-              d="M37.5 29.5a10 10 0 0 0-9.96 9.95v60.34c-.05.37-.05.74 0 1.1v3.66a10 10 0 0 0 9.95 9.95h54.6a3.65 3.65 0 1 0 0-7.3h-54.6a2.6 2.6 0 0 1-2.65-2.65V104H92.1a3.65 3.65 0 0 0 3.65-3.65v-60.9a10 10 0 0 0-9.95-9.95H37.5Zm41.2 23.24-.46.2.46-.2a3.65 3.65 0 0 0-3.41-2.24h-27.3a3.65 3.65 0 1 0 0 7.3h27.3a3.65 3.65 0 0 0 3.41-2.24l-.46-.2.46.2a3.65 3.65 0 0 0 0-2.82ZM37.5 36.8h48.3a2.6 2.6 0 0 1 2.64 2.65V96.7h-53.6V39.45a2.6 2.6 0 0 1 2.65-2.65Z"
-            ></path>
+              d="M122.35 55.45c12.87 7.23 12.87 25.87 0 33.1L28 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C0 4.51 15.45-4.62 28 2.43l94.35 53.02Z"
+              opacity=".7"></path>
           </svg>
            Curso de produtividade
         </li>
@@ -108,18 +91,12 @@ const destaques = await getEntry("produtos", "destaques");
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 144 144"
+            viewBox="0 0 132 144"
           >
             <path
               fill="#77DCF8"
-              fill-opacity=".6"
-              d="M128.35 55.45c12.87 7.23 12.87 25.87 0 33.1L34 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C6 4.51 21.45-4.62 34 2.43l94.35 53.02Z"
-            ></path>
-            <path
-              fill="#4D97FE"
-              stroke="#4D97FE"
-              d="M37.5 29.5a10 10 0 0 0-9.96 9.95v60.34c-.05.37-.05.74 0 1.1v3.66a10 10 0 0 0 9.95 9.95h54.6a3.65 3.65 0 1 0 0-7.3h-54.6a2.6 2.6 0 0 1-2.65-2.65V104H92.1a3.65 3.65 0 0 0 3.65-3.65v-60.9a10 10 0 0 0-9.95-9.95H37.5Zm41.2 23.24-.46.2.46-.2a3.65 3.65 0 0 0-3.41-2.24h-27.3a3.65 3.65 0 1 0 0 7.3h27.3a3.65 3.65 0 0 0 3.41-2.24l-.46-.2.46.2a3.65 3.65 0 0 0 0-2.82ZM37.5 36.8h48.3a2.6 2.6 0 0 1 2.64 2.65V96.7h-53.6V39.45a2.6 2.6 0 0 1 2.65-2.65Z"
-            ></path>
+              d="M122.35 55.45c12.87 7.23 12.87 25.87 0 33.1L28 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C0 4.51 15.45-4.62 28 2.43l94.35 53.02Z"
+              opacity=".7"></path>
           </svg>
            E muito mais!
         </li>
@@ -252,26 +229,7 @@ const destaques = await getEntry("produtos", "destaques");
       titulo="Nós pensamos em tudo!"
       subtitulo="Veja o que mais você vai ter acesso para conquistar a sua tão sonhada aprovação"
     >
-      <Cardserv
-        capa="/icons/test.svg"
-        nome="Aulas de Redação"
-        sobre="Como a Redação vale 20% da sua média final e os alunos tem muitas dúvidas, nossas aulas de redação serão 100% AO VIVO."
-      />
-      <Cardserv
-        capa="/icons/test.svg"
-        nome="Correção de Redações"
-        sobre="Você terá a correção de duas redações por mês de fevereiro até a prova do ITA, sem contar com as seis redações."
-      />
-      <Cardserv
-        capa="/icons/test.svg"
-        nome="Apoio psicologico"
-        sobre="Teremos encontros Ao Vivo de Rodas de Conversa com nossa psicóloga, experiente em acompanhar vestibulandos do ITA."
-      />
-      <Cardserv
-        capa="/icons/test.svg"
-        nome="Guia de estudo"
-        sobre="Interaja com seus colegas, tire suas dúvidas e discutia sobre a matéria. Aqui criamos a interação que leva à aprovação."
-      />
+      <Cardserv serv={serv} page="ITA-IME" />
     </Section>
     <Section
       estilo="claro aprovacoes"
@@ -359,7 +317,7 @@ const destaques = await getEntry("produtos", "destaques");
       title="Garanta"
       linha="true"
       destaque=" sua Vaga!"
-      botao="Quero me matricular"
+      botao="Matricule-se agora!"
     >
       <p class="txt-capa" slot="conteudo">
         Aproveite a oportunidade de ter a melhor preparação para o ITA e IME..
@@ -751,7 +709,7 @@ const destaques = await getEntry("produtos", "destaques");
     font-size: 1.1rem;
   }
   .capa-itens svg {
-    width: 2rem;
+    width: 1.2rem;
     margin-right: 0.8rem;
   }
   .valor {
