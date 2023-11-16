@@ -1,6 +1,4 @@
 ---
-import { getEntry } from "astro:content";
-import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 
 import Capa from "../../components/Capa.astro";
@@ -8,14 +6,17 @@ import Destaques from "../../components/Destaques.astro";
 import Section from "../../components/Section.astro";
 import Accordeon from "../../components/Accordeon.astro";
 
+import { Image } from "astro:assets";
 import capa from "../../img/miscelaneas-ita.png";
 import beneficios from "../../img/beneficios.png";
 
-import CardEbooks from "../../components/CardEbooks.astro";
-import MateriaisValor from "../../components/MateriaisValor.astro";
-
+import { getEntry } from "astro:content";
 const materiais = await getEntry("produtos", "materiais");
 const perguntas = await getEntry("alunos", "perguntas");
+const destaques = await getEntry("produtos", "destaques");
+
+import CardEbooks from "../../components/CardEbooks.astro";
+import MateriaisValor from "../../components/MateriaisValor.astro";
 ---
 
 <Layout title="Turma ITA/IME" description="Catálise - turma ITA/IME">
@@ -28,17 +29,7 @@ const perguntas = await getEntry("alunos", "perguntas");
       </p>
       <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
     </Capa>
-    <Destaques
-      img
-      titulo1="Vasto banco de questões"
-      texto1="Matemática Básica, Física Básica e Produtividade nos estudos, que irá te preparar de forma exclusiva para o ITA."
-      titulo2="Organização por assunto"
-      texto2="Aulas divididas por frentes, disponibilizadas em Módulos e no formato 'Microlearning', que te levarão até o nível do ITA."
-      titulo3="Gabaritos disponíveis"
-      texto3="Após cada aula e ao final do assunto, que te ajudarão a fixar o conteúdo e a se preparar para as provas."
-      titulo4="Resoluções disponíveis"
-      texto4="Te dará suporte de Segunda a Sexta para tirar todas as suas dúvidas e garantir que você esteja sempre preparado."
-    />
+    <Destaques destaques={destaques} page="ITA-IME" />
     <Capa estilo="claro" title="Textinho bacana sobre a Turma ITA" texto="">
       <ul class="capa-itens" slot="conteudo">
         <li>

@@ -47,6 +47,30 @@
       "tag": "Relatório de desempenho",
       "nome": "Após o simulado receba um relatório de desempenho individual, acompanhe sua evolução por matéria e aprenda o que mais você precisar.",
       "page": "ITA-IME"
+    },
+    {
+      "img": "../../img/destaques/trilha de estudos.svg",
+      "tag": "0000000 0000000",
+      "nome": "000000 000000 00000 000000 000000000 000000000 0000000 0000000 00000 00000 00000 00000",
+      "page": "PLANO-ESCOLAS"
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "0000000 0000000",
+      "nome": "000000 000000 00000 000000 000000000 000000000 0000000 0000000 00000 00000 00000 00000",
+      "page": "PLANO-ESCOLAS"
+    },
+    {
+      "img": "../../img/destaques/lista de exercícios2.svg",
+      "tag": "0000000 0000000",
+      "nome": "000000 000000 00000 000000 000000000 000000000 0000000 0000000 00000 00000 00000 00000",
+      "page": "PLANO-ESCOLAS"
+    },
+    {
+      "img": "../../img/destaques/relatório de desempenho.svg",
+      "tag": "0000000 0000000",
+      "nome": "000000 000000 00000 000000 000000000 000000000 0000000 0000000 00000 00000 00000 00000",
+      "page": "PLANO-ESCOLAS"
     }
   ]
 }

@@ -23,6 +23,30 @@
       "tag": "Guia de estudo",
       "nome": "Interaja com seus colegas, tire suas dúvidas e discutia sobre a matéria. Aqui criamos a interação que leva à aprovação.",
       "page": "ITA-IME"
+    },
+    {
+      "img": "../../img/destaques/aulas de redação.svg",
+      "tag": "0000000 0000000",
+      "nome": "000000 000000 00000 000000 000000000 000000000 0000000 0000000 00000 00000 00000 00000",
+      "page": "PLANO-ESCOLAS"
+    },
+    {
+      "img": "../../img/destaques/correção de redação.svg",
+      "tag": "0000000 0000000",
+      "nome": "000000 000000 00000 000000 000000000 000000000 0000000 0000000 00000 00000 00000 00000",
+      "page": "PLANO-ESCOLAS"
+    },
+    {
+      "img": "../../img/destaques/apoio psicológico.svg",
+      "tag": "0000000 0000000",
+      "nome": "000000 000000 00000 000000 000000000 000000000 0000000 0000000 00000 00000 00000 00000",
+      "page": "PLANO-ESCOLAS"
+    },
+    {
+      "img": "../../img/destaques/guia de estudo.svg",
+      "tag": "0000000 0000000",
+      "nome": "000000 000000 00000 000000 000000000 000000000 0000000 0000000 00000 00000 00000 00000",
+      "page": "PLANO-ESCOLAS"
     }
   ]
 }

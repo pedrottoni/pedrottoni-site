@@ -1,0 +1,199 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+
+import Capa from "../components/Capa.astro";
+import Destaques from "../components/Destaques.astro";
+import Section from "../components/Section.astro";
+import Cardserv from "../components/Cardserv.astro";
+import Accordeon from "../components/Accordeon.astro";
+
+import capa from "../img/turma itaime.png";
+import beneficios from "../img/beneficios.png";
+import materiais from "../img/materiais.png";
+
+import { getEntry } from "astro:content";
+const destaques = await getEntry("produtos", "destaques");
+const serv = await getEntry("produtos", "serv");
+const perguntas = await getEntry("alunos", "perguntas");
+---
+
+<Layout title="Turma EEAR" description="Catálise - turma EEAR">
+  <main class="container">
+    <Capa
+      title="Impulsione suas"
+      destaque=" matrículas!"
+      botao="Entre em contato"
+    >
+      <p class="txt-capa" slot="conteudo">
+        Ofereça aos seus alunos a oportunidade de conquistar um futuro brilhante
+        com a parceria do nosso Curso Pré-Vestibular.
+      </p>
+      <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
+    </Capa>
+    <Destaques destaques={destaques} page="PLANO-ESCOLAS" />
+    <Capa
+      estilo="claro"
+      title="00000000 00 0000 0000000 00 0000"
+      texto=""
+    >
+      <ul class="capa-itens" slot="conteudo">
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 132 144"
+          >
+            <path
+              fill="#77DCF8"
+              d="M122.35 55.45c12.87 7.23 12.87 25.87 0 33.1L28 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C0 4.51 15.45-4.62 28 2.43l94.35 53.02Z"
+              opacity=".7"></path>
+          </svg>
+           0000 0000 0000 0000
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 132 144"
+          >
+            <path
+              fill="#77DCF8"
+              d="M122.35 55.45c12.87 7.23 12.87 25.87 0 33.1L28 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C0 4.51 15.45-4.62 28 2.43l94.35 53.02Z"
+              opacity=".7"></path>
+          </svg>
+           0000 0000 0000 0000
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 132 144"
+          >
+            <path
+              fill="#77DCF8"
+              d="M122.35 55.45c12.87 7.23 12.87 25.87 0 33.1L28 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C0 4.51 15.45-4.62 28 2.43l94.35 53.02Z"
+              opacity=".7"></path>
+          </svg>
+           0000 0000 0000 0000
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 132 144"
+          >
+            <path
+              fill="#77DCF8"
+              d="M122.35 55.45c12.87 7.23 12.87 25.87 0 33.1L28 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C0 4.51 15.45-4.62 28 2.43l94.35 53.02Z"
+              opacity=".7"></path>
+          </svg>
+           0000 0000 0000 0000
+        </li>
+      </ul>
+      <Image
+        src={beneficios}
+        alt="Capa do Catálise"
+        class="img-capa-material"
+        slot="imagem"
+        width="770"
+        quality="max"
+      />
+    </Capa>
+    <Section
+      estilo="centro"
+      colunas="col4"
+      tag="00000"
+      titulo="0000 0000 00 0000"
+      subtitulo="0000 00 0000 000 0000 00 0000 00 00000 000 0000 000 0000 000 00 0000 00 0000 0000 00 00 0000"
+    >
+      <Cardserv serv={serv} page="PLANO-ESCOLAS" />
+    </Section>
+    <Capa estilo="claro" title="000000 00000">
+      <div slot="conteudo">
+        <p class="txt-capa-claro">
+            0000 00 0000 000 0000 00 0000 00 00000 000 0000 000 0000 000 00 0000 00 0000 0000 00 00 0000
+        </p>
+        <ul class="mt-2">
+          <li>0000 00 0000 000 0000 </li>
+          <li>0000 00 0000 000 0000 </li>
+          <li>0000 00 0000 000 0000 </li>
+          <li>0000 00 0000 000 0000 </li>
+        </ul>
+      </div>
+      <Image
+        src={materiais}
+        alt="Capa do Catálise"
+        class="img-capa img-capa-material"
+        slot="imagem"
+      />
+    </Capa>
+    <Capa
+      title="Garanta"
+      linha="true"
+      destaque=" sua Vaga!"
+      botao="Matricule-se agora!"
+    >
+      <p class="txt-capa" slot="conteudo">
+        Aproveite a oportunidade de ter a melhor preparação para o ITA e IME..
+      </p>
+      <ul class="capa-itens" slot="conteudo">
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 480 480"
+          >
+            <path
+              fill="#fff"
+              d="M111.69 47.84a16 16 0 0 0-11 4.85l-62.6 62.6a16.01 16.01 0 0 0 .03 25.46l62.57 62.56a16.01 16.01 0 1 0 22.62-22.62L86.62 144H304c62.04 0 112 49.96 112 112s-49.96 112-112 112h-64a16.02 16.02 0 0 0-11.46 27.4A16.02 16.02 0 0 0 240 400h64c73.67 0 132.4-56.52 140.75-128H448v-16c0-79.34-64.66-144-144-144H86.62l36.7-36.69a16 16 0 0 0-11.63-27.47ZM48 368a16 16 0 1 0 0 32 16 16 0 0 0 0-32Zm64 0a16 16 0 1 0 0 32 16 16 0 0 0 0-32Zm64 0a16 16 0 1 0 0 32 16 16 0 0 0 0-32Z"
+            ></path>
+          </svg>
+           Garantimos seu dinheiro de volta por até 7 dias
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 480 480"
+          >
+            <path
+              fill="#fff"
+              d="M352 16H128a32 32 0 0 0-32 32v384a32 32 0 0 0 32 32h224a32 32 0 0 0 32-32V48a32 32 0 0 0-32-32Zm-72 16a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm-64 0h32a8 8 0 0 1 0 16h-32a8 8 0 0 1 0-16Zm136 400H128V48h48l6.62 6.62c6 6 14.15 9.38 22.63 9.38h69.49a32 32 0 0 0 22.62-9.38L304 48h48v384Z"
+            ></path>
+          </svg>
+           Estude do seu jeito e em qualquer dispositivo
+        </li>
+      </ul>
+      <h1 class="valor" slot="conteudo">R$ 1.997,00</h1>
+      <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
+    </Capa>
+    <Section estilo="claro centro" tag="" titulo="Perguntas frequentes">
+      <Accordeon perguntas={perguntas} estilo="grande" page="" />
+    </Section>
+  </main>
+
+  <style scoped>
+    .capa-itens {
+      list-style: none;
+      padding: 0.4rem 0;
+    }
+    .capa-itens li {
+      font-family: var(--font-light);
+      font-weight: 600;
+      margin: 1.2rem 0 0 0;
+      display: flex;
+      align-items: center;
+      font-size: 1.1rem;
+    }
+    .capa-itens svg {
+      width: 1.2rem;
+      margin-right: 0.8rem;
+    }
+    .valor {
+      font-family: var(--font-black);
+      color: var(--clr-yellow);
+      margin-top: 2.4rem;
+    }
+  </style>
+</Layout>
