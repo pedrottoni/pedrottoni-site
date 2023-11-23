@@ -5,35 +5,35 @@
       "tag": "Turma",
       "nome": "ITA/IME",
       "link": "/produtos/ita-ime",
-      "page": "principal"
+      "page": ["principal"]
     },
     {
       "img": "../../img/turmas-card/ita-ime.png",
       "tag": "Turma",
       "nome": "PRÉ ITA/IME",
       "link": "/produtos/pre-ita-ime",
-      "page": "principal"
+      "page": ["principal"]
     },
     {
       "img": "../../img/turmas-card/ita-ime.png",
       "tag": "Revisão",
       "nome": "ITA/IME",
       "link": "/produtos/revisao-ita-ime",
-      "page": "principal"
+      "page": ["principal"]
     },
     {
       "img": "../../img/turmas-card/ita-ime.png",
       "tag": "Turma",
       "nome": "EEAR",
       "link": "/produtos/eear",
-      "page": "principal"
+      "page": ["principal"]
     },
     {
       "img": "../../img/turmas-card/ita-ime.png",
       "tag": "Revisão",
       "nome": "EEAR",
       "link": "/produtos/revisao-eear",
-      "page": "secundaria"
+      "page": ["secundaria"]
     }
   ]
 }

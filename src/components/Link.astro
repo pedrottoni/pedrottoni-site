@@ -44,10 +44,10 @@ const { texto, estilo } = Astro.props;
     transform: translateX(0.2rem) translateY(-0.2rem);
   }
   .grande {
-    font-size: .8rem;
+    font-size: clamp(0.9rem, 1.2vw, .8rem);
   }
   .pequeno {
-    font-size: 0..6rem;
+    font-size: clamp(0.9rem, 1.2vw, .6rem);
   }
   svg {
     width: .9rem;

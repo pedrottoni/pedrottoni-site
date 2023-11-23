@@ -10,7 +10,7 @@ const collectionProdutos = defineCollection({
         tag: z.string(),
         nome: z.string(),
         link: z.string().optional(),
-        page: z.string(),
+        page: z.array(z.string()),
       })
     ),
   })
@@ -30,7 +30,7 @@ const collectionAlunos = defineCollection({
         title: z.string().optional(),
         text: z.string().optional(),
         video: z.string().url().optional(),
-        //page: z.array().optional(),
+        page: z.array(z.string()),
       })
     ),
   })

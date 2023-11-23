@@ -16,7 +16,7 @@ const perguntas = await getEntry("alunos", "perguntas");
 const destaques = await getEntry("produtos", "destaques");
 
 import CardEbooks from "../../components/CardEbooks.astro";
-import MateriaisValor from "../../components/MateriaisValor.astro";
+import MateriaisValor from "../../components/MateriaisValor-MS-IME.astro";
 ---
 
 <Layout title="Turma ITA/IME" description="Catálise - turma ITA/IME">
@@ -25,88 +25,64 @@ import MateriaisValor from "../../components/MateriaisValor.astro";
       <p class="txt-capa" slot="conteudo">
         Este produto contêm todas as questões de matemática, física e química do
         vestibular do ITA desde 1995 até 2022 já divididas por assunto segundo o
-        programa de matérias do vestibular."
+        programa de matérias do vestibular.
       </p>
       <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
     </Capa>
-    <Destaques destaques={destaques} page="ITA-IME" />
+    <Destaques destaques={destaques} page="MS-ITA" />
     <Capa estilo="claro" title="Textinho bacana sobre a Turma ITA" texto="">
       <ul class="capa-itens" slot="conteudo">
         <li>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 144 144"
+            viewBox="0 0 132 144"
           >
             <path
               fill="#77DCF8"
-              fill-opacity=".6"
-              d="M128.35 55.45c12.87 7.23 12.87 25.87 0 33.1L34 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C6 4.51 21.45-4.62 34 2.43l94.35 53.02Z"
-            ></path>
-            <path
-              fill="#4D97FE"
-              stroke="#4D97FE"
-              d="M37.5 29.5a10 10 0 0 0-9.96 9.95v60.34c-.05.37-.05.74 0 1.1v3.66a10 10 0 0 0 9.95 9.95h54.6a3.65 3.65 0 1 0 0-7.3h-54.6a2.6 2.6 0 0 1-2.65-2.65V104H92.1a3.65 3.65 0 0 0 3.65-3.65v-60.9a10 10 0 0 0-9.95-9.95H37.5Zm41.2 23.24-.46.2.46-.2a3.65 3.65 0 0 0-3.41-2.24h-27.3a3.65 3.65 0 1 0 0 7.3h27.3a3.65 3.65 0 0 0 3.41-2.24l-.46-.2.46.2a3.65 3.65 0 0 0 0-2.82ZM37.5 36.8h48.3a2.6 2.6 0 0 1 2.64 2.65V96.7h-53.6V39.45a2.6 2.6 0 0 1 2.65-2.65Z"
-            ></path>
+              d="M122.35 55.45c12.87 7.23 12.87 25.87 0 33.1L28 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C0 4.51 15.45-4.62 28 2.43l94.35 53.02Z"
+              opacity=".7"></path>
           </svg>
-           Mentorias em grupo e Momento Catálise
+           O melhor ebook de questões focado no ITA
         </li>
         <li>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 144 144"
+            viewBox="0 0 132 144"
           >
             <path
               fill="#77DCF8"
-              fill-opacity=".6"
-              d="M128.35 55.45c12.87 7.23 12.87 25.87 0 33.1L34 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C6 4.51 21.45-4.62 34 2.43l94.35 53.02Z"
-            ></path>
-            <path
-              fill="#4D97FE"
-              stroke="#4D97FE"
-              d="M37.5 29.5a10 10 0 0 0-9.96 9.95v60.34c-.05.37-.05.74 0 1.1v3.66a10 10 0 0 0 9.95 9.95h54.6a3.65 3.65 0 1 0 0-7.3h-54.6a2.6 2.6 0 0 1-2.65-2.65V104H92.1a3.65 3.65 0 0 0 3.65-3.65v-60.9a10 10 0 0 0-9.95-9.95H37.5Zm41.2 23.24-.46.2.46-.2a3.65 3.65 0 0 0-3.41-2.24h-27.3a3.65 3.65 0 1 0 0 7.3h27.3a3.65 3.65 0 0 0 3.41-2.24l-.46-.2.46.2a3.65 3.65 0 0 0 0-2.82ZM37.5 36.8h48.3a2.6 2.6 0 0 1 2.64 2.65V96.7h-53.6V39.45a2.6 2.6 0 0 1 2.65-2.65Z"
-            ></path>
+              d="M122.35 55.45c12.87 7.23 12.87 25.87 0 33.1L28 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C0 4.51 15.45-4.62 28 2.43l94.35 53.02Z"
+              opacity=".7"></path>
           </svg>
-           Aulões de Reforço
+           Resoluções que facilitam o aprendizado
         </li>
         <li>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 144 144"
+            viewBox="0 0 132 144"
           >
             <path
               fill="#77DCF8"
-              fill-opacity=".6"
-              d="M128.35 55.45c12.87 7.23 12.87 25.87 0 33.1L34 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C6 4.51 21.45-4.62 34 2.43l94.35 53.02Z"
-            ></path>
-            <path
-              fill="#4D97FE"
-              stroke="#4D97FE"
-              d="M37.5 29.5a10 10 0 0 0-9.96 9.95v60.34c-.05.37-.05.74 0 1.1v3.66a10 10 0 0 0 9.95 9.95h54.6a3.65 3.65 0 1 0 0-7.3h-54.6a2.6 2.6 0 0 1-2.65-2.65V104H92.1a3.65 3.65 0 0 0 3.65-3.65v-60.9a10 10 0 0 0-9.95-9.95H37.5Zm41.2 23.24-.46.2.46-.2a3.65 3.65 0 0 0-3.41-2.24h-27.3a3.65 3.65 0 1 0 0 7.3h27.3a3.65 3.65 0 0 0 3.41-2.24l-.46-.2.46.2a3.65 3.65 0 0 0 0-2.82ZM37.5 36.8h48.3a2.6 2.6 0 0 1 2.64 2.65V96.7h-53.6V39.45a2.6 2.6 0 0 1 2.65-2.65Z"
-            ></path>
+              d="M122.35 55.45c12.87 7.23 12.87 25.87 0 33.1L28 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C0 4.51 15.45-4.62 28 2.43l94.35 53.02Z"
+              opacity=".7"></path>
           </svg>
-           Comunidade VIP no Telegram
+           Banco de questões super organizado
         </li>
         <li>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 144 144"
+            viewBox="0 0 132 144"
           >
             <path
               fill="#77DCF8"
-              fill-opacity=".6"
-              d="M128.35 55.45c12.87 7.23 12.87 25.87 0 33.1L34 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C6 4.51 21.45-4.62 34 2.43l94.35 53.02Z"
-            ></path>
-            <path
-              fill="#4D97FE"
-              stroke="#4D97FE"
-              d="M37.5 29.5a10 10 0 0 0-9.96 9.95v60.34c-.05.37-.05.74 0 1.1v3.66a10 10 0 0 0 9.95 9.95h54.6a3.65 3.65 0 1 0 0-7.3h-54.6a2.6 2.6 0 0 1-2.65-2.65V104H92.1a3.65 3.65 0 0 0 3.65-3.65v-60.9a10 10 0 0 0-9.95-9.95H37.5Zm41.2 23.24-.46.2.46-.2a3.65 3.65 0 0 0-3.41-2.24h-27.3a3.65 3.65 0 1 0 0 7.3h27.3a3.65 3.65 0 0 0 3.41-2.24l-.46-.2.46.2a3.65 3.65 0 0 0 0-2.82ZM37.5 36.8h48.3a2.6 2.6 0 0 1 2.64 2.65V96.7h-53.6V39.45a2.6 2.6 0 0 1 2.65-2.65Z"
-            ></path>
+              d="M122.35 55.45c12.87 7.23 12.87 25.87 0 33.1L28 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C0 4.51 15.45-4.62 28 2.43l94.35 53.02Z"
+              opacity=".7"></path>
           </svg>
-           Simulados 100% focados no ITA
+           Essencial para quem quer focar no que mais precisa
         </li>
       </ul>
       <Image
@@ -120,8 +96,8 @@ import MateriaisValor from "../../components/MateriaisValor.astro";
     </Capa>
     <MateriaisValor />
 
-    <Section estilo="claro" tag="" titulo="Perguntas frequentes">
-      <Accordeon perguntas={perguntas} page="" />
+    <Section estilo="claro centro" tag="" titulo="Perguntas frequentes">
+      <Accordeon perguntas={perguntas} estilo="grande" page="MS" />
     </Section>
     <Section tag="" titulo="Outros materiais" colunas="col4">
       <CardEbooks materiais={materiais} page="principal" swiper />
@@ -233,21 +209,5 @@ import MateriaisValor from "../../components/MateriaisValor.astro";
   .img-capa-material {
     position: relative;
     bottom: 0rem;
-  }
-  .capa-itens {
-    list-style: none;
-    padding: 0.4rem 0;
-  }
-  .capa-itens li {
-    font-family: var(--font-light);
-    font-weight: 600;
-    margin: 1.2rem 0 0 0;
-    display: flex;
-    align-items: center;
-    font-size: 1.1rem;
-  }
-  .capa-itens svg {
-    width: 2rem;
-    margin-right: 0.8rem;
   }
 </style>

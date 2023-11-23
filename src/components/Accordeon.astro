@@ -9,15 +9,14 @@ interface Props {
 
 const { perguntas, page, estilo } = Astro.props;
 
-const principal = perguntas.data.content.filter(
-  (item) => item.page === "principal"
+const filtro = perguntas.data.content.filter((item) =>
+  item.page.includes(page)
 );
-const volume = perguntas.data.content.filter((item) => item.page === "volume");
 ---
 
 <div class="accordion">
   {
-    perguntas.data.content.map((item) => (
+    filtro.map((item) => (
       <details class={estilo}>
         <summary>{item.title}</summary>
         <div class="content">
@@ -172,7 +171,7 @@ const volume = perguntas.data.content.filter((item) => item.page === "volume");
   summary {
     font-family: var(--font-book);
     font-weight: 600;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
     cursor: pointer;
     padding-bottom: 1rem;
     border-bottom: 0.1rem solid var(--clr-gray);
@@ -209,7 +208,7 @@ const volume = perguntas.data.content.filter((item) => item.page === "volume");
     transform: rotate(0deg) translateX(-0.9rem) translateY(0.3rem);
   }
   .grande {
-    font-size: 1.4rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.4rem);
     text-align: left;
   }
 </style>

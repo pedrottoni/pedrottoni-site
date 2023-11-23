@@ -39,7 +39,7 @@ const destaques = await getEntry("produtos", "destaques");
       </p>
       <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
     </Capa>
-    <Destaques destaques={destaques} page="principal" />
+    <Destaques destaques={destaques} page="home" />
 
     <Section
       estilo="claro"
@@ -49,7 +49,7 @@ const destaques = await getEntry("produtos", "destaques");
       botao="Conheça nossas turmas"
       link="/produtos"
     >
-      <CardTurmas estilo="grande" turmas={turmas} page="" swiper />
+      <CardTurmas estilo="grande" turmas={turmas} page="principal" swiper />
     </Section>
     <Section
       estilo="centro"

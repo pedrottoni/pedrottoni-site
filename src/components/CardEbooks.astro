@@ -12,70 +12,34 @@ interface Props {
 
 const { materiais, swiper, page } = Astro.props;
 
-const principal = materiais.data.content.filter(
-  (item) => item.page === "principal"
+const filtro = materiais.data.content.filter((item) =>
+  item.page.includes(page)
 );
-const volume = materiais.data.content.filter((item) => item.page === "volume");
 ---
 
 {
-  !swiper && page === "principal"
-    ? principal.map((material) => (
-        <div class="card">
-          <div class="capa">
-            <Image src={material.img} alt="Capa da material" width="220" />
-          </div>
-          <div class="texto">
-            <span class={material.tag.toLowerCase()}>{material.tag}</span>
-            <h1>{material.nome}</h1>
-            <Botao
-              estilo="outline-claro pequeno"
-              texto="Saiba mais"
-              link={material.link}
-            />
-          </div>
+  !swiper &&
+    filtro.map((material) => (
+      <div class="card">
+        <div class="capa">
+          <Image src={material.img} alt="Capa da material" width="220" />
         </div>
-      ))
-    : !swiper && page === "volume"
-    ? volume.map((material) => (
-        <div class="card">
-          <div class="capa">
-            <Image src={material.img} alt="Capa da material" width="230" />
-          </div>
-          <div class="texto">
-            <span class={material.tag.toLowerCase()}>{material.tag}</span>
-            <h1>{material.nome}</h1>
-            <Botao
-              estilo="outline-claro pequeno"
-              texto="Saiba mais"
-              link={material.link}
-            />
-          </div>
+        <div class="texto">
+          <span class={material.tag.toLowerCase()}>{material.tag}</span>
+          <h1>{material.nome}</h1>
+          <Botao
+            estilo="outline-claro pequeno"
+            texto="Saiba mais"
+            link={material.link}
+          />
         </div>
-      ))
-    : !swiper &&
-      materiais.data.content.map((material) => (
-        <div class="card">
-          <div class="capa">
-            <Image src={material.img} alt="Capa da material" width="230" />
-          </div>
-          <div class="texto">
-            <span class={material.tag.toLowerCase()}>{material.tag}</span>
-            <h1>{material.nome}</h1>
-            <Botao
-              estilo="outline-claro pequeno"
-              texto="Saiba mais"
-              link={material.link}
-            />
-          </div>
-        </div>
-      ))
-}
-{
-  swiper && page === "principal" ? (
+      </div>
+    ))
+}{
+  swiper && (
     <div class="Swiper swiper-materiais">
       <div class="swiper-wrapper">
-        {principal.map((material) => (
+        {filtro.map((material) => (
           <div class="swiper-slide">
             <div class="card">
               <div class="capa">
@@ -97,62 +61,6 @@ const volume = materiais.data.content.filter((item) => item.page === "volume");
       <div class="swiper-button-next" />
       <div class="swiper-button-prev" />
     </div>
-  ) : swiper && page === "volume" ? (
-    <div class="Swiper swiper-materiais">
-      <div class="swiper-wrapper">
-        {volume.map((material) => (
-          <div class="swiper-slide">
-            <div class="card">
-              <div class="capa">
-                <Image src={material.img} alt="Capa da material" width="230" />
-              </div>
-              <div class="texto">
-                <span class={material.tag.toLowerCase()}>{material.tag}</span>
-                <h1>{material.nome}</h1>
-                <Botao
-                  estilo="outline-claro pequeno"
-                  texto="Saiba mais"
-                  link={material.link}
-                />
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div class="swiper-button-next" />
-      <div class="swiper-button-prev" />
-    </div>
-  ) : (
-    swiper && (
-      <div class="Swiper swiper-materiais">
-        <div class="swiper-wrapper">
-          {materiais.data.content.map((material) => (
-            <div class="swiper-slide">
-              <div class="card">
-                <div class="capa">
-                  <Image
-                    src={material.img}
-                    alt="Capa da material"
-                    width="230"
-                  />
-                </div>
-                <div class="texto">
-                  <span class={material.tag.toLowerCase()}>{material.tag}</span>
-                  <h1>{material.nome}</h1>
-                  <Botao
-                    estilo="outline-claro pequeno"
-                    texto="Saiba mais"
-                    link={material.link}
-                  />
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div class="swiper-button-next" />
-        <div class="swiper-button-prev" />
-      </div>
-    )
   )
 }
 <script>
@@ -188,18 +96,27 @@ const volume = materiais.data.content.filter((item) => item.page === "volume");
   }
   .swiper-button-next,
   .swiper-button-prev {
-    width: 3.5rem;
-    height: 3.5rem;
-    background: hsla(0, 0%, 100%, 0.8);
-    border-radius: 5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--clr-dblue);
+    border-radius: 10rem;
     margin: -2.5rem 0rem;
-    box-shadow: 0rem 0rem 1rem 0.3rem hsl(0deg 0% 0% / 27.06%);
     backdrop-filter: blur(0.3rem);
+    border: 0.18rem solid var(--clr-green);
+  }
+  .swiper-button-next,
+  .swiper-rtl .swiper-button-prev {
+    right: 0rem;
+  }
+  .swiper-button-prev,
+  .swiper-rtl .swiper-button-next {
+    left: var(--swiper-navigation-sides-offset, 0rem);
   }
   .swiper-button-next::after,
   .swiper-button-prev::after {
-    font-size: 1.8rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.4rem);
     font-weight: 900;
+    color: var(--clr-green);
   }
   .card {
     display: flex;
@@ -216,7 +133,7 @@ const volume = materiais.data.content.filter((item) => item.page === "volume");
   }
   span {
     font-family: var(--font-bold);
-    font-size: 0.9rem;
+    font-size: clamp(0.9rem, 1.2vw, 0.9rem);
   }
   .ebook {
     color: hsl(52, 93%, 52%);
@@ -229,7 +146,7 @@ const volume = materiais.data.content.filter((item) => item.page === "volume");
   }
   h1 {
     font-family: var(--font-book);
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     text-align: center;

@@ -118,25 +118,28 @@ import logo from "../img/logo catalise.png";
 <style scoped>
   footer {
     background: var(--clr-dgray);
-    width: 100%;
     color: var(--clr-ice);
     border-top: 0.12rem solid var(--clr-gray);
     padding: 6rem 0;
     margin-top: 8rem;
     backdrop-filter: blur(0.8rem);
-    font-size: .8rem;
+    font-size: clamp(0.9rem, 1.2vw, .8rem);
   }
   footer > div:first-child {
     display: flex;
-    flex-direction: row;
-    max-width: 1200px;
-    justify-content: space-between;
-    gap: 2rem;
-    margin: auto;
+    gap: 3rem;
   }
   footer div {
     display: flex;
     flex-direction: column;
+    place-items: center;
+  }
+  footer div ul {
+    align-items: center;
+  }
+  footer > div div:last-child ul {
+    flex-direction: row;
+    max-width: 20rem;
   }
   .logo {
     margin-bottom: 1.8rem;
@@ -147,6 +150,8 @@ import logo from "../img/logo catalise.png";
     flex-direction: column;
     padding: 0;
     gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   li a {
     display: flex;
@@ -156,9 +161,36 @@ import logo from "../img/logo catalise.png";
     width: 1rem;
   }
   footer div:nth-child(2) {
+    display: none;
     gap: 1.7rem;
   }
   a:hover {
     color: var(--clr-green);
+  }
+  @media screen and (min-width: 720px) {
+    footer {
+      gap: 0;
+    }
+    footer > div:first-child {
+      flex-direction: row;
+      width: clamp(10rem, 90vw, 80rem);
+      justify-content: space-between;
+      gap: 2rem;
+      margin: auto;
+    }
+    footer div {
+      display: flex;
+      flex-direction: column;
+      place-items: start;
+    }
+    footer div ul {
+      align-items: start;
+    }
+    footer > div div:last-child ul {
+      flex-direction: column;
+    }
+    footer > div div:nth-child(2) {
+      display: flex;
+    }
   }
 </style>

@@ -215,11 +215,11 @@ const { aprovados, page } = Astro.props;
   }
   span {
     font-family: var(--font-bold);
-    font-size: 0.8rem;
+    font-size: clamp(0.9rem, 1.2vw, 0.8rem);
   }
   h1 {
     font-family: var(--font-bold);
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.2rem);;
     margin-top: 0.3rem;
   }
   .swiper {

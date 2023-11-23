@@ -1,39 +1,94 @@
 {
   "content": [
     {
+      "title": "A Turma ITA-IME do Catálise é presencial ou online?",
+      "text": "O Catálise trabalha com um método 100% online. Dessa forma, você vai poder estudar de onde quiser e quando quiser. Além disso, você não terá gastos consideráveis com alojamento, transporte e alimentação fora de casa.",
+      "page": ["ITA-IME"]
+    },
+    {
       "title": "Quais são as formas de pagamento?",
       "text": "Você poderá efetuar o pagamento da forma que achar melhor: cartão de crédito, no PIX, no boleto, em dois cartões ou uma parte no PIX e outra parte no cartão.",
-      "page": ["TURMAS", "MATERIAIS"]
+      "page": ["ITA-IME"]
     },
     {
-      "title": "Existe alguma taxa de cancelamento do curso?",
+      "title": "Qual é o prazo de Garantia? Existe alguma taxa de cancelamento do curso?",
       "text": "Você pode cancelar, sem qualquer tipo de taxa, até 7 dias corridos após a confirmação do pagamento. Isso pode ser feito pelo próprio sistema de pagamento. Porém, recomendamos que acione a gente pelo nosso contato de suporte, para ajustar a situação da melhor forma possível. Após os 7 dias, não há como cancelar o valor pago, mesmo que ainda tenham parcelas a vencer no caso de pagamento com cartão de crédito.",
-      "page": ["MATERIAIS", "TURMAS"]
-    },
-    {
-      "title": "A Turma ITA do Catálise é presencial ou online?",
-      "text": "O Catálise trabalha com um método 100% online. Dessa forma, você vai poder estudar de onde quiser e quando quiser. Além disso, você não terá gastos consideráveis com alojamento, transporte e alimentação fora de casa.",
-      "page": ["TURMAS"]
+      "page": ["ITA-IME"]
     },
     {
       "title": "Quando receberei o acesso ao curso?",
-      "text": "Após seu pagamento ser confirmado, você receberá em seu Whatsapp o seu acesso a nossa plataforma e demais ferramentas.",
-      "page": ["TURMAS"]
+      "text": "Após seu pagamento ser confirmado, você receberá em seu whatsapp o seu acesso a nossa plataforma e demais ferramentas.",
+      "page": ["ITA-IME"]
     },
     {
       "title": "Até quando terei acesso ao curso?",
       "text": "Você terá acesso a todo o conteúdo da nossa TURMA ITA até dezembro de 2024.",
-      "page": ["TURMAS"]
+      "page": ["ITA-IME"]
     },
     {
       "title": "Posso acessar de um dispositivo móvel ou apenas pelo computador?",
       "text": "Nossa plataforma pode ser acessada de qualquer dispositivo. Caso não consiga em algum específico, experimente mudar de navegador e/ou entre em contato com o nosso suporte.",
-      "page": ["TURMAS"]
+      "page": ["ITA-IME"]
     },
     {
       "title": "Posso emprestar minha conta para um colega ou dividir acesso?",
       "text": "Não. A conta é individual e restrita ao aluno que efetuou a matrícula no curso. Fazendo isso, você estará violando termos de uso e correrá o risco de perder o acesso ao curso. Além disso, nosso curso te proporciona todo uma acompanhamento de desempenho individualizado, o que perderia o sentido nessa situação, prejudicando seus resultados.",
-      "page": ["TURMAS"]
+      "page": ["ITA-IME"]
+    },
+    {
+      "title": "Eu vou começar a estudar agora e não tenho base. Conseguirei acompanhar a Turma ITA do Catálise?",
+      "text": "Sim! O foco do curso é direcionar o aluno desde o nível zero até o nível que o vestibular do ITA. As aulas, listas de exercícios e simulados são do nível zero até o nível ITA.",
+      "page": ["ITA-IME"]
+    },
+    {
+      "title": "Sempre estudei em curso presencial. A Turma ITA online do Catálise serve para mim?",
+      "text": "O Catálise é um curso que, além de entregar todas as aulas que você precisa para passar no ITA, possui diferenciais para que você se adapte o mais rápido possível. Você terá acesso a acompanhamento pedagógico, comunidade com os outros alunos, relatório com a análise do seu desempenho nos simulados, plantão de dúvidas individual e muito mais. Toda a tecnologia que o online pode proporcionar para que você acelere os seus estudos.",
+      "page": ["ITA-IME"]
+    },
+    {
+      "title": "Eu já faço cursinho presencial. Ainda assim devo me matricular no Catálise?",
+      "text": "Com toda certeza! Você terá acesso a muitas ferramentas de suporte em seus estudos, como por exemplo contato diário com uma equipe de coordenação formada por alunos do ITA, o plantão de dúvidas individual, 7 ciclos de simulados modelo ITA, as mentorias em grupo, as provas antigas do ITA separadas por assunto, o acesso a toda plataforma para você estudar onde e quando quiser, a comunidade VIP de alunos para tirar dúvidas e discutir exercícios e muito mais.",
+      "page": ["ITA-IME"]
+    },
+    {
+      "title": "O meu objetivo é o IME. A Turma ITA-IME do Catálise serve para mim de verdade?",
+      "text": "Com toda certeza! Nosso conteúdo também é pensado para quem quer IME. Na nossa plataforma você terá aulas e listas de exercício de todos os assuntos que caem no vestibular do IME. Além disso, você terá acesso a ebooks com todas as provas de física, química e matemática de 2010 até 2022 separadas por assunto, com gabarito e resolução de todas as questões, ",
+      "page": ["ITA-IME"]
+    },
+    {
+      "title": "Qual é o conteúdo do ebook?",
+      "text": "O ebook abrange questões do vestibular do ITA de 1995 a 2022 nas disciplinas de matemática, física e química.",
+      "page": ["MS-ITA"]
+    },
+    {
+      "title": "Como faço para comprar e baixar o ebook?",
+      "text": "Você pode adquirir o ebook clicando no botão “Compre Agora” e seguindo as instruções para o pagamento. Após a confirmação do pagamento, você poderá fazer o download do arquivo.",
+      "page": ["MS"]
+    },
+    {
+      "title": "Em que formatos o ebook está disponível?",
+      "text": "O ebook está disponível em PDF, proporcionando compatibilidade com a maioria dos dispositivos, como computadores, tablets e e-readers.",
+      "page": ["MS"]
+    },
+    {
+      "title": "Posso acessar o ebook em diferentes dispositivos?",
+      "text": "Sim, após o download, você pode transferir o ebook para diferentes dispositivos, como computadores, tablets e e-readers, desde que eles sejam compatíveis com formato oferecido.",
+      "page": ["MS"]
+    },
+    {
+      "title": "Há alguma restrição de cópias ou impressões?",
+      "text": "Você poderá imprimir o material para uso pessoal, mas não é permitido o compartilhamento das impressões ou do arquivo PDF do E-book",
+      "page": ["MS"]
+    },
+    {
+      "title": "O ebook inclui respostas para as questões?",
+      "text": "O ebook possui o gabarito de todas as questões e a resolução de várias delas.",
+      "page": ["MS"]
+    },
+    {
+      "title": "Como faço para obter suporte técnico se tiver problemas com o ebook?",
+      "text": "Se encontrar problemas técnicos ou precisar de suporte, entre em contato pelo e-mail contato@catalisevestibulares.com.br ou fala conosco pelo WhatsApp, basta clicar no ícone do site. Estamos aqui para ajudar a resolver quaisquer problemas que você possa enfrentar.",
+      "page": ["MS"]
     },
     {
       "title": "Eu vou começar a estudar agora e não tenho base. Conseguirei acompanhar a Turma ITA do Catálise?",

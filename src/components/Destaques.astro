@@ -8,7 +8,9 @@ interface Props {
 }
 
 const { destaques, page } = Astro.props;
-const filtro = destaques.data.content.filter((item) => item.page === page);
+const filtro = destaques.data.content.filter((item) =>
+  item.page.includes(page)
+);
 ---
 
 <section>
@@ -47,7 +49,7 @@ const filtro = destaques.data.content.filter((item) => item.page === page);
   }
   h1 {
     font-family: var(--font-book);
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
     color: var(--clr-green);
     margin-top: 0;
     margin-bottom: 0.7rem;
@@ -65,7 +67,7 @@ const filtro = destaques.data.content.filter((item) => item.page === page);
     }
   }
   .img {
-    width: 3.6rem;
+    width: clamp(2.6rem, 8vw, 3.2rem);
     height: auto;
     margin-bottom: 1.4rem;
   }

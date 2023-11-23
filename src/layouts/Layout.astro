@@ -90,6 +90,7 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     text-size-adjust: none;
+    scroll-behavior: smooth;
   }
   body {
     margin: 0 auto;
@@ -112,7 +113,7 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
     margin: 0;
   }
   h2 {
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.2rem);
     margin: 0;
   }
   p {
@@ -152,15 +153,31 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
   .mt-4 {
     margin-top: 4rem;
   }
+  .capa-itens {
+    list-style: none;
+    padding: 0.4rem 0;
+  }
+  .capa-itens li {
+    font-family: var(--font-light);
+    font-weight: 600;
+    margin: 1.2rem 0 0 0;
+    display: flex;
+    align-items: center;
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
+  }
+  .capa-itens svg {
+    width: 1.2rem;
+    margin-right: 0.8rem;
+  }
   .txt-capa {
     font-family: var(--font-light);
     font-size: clamp(1rem, 1.7vw, 1.2rem);
-    width: 80%;
+    width: 100%;
   }
   .txt-capa-claro {
     font-family: var(--font-light);
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
   }
   .img-capa {
     width: -webkit-fill-available;
@@ -215,9 +232,9 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
   }
   .modal__content h3 {
     font-family: var(--font-bold);
-    font-size: 1.8rem;
+    font-size: clamp(1.3rem, 2vw, 1.8rem);
     color: var(--font-black);
-    margin: .12rem 0;
+    margin: 0.12rem 0;
   }
   .modal__content h2 {
     font-family: var(--font-book);
@@ -233,7 +250,7 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
     font-weight: 600;
     top: 0;
     right: 0;
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.2rem);
     line-height: 1 !important;
     border-radius: 100rem !important;
     margin: 1.8rem !important;
@@ -260,5 +277,10 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
   ::-webkit-scrollbar-thumb {
     background-color: var(--clr-lblue);
     border-radius: 0.18rem;
+  }
+  @media screen and (min-width: 720px) {
+    .txt-capa {
+      width: 80%;
+    }
   }
 </style>

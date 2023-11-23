@@ -1,0 +1,274 @@
+---
+import { Image } from "astro:assets";
+import Botao from "./Botao.astro";
+
+import capa1 from "../img/miscelaneas-ita.png";
+import capa2 from "../img/miscelaneas-ita.png";
+import capa3 from "../img/miscelaneas-ita.png";
+import capa4 from "../img/miscelaneas-ita.png";
+---
+
+<section>
+  <div class="materiais">
+    <button class="material-active">
+      <Image
+        src={capa1}
+        alt="Capa do Catálise"
+        class="btn-img"
+        width={100}
+      />Miscelâneas ITA - Coletânea completa
+    </button>
+    <button>
+      <Image
+        src={capa2}
+        alt="Capa do Catálise"
+        class="btn-img"
+        width={100}
+      />Miscelâneas de Matemática
+    </button>
+    <button>
+      <Image
+        src={capa3}
+        alt="Capa do Catálise"
+        class="btn-img"
+        width={100}
+      />Miscelâneas de Física
+    </button>
+    <button>
+      <Image
+        src={capa4}
+        alt="Capa do Catálise"
+        class="btn-img"
+        width={100}
+      />Miscelânea de Química
+    </button>
+  </div>
+  <div class="content content-active">
+    <div>
+      <h1>
+        Miscelâneas ITA
+        <br />
+        <span class="destaque">coletânea completa</span>
+      </h1>
+      <p class="txt-capa" slot="conteudo">
+        28 anos de questões de matemática, física e química do ITA separadas por
+        assunto.
+      </p>
+      <h1 class="valor" slot="conteudo">R$ 157,00</h1>
+      <Botao estilo="grande mt-3" texto="Compre agora" link="" />
+    </div>
+    <div class="capa">
+      <Image
+        src={capa1}
+        alt="Capa do Catálise"
+        class="img-capa"
+        slot="imagem"
+      />
+    </div>
+  </div>
+  <div class="content">
+    <div>
+      <h1>
+        Miscelâneas ITA
+        <br />
+        <span class="destaque">Matemática</span>
+      </h1>
+      <p class="txt-capa" slot="conteudo">
+        28 anos de questões de matemática, física e química do ITA separadas por
+        assunto.
+      </p>
+      <h1 class="valor" slot="conteudo">R$ 57,00</h1>
+      <Botao estilo="grande mt-3" texto="Compre agora" link="" />
+    </div>
+    <div class="capa">
+      <Image
+        src={capa1}
+        alt="Capa do Catálise"
+        class="img-capa"
+        slot="imagem"
+      />
+    </div>
+  </div>
+  <div class="content">
+    <div>
+      <h1>
+        Miscelâneas ITA
+        <br />
+        <span class="destaque">Física</span>
+      </h1>
+      <p class="txt-capa" slot="conteudo">
+        28 anos de questões de matemática, física e química do ITA separadas por
+        assunto.
+      </p>
+      <h1 class="valor" slot="conteudo">R$ 57,00</h1>
+      <Botao estilo="grande mt-3" texto="Compre agora" link="" />
+    </div>
+    <div class="capa">
+      <Image
+        src={capa1}
+        alt="Capa do Catálise"
+        class="img-capa"
+        slot="imagem"
+      />
+    </div>
+  </div>
+  <div class="content">
+    <div>
+      <h1>
+        Miscelâneas ITA
+        <br />
+        <span class="destaque">Química</span>
+      </h1>
+      <p class="txt-capa" slot="conteudo">
+        28 anos de questões de matemática, física e química do ITA separadas por
+        assunto.
+      </p>
+      <h1 class="valor" slot="conteudo">R$ 57,00</h1>
+      <Botao estilo="grande mt-3" texto="Compre agora" link="" />
+    </div>
+    <div class="capa">
+      <Image
+        src={capa1}
+        alt="Capa do Catálise"
+        class="img-capa"
+        slot="imagem"
+      />
+    </div>
+  </div>
+</section>
+
+<script>
+  // Get all the buttons and divs
+  const buttons = document.querySelectorAll(".materiais button");
+  const divs = document.querySelectorAll(".content");
+
+  // Add click event listener to each button
+  buttons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      // Remove "active" class from all buttons
+      buttons.forEach((btn) => btn.classList.remove("material-active"));
+      // Add "active" class to the clicked button
+      button.classList.add("material-active");
+      // Hide all divs
+      divs.forEach((div) => div.classList.remove("content-active"));
+      // Show the corresponding div based on the index of the clicked button
+      divs[index].classList.add("content-active");
+    });
+  });
+</script>
+<style scoped>
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .valor {
+    font-family: var(--font-black);
+    color: var(--clr-yellow);
+    margin-top: 2.4rem;
+  }
+  .materiais {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 4rem;
+    z-index: 3;
+    padding-bottom: 1.2rem;
+    border-bottom: 0.12rem solid var(--clr-blue);
+  }
+  button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: none;
+    color: var(--clr-white);
+    font-family: var(--font-light);
+    font-weight: 600;
+    border: none;
+  }
+  button .btn-img {
+    border-radius: 100rem;
+    height: 100px;
+    object-fit: cover;
+    background: var(--clr-dgray);
+    border: 0.2rem solid var(--clr-dblue);
+    transition: all 0.5s ease;
+  }
+  button:hover .btn-img {
+    filter: drop-shadow(-0.4rem -0.4rem 0.4rem hsl(215, 100%, 30%))
+      drop-shadow(0.4rem 0.4rem 0.4rem hsl(195, 100%, 24%));
+  }
+  .material-active {
+    position: relative;
+    color: var(--clr-green);
+  }
+  .material-active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.24rem;
+    background: var(--clr-lblue);
+    bottom: -1.28rem;
+    border-radius: 100rem 100rem 0 0;
+  }
+  .material-active .btn-img {
+    background: var(--clr-blue);
+    border: 0.2rem solid var(--clr-green);
+  }
+  .content {
+    display: flex;
+    place-items: center;
+    place-content: space-between;
+    margin-top: 2rem;
+    width: 100%;
+    z-index: 2;
+  }
+  .content h1 {
+    font-family: var(--font-black);
+    text-transform: uppercase;
+    margin-bottom: 1.1rem;
+    font-size: clamp(2.2rem, 3.3vw, 3.4rem);
+  }
+  .content .capa {
+    display: none;
+    filter: drop-shadow(-8rem -8rem 8rem hsl(215, 100%, 30%))
+      drop-shadow(8rem 8rem 8rem hsl(195, 100%, 24%));
+    z-index: -1;
+  }
+  .content .destaque {
+    font-size: clamp(2.2rem, 3.3vw, 3.4rem);
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 0.15rem var(--clr-yellow);
+  }
+  .content {
+    display: none;
+  }
+  .content-active {
+    display: flex;
+    position: relative;
+    color: var(--clr-white);
+  }
+  .valor {
+    font-family: var(--font-black);
+    color: var(--clr-yellow);
+    margin-top: 2.4rem;
+  }
+  @media screen and (min-width: 768px) {
+    .content div {
+      width: clamp(24rem, 44vw, 40rem);
+    }
+    .content .capa {
+      display: unset;
+      width: 47%;
+      height: auto;
+    }
+  }
+</style>

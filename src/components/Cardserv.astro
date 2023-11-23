@@ -8,7 +8,8 @@ interface Props {
 }
 
 const { serv, page } = Astro.props;
-const filtro = serv.data.content.filter((item) => item.page === page);
+
+const filtro = serv.data.content.filter((item) => item.page.includes(page));
 ---
 
 {

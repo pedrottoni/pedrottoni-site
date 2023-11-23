@@ -64,8 +64,8 @@ import Link from "./Link.astro";
       hsl(200, 100%, 80%)
     );
     border-radius: 2rem;
-    width: calc(100% + 6rem);
-    padding: 5rem 0rem 5rem 6rem;
+    width: calc(85vw - 2rem);
+    padding: 5rem 2rem;
     color: var(--clr-black);
     filter: drop-shadow(-4rem -4rem 6rem hsl(215, 100%, 30%))
       drop-shadow(4rem 4rem 6rem hsl(195, 100%, 24%));
@@ -99,9 +99,7 @@ import Link from "./Link.astro";
     place-content: center;
     place-items: center;
   }
-  .claro.centro {
-    padding: 5rem 3rem;
-  }
+
   .centro > div:first-child {
     display: block;
     max-width: 39rem;
@@ -114,22 +112,34 @@ import Link from "./Link.astro";
   }
   span {
     font-family: var(--font-bold);
-    font-size: 1.4rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.4rem);
     color: var(--clr-yellow);
     line-height: 2.5;
   }
   h1 {
-    font-size: clamp(2.2rem, 3.5vw, 2.7rem);
+    font-size: clamp(1.9rem, 3.5vw, 2.7rem);
   }
   .claro h1 {
     font-family: var(--font-black);
   }
   p {
     font-family: var(--font-book);
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
     margin-top: 1.4rem;
   }
   .aprovacoes {
     height: 32rem;
+  }
+  @media screen and (min-width: 425px) {
+
+  }
+  @media screen and (min-width: 1026px) {
+    .claro {
+      width: clamp(20rem, 90vw, 81rem);
+      padding: 5rem 0rem 5rem 6rem;
+    }
+    .claro.centro {
+      padding: 5rem 3rem;
+    }
   }
 </style>

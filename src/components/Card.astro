@@ -44,7 +44,7 @@ const { href, title, body } = Astro.props;
 	}
 	h2 {
 		margin: 0;
-		font-size: 1.25rem;
+		font-size: clamp(0.9rem, 1.2vw, 1.25rem);;
 		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 	p {

@@ -4,73 +4,97 @@
       "img": "../../img/destaques/metodologia microlearning.svg",
       "tag": "Metodologia Microlearning",
       "nome": "Aulas curtas, completas e focadas com em média 25 minutos. Abordagem eficaz para garantir que o seu aprendizado seja fixado.",
-      "page": "principal"
+      "page": ["home"]
     },
     {
       "img": "../../img/destaques/lista de exercícios.svg",
       "tag": "Listas de exercícios",
       "nome": "Após a aula aprimore-se com listas abrangentes até o nível avançado. corrija com resoluções escritas e vídeos explicativos.",
-      "page": "principal"
+      "page": ["home"]
     },
     {
       "img": "../../img/destaques/plantão de dúvidas.svg",
       "tag": "Plantão de dúvidas",
       "nome": "Tire suas dúvidas de Física, Química e Matemática ao vivo por chamada do Google Meet. Agende e converse com um professor.",
-      "page": "principal"
+      "page": ["home"]
     },
     {
       "img": "../../img/destaques/simulados com correção.svg",
       "tag": "Simulados com correção",
       "nome": "7 ciclos de simulados: 1 de embasamento, 6 modelos ITA (1ª e 2ª fase), com gabarito, resolução e correção de todas matérias.",
-      "page": "principal"
+      "page": ["home"]
     },
     {
       "img": "../../img/destaques/trilha de estudos.svg",
       "tag": "Trilha de Estudos",
       "nome": "Com a nossa trilha você seguirá uma sequência didática do básico ao avançado, sabendo quando estudar e como estudar cada assunto.",
-      "page": "ITA-IME"
+      "page": ["ITA-IME"]
     },
     {
       "img": "../../img/destaques/metodologia microlearning.svg",
       "tag": "Metodologia Microlearning",
       "nome": "Aprenda tudo que precisa para o ITA com aulas curtas e focadas com em média 25 minutos. Nossa abordagem acelera o seu aprendizado.",
-      "page": "ITA-IME"
+      "page": ["ITA-IME"]
     },
     {
       "img": "../../img/destaques/lista de exercícios2.svg",
       "tag": "Listas do Básico ao Avançado",
       "nome": "Após as aulas aprimore-se com listas de exercícios do básico ao avançado. Com elas você não vai precisar de nenhum outro material.",
-      "page": "ITA-IME"
+      "page": ["ITA-IME"]
     },
     {
       "img": "../../img/destaques/relatório de desempenho.svg",
       "tag": "Relatório de desempenho",
       "nome": "Após o simulado receba um relatório de desempenho individual, acompanhe sua evolução por matéria e aprenda o que mais você precisar.",
-      "page": "ITA-IME"
+      "page": ["ITA-IME"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Super banco de questões",
+      "nome": "Acesso a um amplo acervo de questões de matemática, física e química para praticar e se preparar para a prova.",
+      "page": ["MS-ITA"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Organização por assunto",
+      "nome": "As questões estão todas divididas por assunto,  facilitando o estudo de cada matéria.",
+      "page": ["MS-ITA"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Gabaritos disponíveis",
+      "nome": "Todas as questões possuem gabarito, o possibilitando uma rápida verificação das respostas e do seu desempenho .",
+      "page": ["MS-ITA"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Resoluções disponíveis",
+      "nome": "Várias questões também possuem resoluções disponíveis com o passo a passo de como chegar à resposta correta.",
+      "page": ["MS-ITA"]
     },
     {
       "img": "../../img/destaques/trilha de estudos.svg",
       "tag": "0000000 0000000",
       "nome": "000000 000000 00000 000000 000000000 000000000 0000000 0000000 00000 00000 00000 00000",
-      "page": "PLANO-ESCOLAS"
+      "page": ["PLANO-ESCOLAS"]
     },
     {
       "img": "../../img/destaques/metodologia microlearning.svg",
       "tag": "0000000 0000000",
       "nome": "000000 000000 00000 000000 000000000 000000000 0000000 0000000 00000 00000 00000 00000",
-      "page": "PLANO-ESCOLAS"
+      "page": ["PLANO-ESCOLAS"]
     },
     {
       "img": "../../img/destaques/lista de exercícios2.svg",
       "tag": "0000000 0000000",
       "nome": "000000 000000 00000 000000 000000000 000000000 0000000 0000000 00000 00000 00000 00000",
-      "page": "PLANO-ESCOLAS"
+      "page": ["PLANO-ESCOLAS"]
     },
     {
       "img": "../../img/destaques/relatório de desempenho.svg",
       "tag": "0000000 0000000",
       "nome": "000000 000000 00000 000000 000000000 000000000 0000000 0000000 00000 00000 00000 00000",
-      "page": "PLANO-ESCOLAS"
+      "page": ["PLANO-ESCOLAS"]
     }
   ]
 }
