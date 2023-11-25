@@ -79,7 +79,7 @@ const filtro = turmas.data.content.filter((item) => item.page.includes(page));
 
   const swiper = new Swiper(".swiper-turmas", {
     modules: [Navigation],
-    slidesPerView: "auto",
+    slidesPerView: 2.5,
     spaceBetween: 24,
     navigation: {
       nextEl: ".swiper-button-next",
@@ -89,13 +89,12 @@ const filtro = turmas.data.content.filter((item) => item.page.includes(page));
 </script>
 <style scoped>
   .swiper-turmas {
-    position: relative;
     overflow: hidden;
-    padding: 1rem 0;
+    width: 50%;
+    position: absolute;
+    right: 0;
   }
   .swiper-wrapper {
-    max-width: 52rem;
-    min-height: 27rem;
   }
   .swiper-slide {
     width: 18rem;

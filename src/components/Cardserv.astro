@@ -11,7 +11,7 @@ const { serv, page } = Astro.props;
 
 const filtro = serv.data.content.filter((item) => item.page.includes(page));
 ---
-
+<div class="cards">
 {
   filtro.map((servs) => (
     <div class={"cardserv"}>
@@ -23,8 +23,56 @@ const filtro = serv.data.content.filter((item) => item.page.includes(page));
     </div>
   ))
 }
+</div>
+<div class="Swiper swiper-servs">
+  <div class="swiper-wrapper">
+    {
+      filtro.map((servs) => (
+        <div class="swiper-slide">
+        <div class="cardserv">
+          <Image class="img" src={servs.img} alt={servs.tag} width="120" />
+          <div class="texto">
+            <h2>{servs.tag}</h2>
+            <p>{servs.nome}</p>
+          </div>
+        </div>
+      </div>
+      ))
+    }
+  </div>
+  <div class="buttons">
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+<script>
+  import Swiper from "swiper";
+  import "swiper/css";
+  import "swiper/css/navigation";
 
+  import { Navigation } from "swiper/modules";
+
+  const swiper = new Swiper(".swiper-servs", {
+    modules: [Navigation],
+    slidesPerView: 1.4,
+    spaceBetween: -10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
 <style scoped>
+  .cards{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(16rem,1fr));
+    gap: 1rem;
+    place-items: center;
+    place-content: center;
+    margin-top: 4rem;
+    overflow: visible;
+  }
   .cardserv {
     background-color: var(--clr-dblue);
     border-radius: 1rem;
@@ -49,5 +97,50 @@ const filtro = serv.data.content.filter((item) => item.page.includes(page));
     margin-top: 1rem;
     line-height: 1.5;
     text-align: left;
+  }
+  .swiper-servs {
+    display: none;
+    position: relative;
+    width: calc(100% + 2rem);
+    overflow: hidden;
+  }
+  .swiper-wrapper {
+  }
+  .swiper-slide {
+  }
+  .buttons {
+    position: relative;
+    width: 9rem;
+    height: 3rem;
+    margin-top: 2rem;
+    place-self: center;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--clr-dblue);
+    border-radius: 10rem;
+    backdrop-filter: blur(0.3rem);
+    border: 0.18rem solid var(--clr-green);
+  }
+  .swiper-button-next:after,
+  .swiper-rtl .swiper-button-prev:after,
+  .swiper-button-prev:after,
+  .swiper-rtl .swiper-button-next:after {
+    font-size: clamp(0.9rem,1.2vw,1.4rem);
+    font-weight: 900;
+    color: var(--clr-green);
+  }
+  @media screen and (max-width: 425px) {
+  .cards {
+    display: none;
+  }
+  .swiper-servs {
+    display: flex;
+    flex-direction: column;
+  }
+  .cardserv {
+    margin: 0 .7rem;
   }
 </style>

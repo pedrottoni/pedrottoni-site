@@ -29,10 +29,12 @@ const serv = await getEntry("produtos", "serv");
 ---
 
 <Layout title="Turma ITA/IME" description="Catálise - turma ITA/IME">
+  <!--
   <Breadcrumbs>
     <BreadcrumbsItem href="/produtos" label="Nossos produtos" />
     <BreadcrumbsItem currentPage={true} label="ITA-IME" />
   </Breadcrumbs>
+  -->
   <main class="container">
     <Capa
       title="ITA IME"
@@ -224,7 +226,6 @@ const serv = await getEntry("produtos", "serv");
     </Capa>
     <Section
       estilo="centro"
-      colunas="col4"
       tag="Apoio"
       titulo="Nós pensamos em tudo!"
       subtitulo="Veja o que mais você vai ter acesso para conquistar a sua tão sonhada aprovação"
@@ -239,7 +240,12 @@ const serv = await getEntry("produtos", "serv");
     >
       <CardAprovacoes aprovados={aprovados} page="" />
     </Section>
-    <Section tag="" titulo="Rotina de estudos" colunas="col4 g4">
+    <Section
+      estilo="centro"
+      tag=""
+      titulo="Rotina de estudos"
+      colunas="col4 g4"
+    >
       <div class="rotina">
         <div>1</div>
         <h2>Assista<br />aulas gravadas</h2>
@@ -352,7 +358,12 @@ const serv = await getEntry("produtos", "serv");
         </li>
       </ul>
       <h1 class="valor" slot="conteudo">R$ 1.997,00</h1>
-      <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
+      <Image
+        src={capa}
+        alt="Capa do Catálise"
+        class="img-capa img-capa-valor"
+        slot="imagem"
+      />
     </Capa>
     <Section estilo="claro centro" tag="" titulo="Perguntas frequentes">
       <Accordeon perguntas={perguntas} estilo="grande" page="ITA-IME" />
@@ -692,27 +703,5 @@ const serv = await getEntry("produtos", "serv");
   .rotina h2 {
     color: var(--clr-green);
     margin: 0.6rem;
-  }
-  .img-capa-material {
-    position: relative;
-    bottom: 0rem;
-  }
-
-  .valor {
-    font-family: var(--font-black);
-    color: var(--clr-yellow);
-    margin-top: 2.4rem;
-  }
-  @media screen and (min-width: 720px) {
-    .img-capa-material {
-      opacity: 0.2;
-      filter: contrast(1.5) blur(1px);
-    }
-  }
-  @media screen and (min-width: 1026px) {
-    .img-capa-material {
-      opacity: 1;
-      filter: contrast(1) blur(0);
-    }
   }
 </style>

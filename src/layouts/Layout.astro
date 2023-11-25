@@ -78,6 +78,18 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
 
     --swiper-scrollbar-size: 0.4rem;
     --swiper-scrollbar-drag-bg-color: var(--clr-blue);
+    --swiper-pagination-color: var(--clr-green);
+    --swiper-pagination-bullet-active-color: var(--clr-green);
+
+  }
+  .swiper-pagination-bullet-active {
+    width: 2rem;
+    border-radius: 1rem;
+  }
+  .swiper-pagination-bullet {
+    width: 2rem !important;
+    border-radius: 1rem !important;
+    transition: all 0.4s ease;
   }
 
   html {
@@ -104,7 +116,7 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
     justify-content: center;
     padding: 1rem;
     color: var(--clr-white);
-    gap: 8rem;
+    gap: 6rem;
   }
   h1 {
     font-family: var(--font-bold);
@@ -120,6 +132,7 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
     font-family: var(--font-light);
     font-size: clamp(0.9rem, 1.2vw, 1rem);
     line-height: 1.8;
+    letter-spacing: 0.03rem;
     margin: 0;
   }
   a {
@@ -135,6 +148,9 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
   }
   button {
     cursor: pointer;
+  }
+  #matricula {
+    flex-direction: column;
   }
 
   .container {
@@ -180,8 +196,24 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
     font-size: clamp(0.9rem, 1.2vw, 1.1rem);
   }
   .img-capa {
-    width: -webkit-fill-available;
+    width: clamp(20rem, 60vw, 40rem);
     height: auto;
+    margin-bottom: 3rem;
+  }
+  .img-capa-material {
+    display: none;
+    position: relative;
+    bottom: 0rem;
+    opacity: 0.2;
+    filter: contrast(1.5) blur(1px);
+  }
+  .img-capa-valor {
+    display: none;
+  }
+  .valor {
+    font-family: var(--font-black);
+    color: var(--clr-yellow);
+    margin-top: 2.4rem;
   }
   .depoimentos {
     display: flex;
@@ -214,7 +246,7 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
       hsl(226, 100%, 97%),
       hsl(200, 100%, 80%)
     );
-    min-width: 32vw;
+    width: clamp(20rem, 94vw, 40rem);
     overflow: hidden;
   }
   :where(.modal) {
@@ -278,9 +310,32 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
     background-color: var(--clr-lblue);
     border-radius: 0.18rem;
   }
-  @media screen and (min-width: 720px) {
+  @media screen and (min-width: 768px) {
+    main {
+      gap: 8rem;
+    }
+    .img-capa-material {
+      display: block;
+      opacity: 0.2;
+      filter: contrast(1.5) blur(1px);
+    }
     .txt-capa {
       width: 80%;
+    }
+    .image-capa {
+      margin-bottom: 0rem;
+    }
+  }
+  @media screen and (min-width: 1026px) {
+    #matricula {
+      flex-direction: row;
+    }
+    .img-capa-valor {
+      display: unset;
+    }
+    .img-capa-material {
+      opacity: 1;
+      filter: contrast(1) blur(0);
     }
   }
 </style>

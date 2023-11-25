@@ -24,11 +24,45 @@ const filtro = destaques.data.content.filter((item) =>
     ))
   }
 </section>
+<div class="Swiper swiper-destaque">
+  <div class="swiper-wrapper">
+    {
+      filtro.map((destaque) => (
+        <div class="swiper-slide">
+          <div class="destaque">
+            <Image class="img" src={destaque.img} alt={destaque.tag} />
+            <h1>{destaque.tag}</h1>
+            <p>{destaque.nome}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <div class="pagination">
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+<script>
+  import Swiper from "swiper";
+  import "swiper/css";
+  import "swiper/css/pagination";
 
+  import { Pagination } from "swiper/modules";
+
+  const swiper = new Swiper(".swiper-destaque", {
+    modules: [Pagination],
+    slidesPerView: 1.08,
+    spaceBetween: -10,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
 <style scoped>
   section {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 2rem;
     place-items: center;
     place-content: space-between;
@@ -40,6 +74,7 @@ const filtro = destaques.data.content.filter((item) =>
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 0;
   }
   .imagem {
     width: 25%;
@@ -54,21 +89,45 @@ const filtro = destaques.data.content.filter((item) =>
     margin-top: 0;
     margin-bottom: 0.7rem;
   }
-  p {
-  }
-  @media screen and (min-width: 425px) {
-    section {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  @media screen and (min-width: 768px) {
-    section {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-  }
   .img {
     width: clamp(2.6rem, 8vw, 3.2rem);
     height: auto;
     margin-bottom: 1.4rem;
+  }
+  .swiper-destaque {
+    display: none;
+    position: relative;
+    width: calc(100% + 2rem);
+    overflow: hidden;
+  }
+  .swiper-wrapper {
+  }
+  .swiper-slide {
+  }
+  .pagination {
+    margin-top: 3rem;
+  }
+  @media screen and (max-width: 425px) {
+    section {
+      display: none;
+    }
+    .swiper-destaque {
+      display: flex;
+      flex-direction: column;
+    }
+    .destaque {
+      width: -webkit-fill-available;
+      text-align: left;
+      background: var(--clr-dblue);
+      padding: 1.4rem;
+      border-radius: 1rem;
+      backdrop-filter: blur(0.4rem);
+      margin: 0 1rem;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    section {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 </style>

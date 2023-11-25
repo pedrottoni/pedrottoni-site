@@ -51,8 +51,7 @@ const { depoimentos, page } = Astro.props;
 </script>
 <style scoped>
   swiper-container {
-    position: absolute;
-    width: 40rem;
+    width: 80vw;
     height: auto;
   }
   swiper-slide {
@@ -65,8 +64,8 @@ const { depoimentos, page } = Astro.props;
   }
   .aluno {
     display: flex;
-    flex-direction: row;
-    place-items: center;
+    flex-direction: column;
+    place-items: start;
     gap: 1.4rem;
     border-bottom: 0.1rem solid var(--clr-dblue);
     padding-bottom: 1.6rem;
@@ -96,5 +95,16 @@ const { depoimentos, page } = Astro.props;
     width: 2rem;
     border-radius: 1rem;
     transition: all 0.4s ease;
+  }
+  @media screen and (min-width: 768px) {
+    .aluno {
+      flex-direction: row;
+      place-items: center;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    swiper-container {
+      width: clamp(20rem, 43vw, 40rem);
+    }
   }
 </style>

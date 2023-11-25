@@ -5,9 +5,10 @@ import { Image } from "astro:assets";
 interface Props {
   aprovados: CollectionEntry<"alunos">;
   page: string;
+  direction?: string;
 }
 
-const { aprovados, page } = Astro.props;
+const { aprovados, page, direction } = Astro.props;
 ---
 
 {
@@ -134,25 +135,32 @@ const { aprovados, page } = Astro.props;
 }
 <script>
   import { Swiper } from "swiper";
-  import { Pagination, Mousewheel, Scrollbar } from "swiper/modules";
+  import { Mousewheel, Scrollbar } from "swiper/modules";
   import "swiper/css";
   import "swiper/css/pagination";
   import "swiper/css/scrollbar";
 
   new Swiper(".swiper-aprovacoes", {
-    modules: [Pagination, Mousewheel, Scrollbar],
-    slidesPerView: 1.4,
-    spaceBetween: 32,
-    direction: "vertical",
-    centeredSlides: true,
+    modules: [Mousewheel, Scrollbar],
+    slidesPerView: 1,
+    direction: "horizontal",
+    spaceBetween: 24,
     mousewheel: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
     scrollbar: {
       el: ".swiper-scrollbar",
       draggable: true,
+    },
+    breakpoints: {
+      // when window width is <= 499px
+      1026: {
+        direction: "vertical",
+        slidesPerView: 1.4,
+        centeredSlides: true,
+        spaceBetween: 32,
+      },
+      768: {
+        slidesPerView: 2,
+      },
     },
   });
 </script>
@@ -163,10 +171,13 @@ const { aprovados, page } = Astro.props;
     cursor: pointer;
   }
   .capa {
-    height: auto;
     margin-bottom: -1.3rem;
     filter: brightness(0.9);
     transition: all 0.8s ease;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   svg {
     position: absolute;
@@ -174,16 +185,12 @@ const { aprovados, page } = Astro.props;
     transition: all 0.4s ease;
   }
   .play-interno {
-    top: 36%;
-    left: calc(50% - 48px);
-    width: 6rem;
-    height: 6rem;
+    width: clamp(4rem, 6vw, 6rem);
+    height: auto;
   }
   .play-externo {
-    top: calc(50% - 66px);
-    left: calc(50% - 56.43px);
-    width: 7rem;
-    height: 7rem;
+    width: clamp(5rem, 8vw, 7rem);
+    height: auto;
     transform: scale(0.9);
   }
   .card:hover .capa svg {
@@ -202,12 +209,13 @@ const { aprovados, page } = Astro.props;
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    padding: 1rem 1rem 1.1rem 8.8rem;
+    padding: 1rem 1rem 1.5rem 8.8rem;
   }
   .texto img {
     position: absolute;
     top: -1.8rem;
     left: 0;
+    width: auto;
   }
   .texto div {
     color: var(--clr-ice);
@@ -219,15 +227,15 @@ const { aprovados, page } = Astro.props;
   }
   h1 {
     font-family: var(--font-bold);
-    font-size: clamp(0.9rem, 1.2vw, 1.2rem);;
+    font-size: clamp(0.9rem, 1.2vw, 1.2rem);
     margin-top: 0.3rem;
   }
   .swiper {
   }
   .swiper-aprovacoes {
     height: -webkit-fill-available;
-    position: absolute;
     overflow: visible;
+    width: -webkit-fill-available;
   }
   .swiper-slide {
     place-self: center;
@@ -244,5 +252,23 @@ const { aprovados, page } = Astro.props;
     right: -1.4rem;
     top: 5rem;
     height: 80%;
+  }
+  .swiper-vertical > .swiper-scrollbar,
+  .swiper-scrollbar.swiper-scrollbar-horizontal {
+    bottom: -1.6rem;
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1024px) {
+    .swiper-aprovacoes {
+      height: -webkit-fill-available;
+      position: absolute;
+      overflow: visible;
+      right: 4rem;
+      width: clamp(20rem, 43vw, 40rem);
+    }
+    .capa {
+      height: auto;
+    }
   }
 </style>

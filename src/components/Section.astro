@@ -27,8 +27,8 @@ import Link from "./Link.astro";
   }
   section > div:first-child {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     z-index: 1;
   }
   section > div:first-child div:first-child {
@@ -44,7 +44,7 @@ import Link from "./Link.astro";
     overflow: visible;
   }
   .col3 {
-    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
   }
   .col4 {
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
@@ -53,11 +53,9 @@ import Link from "./Link.astro";
     row-gap: 4rem;
   }
   .claro {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-    place-items: center;
-    place-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     background: linear-gradient(
       80deg,
       hsl(226, 100%, 97%),
@@ -65,7 +63,7 @@ import Link from "./Link.astro";
     );
     border-radius: 2rem;
     width: calc(85vw - 2rem);
-    padding: 5rem 2rem;
+    padding: 3rem 3rem;
     color: var(--clr-black);
     filter: drop-shadow(-4rem -4rem 6rem hsl(215, 100%, 30%))
       drop-shadow(4rem 4rem 6rem hsl(195, 100%, 24%));
@@ -73,15 +71,14 @@ import Link from "./Link.astro";
     z-index: 1;
   }
   .claro > div:first-child {
-    display: block;
     z-index: 1;
   }
   .claro > div:first-child div:first-child {
     max-width: 100%;
   }
   .claro .conteudo {
-    display: flex;
     gap: 1rem;
+    display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     margin-top: 0;
@@ -128,18 +125,24 @@ import Link from "./Link.astro";
     margin-top: 1.4rem;
   }
   .aprovacoes {
-    height: 32rem;
+    min-height: 32rem;
   }
-  @media screen and (min-width: 425px) {
-
+  @media screen and (min-width: 768px) {
+    .claro {
+      width: -webkit-fill-available;
+    }
   }
   @media screen and (min-width: 1026px) {
     .claro {
-      width: clamp(20rem, 90vw, 81rem);
-      padding: 5rem 0rem 5rem 6rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9rem;
+      place-content: center;
+      padding: 5rem 6rem;
+      width: clamp(20rem, 80vw, 75rem);
     }
-    .claro.centro {
-      padding: 5rem 3rem;
+    .centro {
+      grid-template-columns: 1fr;
     }
   }
 </style>

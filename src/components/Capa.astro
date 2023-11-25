@@ -30,7 +30,7 @@ const { id, estilo, title, destaque, botao, link, linha } = Astro.props;
     display: flex;
     place-items: center;
     place-content: space-between;
-    margin-top: 2rem;
+    flex-direction: column-reverse;
     width: 100%;
     z-index: 2;
   }
@@ -40,7 +40,6 @@ const { id, estilo, title, destaque, botao, link, linha } = Astro.props;
     margin-bottom: 1.1rem;
   }
   .capa {
-    display: none;
     filter: drop-shadow(-8rem -8rem 8rem hsl(215, 100%, 30%))
       drop-shadow(8rem 8rem 8rem hsl(195, 100%, 24%));
     z-index: -1;
@@ -60,7 +59,7 @@ const { id, estilo, title, destaque, botao, link, linha } = Astro.props;
     border-radius: 2rem;
     color: var(--clr-black);
     width: calc(85vw - 2rem);
-    padding: 5rem 2rem;
+    padding: 3rem 3rem;
     filter: drop-shadow(-4rem -4rem 6rem hsl(215, 100%, 30%))
       drop-shadow(4rem 4rem 6rem hsl(195, 100%, 24%));
     overflow: hidden;
@@ -82,26 +81,32 @@ const { id, estilo, title, destaque, botao, link, linha } = Astro.props;
   .claro .capa {
     filter: none;
     position: absolute;
-    right: 12ch;
   }
   @media screen and (min-width: 768px) {
-    .capa {
+    section {
+      flex-direction: row;
+    }
+    .claro {
+      width: -webkit-fill-available;
+    }
+    .claro .capa {
       display: unset;
-      width: clamp(27rem, 60vw, 36rem);
       height: auto;
+      left: 12;
     }
   }
-  @media screen and (min-width: 1026px) {
-    div {
+  @media screen and (min-width: 1024px) {
+    .claro > div:first-child {
       width: clamp(24rem, 40vw, 35rem);
     }
     .claro {
-      width: clamp(20rem, 90vw, 81rem);
-      padding: 5rem 0rem 5rem 6rem;
+      padding: 5rem 6rem;
+      width: clamp(20rem, 80vw, 75rem);
     }
-    .capa {
+    .claro .capa {
       display: unset;
       height: auto;
+      left: clamp(0rem, 40vw, 40rem);
     }
     .links a {
       display: inline-block;
