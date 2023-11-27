@@ -170,18 +170,21 @@
     margin: 0;
     padding: 0 0 2rem 0;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     gap: 4rem;
-    border-bottom: 0.15rem solid var(--clr-lblue);
+    border-bottom: 0.15rem solid var(--clr-dblue);
+    width: 90vw;
+    overflow-y: hidden;
+    overflow-x: auto;
   }
   [aria-selected="true"] {
-    text-decoration-thickness: 0.25em;
-    text-underline-offset: 0.5em;
     color: var(--clr-green);
-    padding-bottom: 1.7rem;
-    border-bottom: 0.4rem solid var(--clr-green);
   }
-
+  .tabs-container {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+  }
   .tabs__panels.flow {
     margin-top: 3rem;
   }
@@ -190,18 +193,33 @@
   }
   .tabs__panels.flow > div > img {
     float: left;
-    width: calc(50% - 2rem);
-    margin: 0 2rem 0 0;
+    width: 100%;
+    margin: 0rem 2rem 0 0;
     border-radius: 1rem;
   }
   .tabs__panels.flow > div > div {
     float: left;
-    width: 50%;
-    height: 100%;
+    width: 100%;
+    margin-top: 1rem;
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
+  }
+  @media screen and (min-width: 768px) {
+    [role="tablist"] {
+      justify-content: center;
+      gap: 4rem;
+      border-bottom: 0.15rem solid var(--clr-lblue);
+    }
+    .tabs__panels.flow > div > img {
+      width: calc(50% - 4rem);
+    }
+    .tabs__panels.flow > div > div {
+      width: 50%;
+      height: 100%;
+      margin-top: 0rem;
+    }
   }
 </style>
