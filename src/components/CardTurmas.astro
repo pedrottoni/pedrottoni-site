@@ -65,8 +65,10 @@ const filtro = turmas.data.content.filter((item) => item.page.includes(page));
           </div>
         ))}
       </div>
-      <div class="swiper-button-next" />
-      <div class="swiper-button-prev" />
+      <div class="buttons">
+        <div class="swiper-button-next" />
+        <div class="swiper-button-prev" />
+      </div>
     </div>
   )
 }
@@ -79,20 +81,38 @@ const filtro = turmas.data.content.filter((item) => item.page.includes(page));
 
   const swiper = new Swiper(".swiper-turmas", {
     modules: [Navigation],
-    slidesPerView: 2.5,
-    spaceBetween: 24,
+    slidesPerView: 1.1,
+    spaceBetween: 16,
+    centeredSlides: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      1026: {
+        slidesPerView: 2.2,
+        spaceBetween: 24,
+        centeredSlides: false,
+      },
+      768: {
+        slidesPerView: 3.1,
+        spaceBetween: 24,
+        centeredSlides: false,
+      },
+      520: {
+        slidesPerView: 2,
+        spaceBetween: 24,
+      },
     },
   });
 </script>
 <style scoped>
   .swiper-turmas {
-    overflow: hidden;
-    width: 50%;
-    position: absolute;
-    right: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1.6rem;
   }
   .swiper-wrapper {
   }
@@ -104,26 +124,36 @@ const filtro = turmas.data.content.filter((item) => item.page.includes(page));
   }
   .swiper-button-next,
   .swiper-button-prev {
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
     background: var(--clr-white);
     border-radius: 5rem;
     box-shadow: 0 0.1rem 2rem hsl(0, 0%, 60%);
     margin: -2.8rem 1rem;
   }
-  .swiper-button-next:after,
-  .swiper-rtl .swiper-button-prev:after {
-    font-weight: 600;
-    padding-left: 0.4rem;
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 3rem;
+    height: 3rem;
+    margin-top: -2rem;
+    background: hsl(226, 80%, 14%);
+    border-radius: 10rem;
+    border: 0.18rem solid var(--clr-green);
   }
+  .swiper-button-next:after,
+  .swiper-rtl .swiper-button-prev:after,
   .swiper-button-prev:after,
   .swiper-rtl .swiper-button-next:after {
-    font-weight: 600;
-    padding-right: 0.4rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.4rem);
+    font-weight: 900;
+    color: var(--clr-green);
   }
-  .swiper-button-disabled {
-    display: none;
-    opacity: 0;
+  .swiper-button-prev {
+    left: -3rem;
+  }
+  .swiper-button-next {
+    right: -3rem;
   }
   .card {
     background-color: var(--clr-white);
@@ -139,7 +169,8 @@ const filtro = turmas.data.content.filter((item) => item.page.includes(page));
     background-repeat: no-repeat;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
     width: 100%;
-    height: 14rem;
+    height: auto;
+    object-fit: cover;
   }
   .grande img.revisão {
     background-image: linear-gradient(
@@ -150,14 +181,15 @@ const filtro = turmas.data.content.filter((item) => item.page.includes(page));
     background-repeat: no-repeat;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
     width: 100%;
-    height: 14rem;
+    height: auto;
+    object-fit: cover;
   }
   .grande .texto {
     display: flex;
     flex-direction: column;
     place-items: center;
     place-content: center;
-    padding: 1rem 3rem 3rem 3rem;
+    padding: 1rem 2rem 2rem 2rem;
   }
   span {
     font-family: var(--font-bold);
@@ -197,5 +229,23 @@ const filtro = turmas.data.content.filter((item) => item.page.includes(page));
     padding: 2.2rem 2.2rem 2.2rem 2.2rem;
     z-index: 1;
     text-align: left;
+  }
+  @media screen and (min-width: 1025px) {
+    .swiper-turmas {
+      overflow: hidden;
+      width: 52%;
+      position: absolute;
+      right: 0;
+      margin-top: 0;
+    }
+    .grande .texto {
+      padding: 1rem 3rem 3rem 3rem;
+    }
+    .swiper-button-prev {
+      left: 0rem;
+    }
+    .swiper-button-next {
+      right: 0rem;
+    }
   }
 </style>

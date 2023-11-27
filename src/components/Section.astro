@@ -29,7 +29,9 @@ import Link from "./Link.astro";
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
     z-index: 1;
+    max-width: none;
   }
   section > div:first-child div:first-child {
     max-width: 50%;
@@ -125,7 +127,7 @@ import Link from "./Link.astro";
     margin-top: 1.4rem;
   }
   .aprovacoes {
-    min-height: 24rem;
+    min-height: 26rem;
   }
   @media screen and (min-width: 768px) {
     .claro {
@@ -136,13 +138,16 @@ import Link from "./Link.astro";
     .claro {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 9rem;
+      gap: 6rem;
       place-content: center;
       padding: 5rem 6rem;
       width: clamp(20rem, 80vw, 75rem);
     }
     .centro {
       grid-template-columns: 1fr;
+    }
+    section > div:first-child {
+      max-width: 26rem;
     }
   }
 </style>

@@ -12,49 +12,67 @@ const { depoimentos, page } = Astro.props;
 
 {
   (
-    <swiper-container
-      class="mySwiper"
-      pagination="true"
-      pagination-clickable="true"
-      effect="cards"
-    >
-      {depoimentos.data.content.map((depoimento) => (
-        <swiper-slide>
-          <div class="aluno">
-            <Image
-              src={depoimento.foto}
-              alt={depoimento.nome}
-              width="120"
-              height="90"
-            />
-            <div>
-              <span>{depoimento.nome}</span>
-              <span>{depoimento.sobre}</span>
+    <div class="swiper swiper-depoimentos">
+      <div class="swiper-wrapper">
+        {depoimentos.data.content.map((depoimento) => (
+          <div class="swiper-slide">
+            <div class="aluno">
+              <Image
+                src={depoimento.foto}
+                alt={depoimento.nome}
+                width="120"
+                height="90"
+              />
+              <div>
+                <span>{depoimento.nome}</span>
+                <span>{depoimento.sobre}</span>
+              </div>
             </div>
+            <p>{depoimento.depoimento}</p>
           </div>
-          <p>{depoimento.depoimento}</p>
-        </swiper-slide>
-      ))}
-    </swiper-container>
+        ))}
+      </div>
+      <div class="swiper-paginations">
+        <div class="swiper-pagination" />
+      </div>
+    </div>
   )
 }
 
 <script>
-  import { register } from "swiper/element/bundle";
-  register();
+  import { Swiper } from "swiper";
+  import { Pagination, EffectCards } from "swiper/modules";
+  import "swiper/css";
+  import "swiper/css/pagination";
+  import "swiper/css/effect-cards";
+  import { fade } from "astro:transitions";
 
-  const swiperEl = document.querySelector("swiper-container");
-
-  const swiperParams = {};
-
-  Object.assign(swiperEl, swiperParams);
+  new Swiper(".swiper-depoimentos", {
+    modules: [Pagination, EffectCards],
+    effect: "cards",
+    cardsEffect: {
+      perSlideOffset: 1,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      1026: {
+        cardsEffect: {
+          perSlideOffset: 6,
+          rotate: true,
+        },
+      },
+    },
+  });
 </script>
 <style scoped>
-  swiper-container {
+  .swiper-depoimentos {
     width: 80vw;
     height: auto;
   }
-  swiper-slide {
+  .swiper-slide {
     background: var(--clr-ice);
     width: -webkit-fill-available !important;
     padding: 2rem;
@@ -65,7 +83,8 @@ const { depoimentos, page } = Astro.props;
   .aluno {
     display: flex;
     flex-direction: column;
-    place-items: start;
+    place-items: center;
+    text-align: center;
     gap: 1.4rem;
     border-bottom: 0.1rem solid var(--clr-dblue);
     padding-bottom: 1.6rem;
@@ -79,31 +98,22 @@ const { depoimentos, page } = Astro.props;
     display: flex;
     flex-direction: column;
   }
-  swiper-slide p {
+  .swiper-slide p {
     font-family: var(--font-book);
     padding-top: 1.6rem;
   }
-  swiper-container::part(pagination) {
-    bottom: -2rem;
-  }
-  swiper-container::part(bullet-active) {
-    background-color: var(--clr-lblue);
-    width: 2rem;
-    border-radius: 1rem;
-  }
-  swiper-container::part(bullet) {
-    width: 2rem;
-    border-radius: 1rem;
-    transition: all 0.4s ease;
+  .swiper-paginations {
+    margin-top: 4rem;
   }
   @media screen and (min-width: 768px) {
     .aluno {
       flex-direction: row;
       place-items: center;
+      text-align: start;
     }
   }
-  @media screen and (min-width: 1024px) {
-    swiper-container {
+  @media screen and (min-width: 1026px) {
+    .swiper-depoimentos {
       width: clamp(20rem, 43vw, 40rem);
     }
   }

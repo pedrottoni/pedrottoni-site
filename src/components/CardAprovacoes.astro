@@ -187,11 +187,13 @@ const { aprovados, page, direction } = Astro.props;
   .play-interno {
     width: clamp(4rem, 6vw, 6rem);
     height: auto;
+    margin-bottom: 0;
   }
   .play-externo {
     width: clamp(5rem, 8vw, 7rem);
     height: auto;
     transform: scale(0.9);
+    margin-bottom: 0;
   }
   .card:hover .capa svg {
     filter: contrast(2);
@@ -204,16 +206,11 @@ const { aprovados, page, direction } = Astro.props;
     filter: brightness(1.1);
   }
   .texto {
-    background: linear-gradient(
-      45deg,
-      hsl(215deg 51% 47% / 59%),
-      hsl(195, 99%, 65%)
-    );
+    background: linear-gradient(45deg, hsl(215deg 51% 47%), hsl(195, 99%, 65%));
     display: flex;
     flex-direction: row;
     gap: 1rem;
     padding: 1rem 1rem 1.2rem 7.8rem;
-    backdrop-filter: blur(0.4rem);
     border-radius: 0 0 1rem 1rem;
     position: relative;
   }
@@ -265,7 +262,7 @@ const { aprovados, page, direction } = Astro.props;
   }
   @media screen and (min-width: 768px) {
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1025px) {
     .swiper-aprovacoes {
       height: -webkit-fill-available;
       position: absolute;
@@ -274,13 +271,18 @@ const { aprovados, page, direction } = Astro.props;
       width: clamp(20rem, 43vw, 40rem);
     }
     .capa {
-      margin-bottom: -4.1rem;
       height: auto;
     }
     .texto {
       position: absolute;
       bottom: 0;
       width: -webkit-fill-available;
+    }
+    .play-externo {
+      margin-bottom: 4rem;
+    }
+    .play-interno {
+      margin-bottom: 4rem;
     }
   }
 </style>

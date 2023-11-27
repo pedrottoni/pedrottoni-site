@@ -80,7 +80,6 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
     --swiper-scrollbar-drag-bg-color: var(--clr-blue);
     --swiper-pagination-color: var(--clr-green);
     --swiper-pagination-bullet-active-color: var(--clr-green);
-
   }
   .swiper-pagination-bullet-active {
     width: 2rem;
@@ -200,11 +199,12 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
     margin-bottom: 3rem;
   }
   .img-capa-material {
-    display: none;
     position: relative;
     bottom: 0rem;
-    opacity: 0.2;
-    filter: contrast(1.5) blur(1px);
+    width: 26rem;
+    height: auto;
+    margin-bottom: -5rem;
+    margin-right: -10rem;
   }
   .img-capa-valor {
     display: none;
@@ -303,6 +303,7 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
 
   ::-webkit-scrollbar {
     width: 0.5rem;
+    height: 0.4rem;
   }
 
   ::-webkit-scrollbar-thumb {
@@ -315,8 +316,9 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
     }
     .img-capa-material {
       display: block;
-      opacity: 0.2;
-      filter: contrast(1.5) blur(1px);
+      margin-bottom: 0;
+      margin-right: 0;
+      width: 60vw;
     }
     .txt-capa {
       width: 80%;
@@ -333,8 +335,10 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
       display: unset;
     }
     .img-capa-material {
-      opacity: 1;
-      filter: contrast(1) blur(0);
+      display: block;
+      width: auto;
+      margin-bottom: 0;
+      margin-right: 0;
     }
   }
 </style>

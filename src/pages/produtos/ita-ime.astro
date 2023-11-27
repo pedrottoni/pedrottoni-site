@@ -41,6 +41,7 @@ const serv = await getEntry("produtos", "serv");
       destaque=" 2024"
       botao="Quero me matricular"
       link="#matricula"
+      estilo="capa-page"
     >
       <p class="txt-capa" slot="conteudo">
         Descubra o caminho da aprovação com nossa turma ITA-IME! Aqui você vai
@@ -248,65 +249,81 @@ const serv = await getEntry("produtos", "serv");
     >
       <div class="rotina">
         <div>1</div>
-        <h2>Assista<br />aulas gravadas</h2>
-        <p>
-          Nossas aulas no modelo microlearning te levarão do básico até o
-          avançado.
-        </p>
+        <div>
+          <h2>Assista<br />aulas gravadas</h2>
+          <p>
+            Nossas aulas no modelo microlearning te levarão do básico até o
+            avançado.
+          </p>
+        </div>
       </div>
       <div class="rotina">
         <div>2</div>
-        <h2>Faça exercícios<br />de fixação</h2>
-        <p>
-          Após cada aula você terá acesso a listas curtas sobre o assunto da
-          aula para fixação.
-        </p>
+        <div>
+          <h2>Faça exercícios<br />de fixação</h2>
+          <p>
+            Após cada aula você terá acesso a listas curtas sobre o assunto da
+            aula para fixação.
+          </p>
+        </div>
       </div>
       <div class="rotina">
         <div>3</div>
-        <h2>Tire dúvidas no plantão individual</h2>
-        <p>
-          Nenhuma dúvida é simples demais. Tire suas dúvidas Ao Vivo com um
-          aluno do ITA.
-        </p>
+        <div>
+          <h2>Tire dúvidas no<br /> plantão individual</h2>
+          <p>
+            Nenhuma dúvida é simples demais. Tire suas dúvidas Ao Vivo com um
+            aluno do ITA.
+          </p>
+        </div>
       </div>
       <div class="rotina">
         <div>4</div>
-        <h2>Faça exercícios de aprofundamento</h2>
-        <p>
-          Após finalizar um bloco de conteúdos passamos listas com nível cada
-          vez maior.
-        </p>
+        <div>
+          <h2>Faça exercícios<br /> de aprofundamento</h2>
+          <p>
+            Após finalizar um bloco de conteúdos passamos listas com nível cada
+            vez maior.
+          </p>
+        </div>
       </div>
       <div class="rotina">
         <div>5</div>
-        <h2>Estude em grupo<br />com amigos</h2>
-        <p>
-          Conheça na nossa comunidade pessoas que caminham para a aprovação.
-        </p>
+        <div>
+          <h2>Estude em grupo<br />com amigos</h2>
+          <p>
+            Conheça na nossa comunidade pessoas que caminham para a aprovação.
+          </p>
+        </div>
       </div>
       <div class="rotina">
         <div>6</div>
-        <h2>Faça simulados modelo ITA</h2>
-        <p>
-          Nossos ciclos de simulados são cuidadosamente feitos para a sua
-          aprovação.
-        </p>
+        <div>
+          <h2>Faça simulados<br /> modelo ITA</h2>
+          <p>
+            Nossos ciclos de simulados são cuidadosamente feitos para a sua
+            aprovação.
+          </p>
+        </div>
       </div>
       <div class="rotina">
         <div>7</div>
-        <h2>Acompanhe o<br />seu desempenho</h2>
-        <p>
-          Saiba exatamente o que errou nos simulados e onde está o conteúdo para
-          revisar.
-        </p>
+        <div>
+          <h2>Acompanhe o<br />seu desempenho</h2>
+          <p>
+            Saiba exatamente o que errou nos simulados e onde está o conteúdo
+            para revisar.
+          </p>
+        </div>
       </div>
       <div class="rotina">
         <div>8</div>
-        <h2>Receba todo o<br />suporte necessário</h2>
-        <p>
-          Com nossos mentorias e apoio da coordenação tudo ficará mais fácil.
-        </p>
+        <div>
+          <h2>Receba todo o<br />suporte necessário</h2>
+          <p>
+            Com nossos mentorias e apoio da coordenação tudo ficará mais fácil.
+          </p>
+        </div>
       </div>
     </Section>
     <Section
@@ -673,8 +690,7 @@ const serv = await getEntry("produtos", "serv");
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    max-width: 16rem;
-    padding-top: 1.6rem;
+    margin: 0 3rem;
   }
   .rotina:before {
     /* content: ""; */
@@ -686,10 +702,11 @@ const serv = await getEntry("produtos", "serv");
     z-index: -1;
   }
   .rotina div:first-child {
-    background: var(--clr-blue);
+    background: var(--clr-dblue);
     border-radius: 100rem;
     font-family: var(--font-black);
     font-size: 3rem;
+    line-height: 0;
     width: 6rem;
     height: 6rem;
     display: flex;
@@ -702,6 +719,24 @@ const serv = await getEntry("produtos", "serv");
   }
   .rotina h2 {
     color: var(--clr-green);
-    margin: 0.6rem;
+    margin: 0.6rem 0;
+  }
+  @media screen and (max-width: 768px) {
+    .rotina {
+      flex-direction: row;
+      text-align: start;
+      align-items: start;
+      gap: 1rem;
+      position: relative;
+      margin: -1rem 0.6rem 0 5rem;
+    }
+    .rotina div:first-child {
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.5rem;
+      position: absolute;
+      top: 0;
+      left: -4rem;
+    }
   }
 </style>

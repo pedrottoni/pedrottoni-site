@@ -174,12 +174,14 @@ import capa4 from "../img/miscelaneas-ita.png";
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     width: 100%;
-    gap: 4rem;
+    gap: 1rem;
     z-index: 3;
     padding-bottom: 1.2rem;
     border-bottom: 0.12rem solid var(--clr-blue);
+    overflow-y: hidden;
+    overflow-x: auto;
   }
   button {
     display: flex;
@@ -192,6 +194,7 @@ import capa4 from "../img/miscelaneas-ita.png";
     font-family: var(--font-light);
     font-weight: 600;
     border: none;
+    min-width: 10rem;
   }
   button .btn-img {
     border-radius: 100rem;
@@ -206,7 +209,7 @@ import capa4 from "../img/miscelaneas-ita.png";
       drop-shadow(0.4rem 0.4rem 0.4rem hsl(195, 100%, 24%));
   }
   .material-active {
-    position: relative;
+    position: unset;
     color: var(--clr-green);
   }
   .material-active::after {
@@ -261,7 +264,7 @@ import capa4 from "../img/miscelaneas-ita.png";
     color: var(--clr-yellow);
     margin-top: 2.4rem;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     .content div {
       width: clamp(24rem, 44vw, 40rem);
     }
@@ -269,6 +272,15 @@ import capa4 from "../img/miscelaneas-ita.png";
       display: unset;
       width: auto;
       height: auto;
+      position: absolute;
+      right: -1rem;
+    }
+    .materiais {
+      justify-content: center;
+      gap: 4rem;
+    }
+    .material-active {
+      position: relative;
     }
   }
 </style>
