@@ -12,7 +12,8 @@ import CardEbooks from "../components/CardEbooks.astro";
 import CardAprovacoes from "../components/CardAprovacoes.astro";
 import CardDepoimentos from "../components/CardDepoimentos.astro";
 
-import capa from "../img/capa catalise.png";
+import capa from "../img/turma itaime.png";
+import venha from "../img/capa catalise.png";
 
 const turmas = await getEntry("produtos", "turmas");
 const materiais = await getEntry("produtos", "materiais");
@@ -29,14 +30,15 @@ const destaques = await getEntry("produtos", "destaques");
       <div class="box orange"></div>
     </div>
     <Capa
-      title="Uma frase bacana"
-      destaque=" Aqui!"
+      title="Turma"
+      destaque=" ITA-IME"
       botao="Quero me matricular"
       link="/produtos/ita-ime"
       estilo="capa-page"
     >
       <p class="txt-capa" slot="conteudo">
-        Explore nossos produtos e siga em direção ao sonho da aprovação.
+        Descubra o caminho da aprovação com nossa turma ITA-IME! Aqui você vai
+        aprender tudo o que precisa para conquistar os seus sonhos!
       </p>
       <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
     </Capa>
@@ -80,7 +82,7 @@ const destaques = await getEntry("produtos", "destaques");
         Junte-se aos nosso aprovados no melhor preparatório online para os
         processos seletivos do ITA, IME e EEAR!
       </p>
-      <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
+      <Image src={venha} alt="Catálise" class="img-capa" slot="imagem" />
     </Capa>
     <Section
       estilo="claro"

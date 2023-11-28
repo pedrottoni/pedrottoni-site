@@ -44,8 +44,8 @@ const { id, estilo, title, destaque, botao, link, linha } = Astro.props;
     gap: 1rem;
   }
   .capa {
-    /* filter: drop-shadow(-4rem -4rem 6rem hsl(215, 100%, 30%))
-      drop-shadow(4rem 4rem 6rem hsl(195, 100%, 24%)); */
+    filter: drop-shadow(-4rem -4rem 6rem hsl(215, 100%, 30%))
+      drop-shadow(4rem 4rem 6rem hsl(195, 100%, 24%));
 
     z-index: -1;
   }
@@ -94,6 +94,7 @@ const { id, estilo, title, destaque, botao, link, linha } = Astro.props;
   @media screen and (min-width: 768px) {
     .capa-page {
       flex-direction: row;
+      margin: 1.5rem 0;
     }
     .claro > div:first-child {
       width: clamp(24rem, 40vw, 35rem);
