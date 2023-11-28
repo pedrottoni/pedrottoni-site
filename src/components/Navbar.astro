@@ -10,11 +10,79 @@ import MenuMobile from "./MenuMobile.astro";
   </a>
   <MenuMobile />
   <div class="links">
-    <a href="/" class="link">Home</a>
+    <a href="/">
+      <Image src={logo} alt="Logo do Catálise" class="logo" />
+    </a>
     <a href="/produtos" class="link">Nossos produtos</a>
     <a href="/sobre" class="link">Quem somos</a>
     <a href="/parcerias" class="link">Plano Escolas</a>
     <a href="/contato" class="link">Contato</a>
+    <div class="social">
+      <ul>
+        <li>
+          <a href="https://www.instagram.com/cataliseita/">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 500 500"
+            >
+              <path
+                fill="#fff"
+                d="M120 30c-49.6 0-90 40.4-90 90v260c0 49.6 40.4 90 90 90h260c49.6 0 90-40.4 90-90V120c0-49.6-40.4-90-90-90H120Zm260 50h30c5.5 0 10 4.5 10 10v30c0 5.5-4.5 10-10 10h-30c-5.5 0-10-4.5-10-10V90c0-5.5 4.5-10 10-10Zm-130 20c53.3 0 100.2 28 126.8 70H420v200c0 27.6-22.4 50-50 50H130c-27.6 0-50-22.4-50-50V170h43.2c26.6-42 73.5-70 126.8-70Zm0 20c-71.7 0-130 58.3-130 130s58.3 130 130 130 130-58.3 130-130-58.3-130-130-130Zm0 40c49.6 0 90 40.4 90 90s-40.4 90-90 90-90-40.4-90-90 40.4-90 90-90Z"
+              ></path>
+            </svg>
+             @cataliseita</a
+          >
+        </li>
+        <li>
+          <a href="https://www.instagram.com/cataliseeear/">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 500 500"
+            >
+              <path
+                fill="#fff"
+                d="M120 30c-49.6 0-90 40.4-90 90v260c0 49.6 40.4 90 90 90h260c49.6 0 90-40.4 90-90V120c0-49.6-40.4-90-90-90H120Zm260 50h30c5.5 0 10 4.5 10 10v30c0 5.5-4.5 10-10 10h-30c-5.5 0-10-4.5-10-10V90c0-5.5 4.5-10 10-10Zm-130 20c53.3 0 100.2 28 126.8 70H420v200c0 27.6-22.4 50-50 50H130c-27.6 0-50-22.4-50-50V170h43.2c26.6-42 73.5-70 126.8-70Zm0 20c-71.7 0-130 58.3-130 130s58.3 130 130 130 130-58.3 130-130-58.3-130-130-130Zm0 40c49.6 0 90 40.4 90 90s-40.4 90-90 90-90-40.4-90-90 40.4-90 90-90Z"
+              ></path>
+            </svg>
+             @cataliseeear</a
+          >
+        </li>
+        <li>
+          <a href="https://www.youtube.com/catalisevestibulares">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 500 500"
+            >
+              <path
+                fill="#fff"
+                d="M448.98 145c-3.98-22-22.96-38-45-43-32.96-7-93.98-12-160-12-65.97 0-127.96 5-160.97 12-22 5-41.02 20-45 43C33.98 170 30 205 30 250s3.98 80 8.98 105c4.03 22 23.01 38 45 43 35 7 95 12 161.02 12 66.02 0 126.02-5 161.02-12 21.99-5 40.97-20 45-43 3.98-25 8.98-61.02 10-105-2.04-45-7.04-80-12.04-105ZM190 320V180l122 70-122 70Z"
+              ></path>
+            </svg>
+             Youtube</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/company/cat%C3%A1lise/posts/?feedView=all&viewAsMember=true"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 500 500"
+            >
+              <path
+                fill="#fff"
+                d="M410 40H90c-27.6 0-50 22.4-50 50v320c0 27.6 22.4 50 50 50h320c27.6 0 50-22.4 50-50V90c0-27.6-22.4-50-50-50ZM170 200v190h-60V200h60Zm-60-55.3c0-14 12-28.7 30-28.7s29.3 14.7 30 28.7c0 14-11.2 29.3-30 29.3-18 0-30-15.3-30-29.3ZM390 390h-60V290c0-20-10-40-35-40.4h-.8c-24.2 0-34.2 20.6-34.2 40.4v100h-60V200h60v25.6s19.3-25.6 58.1-25.6c39.7 0 71.9 27.3 71.9 82.6V390Z"
+              ></path>
+            </svg>
+             Linkedin</a
+          >
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
@@ -54,10 +122,50 @@ import MenuMobile from "./MenuMobile.astro";
     color: var(--clr-green);
   }
   .links a.active {
-    color:  var(--clr-green);;
+    color: var(--clr-green);
+  }
+  .links a:first-child {
+    display: block;
   }
   .desktop {
-    display: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    position: fixed;
+    top: 0;
+    right: 0px;
+    background: hsl(220, 80%, 12%);
+    padding: 3rem 2rem;
+    z-index: 3;
+    touch-action: none;
+  }
+  .desktop .link {
+    font-size: large;
+    color: var(--clr-lgray);
+  }
+  .desktop a:nth-child(2) {
+    margin-top: 2rem;
+  }
+  .desktop a:nth-child(5) {
+    margin-bottom: 6rem;
+  }
+  .social ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+  }
+  .social li a {
+    display: flex;
+    flex-direction: row;
+  }
+  .social li a svg {
+    width: 1.2rem;
+    margin-right: 0.4rem;
   }
   @media screen and (min-width: 768px) {
     .links {
@@ -69,6 +177,12 @@ import MenuMobile from "./MenuMobile.astro";
     .links a {
       display: inline-block;
       padding: 15px 20px;
+    }
+    .links .social {
+      display: none;
+    }
+    .links a:first-child {
+      display: none;
     }
   }
 </style>

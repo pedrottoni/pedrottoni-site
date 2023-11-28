@@ -52,6 +52,7 @@ const { depoimentos, page } = Astro.props;
     effect: "cards",
     cardsEffect: {
       perSlideOffset: 1,
+      perSlideRotate: 0,
     },
     pagination: {
       el: ".swiper-pagination",
@@ -61,6 +62,7 @@ const { depoimentos, page } = Astro.props;
       1026: {
         cardsEffect: {
           perSlideOffset: 6,
+          perSlideRotate: 1,
           rotate: true,
         },
       },
@@ -103,7 +105,8 @@ const { depoimentos, page } = Astro.props;
     padding-top: 1.6rem;
   }
   .swiper-paginations {
-    margin-top: 4rem;
+    margin-top: 3rem;
+    z-index: 2;
   }
   @media screen and (min-width: 768px) {
     .aluno {

@@ -257,7 +257,7 @@ import capa from "../img/capa catalise.png";
   .timeline-component {
     margin: 0 0 0 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 2rem;
   }
   .timeline-component img {
@@ -265,7 +265,7 @@ import capa from "../img/capa catalise.png";
     border-radius: 1rem;
   }
   .timeline-component .texto {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -305,6 +305,12 @@ import capa from "../img/capa catalise.png";
       background: var(--clr-green);
       -webkit-transform: translateX(-50%);
       transform: translateX(-50%);
+    }
+    .timeline-component {
+      flex-direction: row;
+    }
+    .timeline-component .texto {
+      width: 50%;
     }
   }
 </style>

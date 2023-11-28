@@ -16,7 +16,7 @@ const perguntas = await getEntry("alunos", "perguntas");
 const destaques = await getEntry("produtos", "destaques");
 
 import CardEbooks from "../../components/CardEbooks.astro";
-import MateriaisValor from "../../components/MateriaisValor-MS-IME.astro";
+import MateriaisValor from "../../components/MateriaisValor-MS-ITA.astro";
 ---
 
 <Layout title="Turma ITA/IME" description="Catálise - turma ITA/IME">
@@ -25,6 +25,7 @@ import MateriaisValor from "../../components/MateriaisValor-MS-IME.astro";
       title="Miscelâneas"
       destaque=" ITA"
       botao="Compre agora"
+      link="#valor"
       estilo="capa-page"
     >
       <p class="txt-capa" slot="conteudo">

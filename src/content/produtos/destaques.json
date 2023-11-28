@@ -3,74 +3,260 @@
     {
       "img": "../../img/destaques/metodologia microlearning.svg",
       "tag": "Metodologia Microlearning",
-      "nome": "Aulas curtas, completas e focadas com em média 25 minutos. Abordagem eficaz para garantir que o seu aprendizado seja fixado.",
+      "nome": "Aulas curtas, completas e focadas com em média 25 minutos. Abordagem eficaz para garantir que o seu aprendizado seja fixado",
       "page": ["home"]
     },
     {
       "img": "../../img/destaques/lista de exercícios.svg",
       "tag": "Listas de exercícios",
-      "nome": "Após a aula aprimore-se com listas abrangentes até o nível avançado. corrija com resoluções escritas e vídeos explicativos.",
+      "nome": "Após a aula aprimore-se com listas abrangentes até o nível avançado. corrija com resoluções escritas e vídeos explicativos",
       "page": ["home"]
     },
     {
       "img": "../../img/destaques/plantão de dúvidas.svg",
       "tag": "Plantão de dúvidas",
-      "nome": "Tire suas dúvidas de Física, Química e Matemática ao vivo por chamada do Google Meet. Agende e converse com um professor.",
+      "nome": "Tire suas dúvidas de Física, Química e Matemática ao vivo por chamada do Google Meet. Agende e converse com um professor",
       "page": ["home"]
     },
     {
       "img": "../../img/destaques/simulados com correção.svg",
       "tag": "Simulados com correção",
-      "nome": "7 ciclos de simulados: 1 de embasamento, 6 modelos ITA (1ª e 2ª fase), com gabarito, resolução e correção de todas matérias.",
+      "nome": "7 ciclos de simulados: 1 de embasamento, 6 modelos ITA (1ª e 2ª fase), com gabarito, resolução e correção de todas matérias",
       "page": ["home"]
     },
     {
       "img": "../../img/destaques/trilha de estudos.svg",
       "tag": "Trilha de Estudos",
-      "nome": "Com a nossa trilha você seguirá uma sequência didática do básico ao avançado, sabendo quando estudar e como estudar cada assunto.",
+      "nome": "Com a nossa trilha você seguirá uma sequência didática do básico ao avançado, sabendo quando estudar e como estudar cada assunto",
       "page": ["ITA-IME"]
     },
     {
       "img": "../../img/destaques/metodologia microlearning.svg",
       "tag": "Metodologia Microlearning",
-      "nome": "Aprenda tudo que precisa para o ITA com aulas curtas e focadas com em média 25 minutos. Nossa abordagem acelera o seu aprendizado.",
+      "nome": "Aprenda tudo que precisa para o ITA com aulas curtas e focadas com em média 25 minutos. Nossa abordagem acelera o seu aprendizado",
       "page": ["ITA-IME"]
     },
     {
       "img": "../../img/destaques/lista de exercícios2.svg",
       "tag": "Listas do Básico ao Avançado",
-      "nome": "Após as aulas aprimore-se com listas de exercícios do básico ao avançado. Com elas você não vai precisar de nenhum outro material.",
+      "nome": "Após as aulas aprimore-se com listas de exercícios do básico ao avançado. Com elas você não vai precisar de nenhum outro material",
       "page": ["ITA-IME"]
     },
     {
       "img": "../../img/destaques/relatório de desempenho.svg",
       "tag": "Relatório de desempenho",
-      "nome": "Após o simulado receba um relatório de desempenho individual, acompanhe sua evolução por matéria e aprenda o que mais você precisar.",
+      "nome": "Após o simulado receba um relatório de desempenho individual, acompanhe sua evolução por matéria e aprenda o que mais você precisar",
       "page": ["ITA-IME"]
+    },
+    {
+      "img": "../../img/destaques/trilha de estudos.svg",
+      "tag": "Trilha de Estudos",
+      "nome": "Com a nossa trilha você seguirá uma sequência didática do básico ao avançado, sabendo quando estudar e como estudar cada assunto",
+      "page": ["PRE-ITA-IME"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Metodologia Microlearning",
+      "nome": "Aprenda tudo que precisa para o ITA com aulas curtas e focadas com em média 25 minutos. Nossa abordagem acelera o seu aprendizado",
+      "page": ["PRE-ITA-IME"]
+    },
+    {
+      "img": "../../img/destaques/lista de exercícios2.svg",
+      "tag": "Listas do Básico ao Avançado",
+      "nome": "Após as aulas aprimore-se com listas de exercícios do básico ao avançado. Com elas você não vai precisar de nenhum outro material",
+      "page": ["PRE-ITA-IME"]
+    },
+    {
+      "img": "../../img/destaques/relatório de desempenho.svg",
+      "tag": "Relatório de desempenho",
+      "nome": "Após o simulado receba um relatório de desempenho individual, acompanhe sua evolução por matéria e descubra o que mais você precisa aprender por matéria",
+      "page": ["PRE-ITA-IME"]
+    },
+    {
+      "img": "../../img/destaques/trilha de estudos.svg",
+      "tag": "Resoluções de provas em vídeo",
+      "nome": "Tenha acesso a resolução detalhada em vídeo de todas as questões de Física, Química e Matemática do vestibular do ITA de 2017 a 2024",
+      "page": ["REVISAO ITA"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Provas Remodeladas",
+      "nome": "Não tenha problemas fazendo as provas antigas que eram em outro modelo. Você receberá 10 provas de 1ª fase  remodeladas para o modelo atual",
+      "page": ["REVISAO ITA"]
+    },
+    {
+      "img": "../../img/destaques/lista de exercícios2.svg",
+      "tag": "Orientação Individualizada",
+      "nome": "Com nossa planilha de correção de provas antigas você receberá a lista dos assuntos que precisa revisar e saberá exatamente seus pontos fortes e ponto de melhora",
+      "page": ["REVISAO ITA"]
+    },
+    {
+      "img": "../../img/destaques/relatório de desempenho.svg",
+      "tag": "Aulas Ao Vivo ",
+      "nome": "Aproveite a reta final para se preparar para a redação do ITA. Para isso você terá uma aula de redação por semana até a prova para revisar tudo o que você precisa",
+      "page": ["REVISAO ITA"]
+    },
+    {
+      "img": "../../img/destaques/trilha de estudos.svg",
+      "tag": "Trilha de Estudos",
+      "nome": "Com a nossa trilha você seguirá uma sequência didática do básico ao avançado, sabendo quando estudar e como estudar cada assunto",
+      "page": ["EEAR"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Metodologia Microlearning",
+      "nome": "Aprenda tudo que precisa para a EEAR com aulas curtas e focadas com em média 25 minutos. Nossa abordagem acelera o seu aprendizado",
+      "page": ["EEAR"]
+    },
+    {
+      "img": "../../img/destaques/lista de exercícios2.svg",
+      "tag": "Listas do Básico ao Avançado",
+      "nome": "Após as aulas aprimore-se com listas de exercícios do básico ao avançado. Com elas você não vai precisar de nenhum outro material",
+      "page": ["EEAR"]
+    },
+    {
+      "img": "../../img/destaques/relatório de desempenho.svg",
+      "tag": "Relatório de desempenho",
+      "nome": "Após o simulado receba um relatório de desempenho individual, acompanhe sua evolução por matéria e descubra o que mais você precisa aprender por matéria",
+      "page": ["EEAR"]
+    },
+    {
+      "img": "../../img/destaques/trilha de estudos.svg",
+      "tag": "Provas antigas sem marcações",
+      "nome": "Você vai receber todas as provas da EEAR de 2014 a 2024-1 sem aquelas marcações em vermelho que EEAR coloca nas provas na hora de divulgar os gabaritos",
+      "page": ["REVISAO EEAR"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Resoluções de provas",
+      "nome": "Tenha acesso a resolução detalhada de todas as questões de Física e Matemática de todas as questões das provas da EEAR de 2014 a 2024-1",
+      "page": ["REVISAO EEAR"]
+    },
+    {
+      "img": "../../img/destaques/lista de exercícios2.svg",
+      "tag": "Aulas Ao Vivo",
+      "nome": "Aproveite nossas aulas de revisão de Física, Matemática, Português e Inglês para chegar na prova sabendo o que precisa. A cada aula temos uma lista com resolução",
+      "page": ["REVISAO EEAR"]
+    },
+    {
+      "img": "../../img/destaques/relatório de desempenho.svg",
+      "tag": "Orientação Individualizada",
+      "nome": "Com nossa planilha de correção de provas antigas você receberá a lista dos assuntos que precisa revisar e saberá exatamente seus pontos fortes e ponto de melhora",
+      "page": ["REVISAO EEAR"]
     },
     {
       "img": "../../img/destaques/metodologia microlearning.svg",
       "tag": "Super banco de questões",
-      "nome": "Acesso a um amplo acervo de questões de matemática, física e química para praticar e se preparar para a prova.",
+      "nome": "Acesso a um amplo acervo de questões de matemática, física e química para praticar e se preparar para a prova",
       "page": ["MS-ITA"]
     },
     {
       "img": "../../img/destaques/metodologia microlearning.svg",
       "tag": "Organização por assunto",
-      "nome": "As questões estão todas divididas por assunto,  facilitando o estudo de cada matéria.",
+      "nome": "As questões estão todas divididas por assunto,  facilitando o estudo de cada matéria",
       "page": ["MS-ITA"]
     },
     {
       "img": "../../img/destaques/metodologia microlearning.svg",
       "tag": "Gabaritos disponíveis",
-      "nome": "Todas as questões possuem gabarito, o possibilitando uma rápida verificação das respostas e do seu desempenho .",
+      "nome": "Todas as questões possuem gabarito, o possibilitando uma rápida verificação das respostas e do seu desempenho",
       "page": ["MS-ITA"]
     },
     {
       "img": "../../img/destaques/metodologia microlearning.svg",
       "tag": "Resoluções disponíveis",
-      "nome": "Várias questões também possuem resoluções disponíveis com o passo a passo de como chegar à resposta correta.",
+      "nome": "Várias questões também possuem resoluções disponíveis com o passo a passo de como chegar à resposta correta",
       "page": ["MS-ITA"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Super banco de questões",
+      "nome": "Acesso a um amplo acervo de questões de matemática e física para praticar e se preparar para a prova",
+      "page": ["MS-AFA"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Organização por assunto",
+      "nome": "As questões estão todas divididas por assunto,  facilitando o estudo de cada matéria",
+      "page": ["MS-AFA"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Gabaritos disponíveis",
+      "nome": "Todas as questões possuem gabarito, o possibilitando uma rápida verificação das respostas e do seu desempenho",
+      "page": ["MS-AFA"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Resoluções disponíveis",
+      "nome": "Todas as questões também possuem resoluções disponíveis com o passo a passo de como chegar à resposta correta",
+      "page": ["MS-AFA"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Super banco de questões",
+      "nome": "Acesso a um amplo acervo de questões de matemática e física para praticar e se preparar para a prova",
+      "page": ["MS-EEAR"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Organização por assunto",
+      "nome": "As questões estão todas divididas por assunto,  facilitando o estudo de cada matéria",
+      "page": ["MS-EEAR"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Foque onde desejar",
+      "nome": "Você pode se aprofundar em áreas específicas da matemática e da física de acordo com a sua necessidade",
+      "page": ["MS-EEAR"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Gabaritos e Resoluções",
+      "nome": "Todas as questões possuem gabarito e resoluções detalhadas para você de preparar da melhor forma ",
+      "page": ["MS-EEAR"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Super resumo  de matérias",
+      "nome": "Tenha em um só lugar tudo aquilo que você iria passar horas procurando em diversas fontes de livros do ensino superior",
+      "page": ["BIZU-QUIMICA"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Aprendizado focado",
+      "nome": "Com os bizuários em mãos você aprenderá os tópicos que o ITA poderá cobrar na prova que talvez você nunca fosse ver",
+      "page": ["BIZU-QUIMICA"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Economize tempo",
+      "nome": "Pare de ficar buscando em diversas fontes e utilize este tempo para  aprender e decorar o que é mais importante ",
+      "page": ["BIZU-QUIMICA"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Mindset de Iteano",
+      "nome": "Entenda a importância de desenvolver uma mentalidade construtiva durante o processo de preparação",
+      "page": ["BIBLIA-ITA"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Planejamento de estudos",
+      "nome": "Tenha acesso a dicas incríveis para montar um planejamento de estudos eficiente, robusto e organizado",
+      "page": ["BIBLIA-ITA"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Ferramentas de estudos",
+      "nome": "Descubra como utilizar flashcards, caderno de bizus, simulados e provas antigas do ITA a seu favor",
+      "page": ["BIBLIA-ITA"]
+    },
+    {
+      "img": "../../img/destaques/metodologia microlearning.svg",
+      "tag": "Estatísticas de prova",
+      "nome": "Veja as estatísticas dos assuntos que mais caem no vestibular do ITA em química, física e matemática",
+      "page": ["BIBLIA-ITA"]
     },
     {
       "img": "../../img/destaques/trilha de estudos.svg",

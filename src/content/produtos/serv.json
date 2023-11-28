@@ -26,6 +26,30 @@
     },
     {
       "img": "../../img/destaques/aulas de redação.svg",
+      "tag": "Bate papo com ITEANO",
+      "nome": "Bate papo com convidado especial: alunos ou ex-alunos do ITA que está trabalhando em grandes empresas.",
+      "page": ["REVISAO ITA"]
+    },
+    {
+      "img": "../../img/destaques/apoio psicológico.svg",
+      "tag": "Apoio psicológico",
+      "nome": "Teremos uma Roda de Conversa com nossa psicóloga, experiente em acompanhar alunos que se preparam para o ITA",
+      "page": ["REVISAO ITA"]
+    },
+    {
+      "img": "../../img/destaques/apoio psicológico.svg",
+      "tag": "28 anos por assunto",
+      "nome": "Tenha 28 anos de provas do ITA de Física, Química e Matemática divididas por assunto para você focar no que mas precisa",
+      "page": ["REVISAO ITA"]
+    },
+    {
+      "img": "../../img/destaques/guia de estudo.svg",
+      "tag": "Comunidade VIP",
+      "nome": "Interaja com seus colegas, tire suas dúvidas e discutia sobre a matéria. Aqui criamos a interação que leva à aprovação.",
+      "page": ["REVISAO ITA"]
+    },
+    {
+      "img": "../../img/destaques/aulas de redação.svg",
       "tag": "0000000 0000000",
       "nome": "000000 000000 00000 000000 000000000 000000000 0000000 0000000 00000 00000 00000 00000",
       "page": ["PLANO-ESCOLAS"]

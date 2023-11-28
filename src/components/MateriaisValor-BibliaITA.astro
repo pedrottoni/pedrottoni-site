@@ -1,0 +1,169 @@
+---
+import { Image } from "astro:assets";
+import Botao from "./Botao.astro";
+
+import capa1 from "../img/miscelaneas-ita.png";
+import capa2 from "../img/miscelaneas-ita.png";
+import capa3 from "../img/miscelaneas-ita.png";
+import capa4 from "../img/miscelaneas-ita.png";
+---
+
+<section id="valor">
+  <div class="content content-active">
+    <div>
+      <h1>
+        A BÍBLIA
+        <br />
+        <span class="destaque">PARA O ITA</span>
+      </h1>
+      <p class="txt-capa" slot="conteudo">
+        Aproveite todas as dicas que preparamos para acelerar a sua aprovação no
+        ITA!
+      </p>
+      <h1 class="valor" slot="conteudo">Gratuito</h1>
+      <Botao
+        estilo="grande mt-3"
+        texto="Baixe agora"
+        link="https://catalise-vestibulares.herospark.co/p/abibliaparaoita"
+      />
+    </div>
+    <div class="capa">
+      <Image
+        src={capa1}
+        alt="Capa do Catálise"
+        class="img-capa"
+        slot="imagem"
+      />
+    </div>
+  </div>
+</section>
+
+<script></script>
+<style scoped>
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .valor {
+    font-family: var(--font-black);
+    color: var(--clr-yellow);
+    margin-top: 2.4rem;
+  }
+  .materiais {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    gap: 1rem;
+    z-index: 3;
+    padding-bottom: 1.2rem;
+    border-bottom: 0.12rem solid var(--clr-blue);
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+  button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: none;
+    color: var(--clr-white);
+    font-family: var(--font-light);
+    font-weight: 600;
+    border: none;
+    min-width: 10rem;
+  }
+  button .btn-img {
+    border-radius: 100rem;
+    height: 100px;
+    object-fit: cover;
+    background: var(--clr-dgray);
+    border: 0.2rem solid var(--clr-dblue);
+    transition: all 0.5s ease;
+  }
+  button:hover .btn-img {
+    filter: drop-shadow(-0.4rem -0.4rem 0.4rem hsl(215, 100%, 30%))
+      drop-shadow(0.4rem 0.4rem 0.4rem hsl(195, 100%, 24%));
+  }
+  .material-active {
+    position: unset;
+    color: var(--clr-green);
+  }
+  .material-active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.24rem;
+    background: var(--clr-lblue);
+    bottom: -1.28rem;
+    border-radius: 100rem 100rem 0 0;
+  }
+  .material-active .btn-img {
+    background: var(--clr-blue);
+    border: 0.2rem solid var(--clr-green);
+  }
+  .content {
+    display: flex;
+    place-items: center;
+    place-content: space-between;
+    margin-top: 2rem;
+    width: 100%;
+    z-index: 2;
+  }
+  .content h1 {
+    font-family: var(--font-black);
+    text-transform: uppercase;
+    margin-bottom: 1.1rem;
+    font-size: clamp(2.2rem, 3.3vw, 3rem);
+  }
+  .content .capa {
+    display: none;
+    filter: drop-shadow(-8rem -8rem 8rem hsl(215, 100%, 30%))
+      drop-shadow(8rem 8rem 8rem hsl(195, 100%, 24%));
+    z-index: -1;
+  }
+  .content .destaque {
+    font-size: clamp(2.2rem, 3.3vw, 3rem);
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 0.15rem var(--clr-yellow);
+  }
+  .content {
+    display: none;
+  }
+  .content-active {
+    display: flex;
+    position: relative;
+    color: var(--clr-white);
+  }
+  .valor {
+    font-family: var(--font-black);
+    color: var(--clr-yellow);
+    margin-top: 2.4rem;
+  }
+  @media screen and (min-width: 769px) {
+    .content div {
+      width: clamp(24rem, 44vw, 40rem);
+    }
+    .content .capa {
+      display: unset;
+      width: auto;
+      height: auto;
+      position: absolute;
+      right: -1rem;
+    }
+    .materiais {
+      justify-content: center;
+      gap: 4rem;
+    }
+    .material-active {
+      position: relative;
+    }
+  }
+</style>

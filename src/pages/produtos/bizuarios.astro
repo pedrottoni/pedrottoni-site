@@ -1,0 +1,204 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import Capa from "../../components/Capa.astro";
+import Destaques from "../../components/Destaques.astro";
+import Section from "../../components/Section.astro";
+import Accordeon from "../../components/Accordeon.astro";
+
+import { Image } from "astro:assets";
+import capa from "../../img/miscelaneas-ita.png";
+import beneficios from "../../img/beneficios.png";
+
+import { getEntry } from "astro:content";
+const materiais = await getEntry("produtos", "materiais");
+const perguntas = await getEntry("alunos", "perguntas");
+const destaques = await getEntry("produtos", "destaques");
+
+import CardEbooks from "../../components/CardEbooks.astro";
+import MateriaisValor from "../../components/MateriaisValor-Bizuarios.astro";
+---
+
+<Layout title="Turma ITA/IME" description="Catálise - turma ITA/IME">
+  <main class="container">
+    <Capa
+      title="Bizuários"
+      linha="true"
+      destaque=" de Química"
+      botao="Compre agora"
+      link="#valor"
+      estilo="capa-page"
+    >
+      <p class="txt-capa" slot="conteudo">
+        Nestes ebooks você vai encontrar as principais decorebas que você
+        precisa saber para o vestibular do ITA e do IME. Concentramos tudo o que
+        é importante aqui para você não precisar ficar consultando o rodapé de
+        livros do ensino superior.
+      </p>
+      <Image src={capa} alt="Capa do Catálise" class="img-capa" slot="imagem" />
+    </Capa>
+    <Destaques destaques={destaques} page="BIZU-QUIMICA" />
+    <Capa estilo="claro" title="O direcionamento que você precisa!" texto="">
+      <ul class="capa-itens" slot="conteudo">
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 132 144"
+          >
+            <path
+              fill="#77DCF8"
+              d="M122.35 55.45c12.87 7.23 12.87 25.87 0 33.1L28 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C0 4.51 15.45-4.62 28 2.43l94.35 53.02Z"
+              opacity=".7"></path>
+          </svg>
+           O melhor ebook de química focado no ITA
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 132 144"
+          >
+            <path
+              fill="#77DCF8"
+              d="M122.35 55.45c12.87 7.23 12.87 25.87 0 33.1L28 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C0 4.51 15.45-4.62 28 2.43l94.35 53.02Z"
+              opacity=".7"></path>
+          </svg>
+           Resumos que facilitam o aprendizado
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 132 144"
+          >
+            <path
+              fill="#77DCF8"
+              d="M122.35 55.45c12.87 7.23 12.87 25.87 0 33.1L28 141.57c-12.55 7.05-28-2.08-28-16.55V18.98C0 4.51 15.45-4.62 28 2.43l94.35 53.02Z"
+              opacity=".7"></path>
+          </svg>
+           Essencial para quem quer focar no que mais precisa
+        </li>
+      </ul>
+      <Image
+        src={beneficios}
+        alt="Capa do Catálise"
+        class="img-capa-material"
+        slot="imagem"
+        width="770"
+        quality="max"
+      />
+    </Capa>
+    <MateriaisValor />
+
+    <Section estilo="claro centro" tag="" titulo="Perguntas frequentes">
+      <Accordeon perguntas={perguntas} estilo="grande" page="MS" />
+    </Section>
+    <Section tag="" titulo="Outros materiais" colunas="col4">
+      <CardEbooks materiais={materiais} page="principal" swiper />
+    </Section>
+  </main>
+</Layout>
+
+<script>
+  import { Swiper } from "swiper";
+  import { Pagination, Mousewheel } from "swiper/modules";
+  import "swiper/css";
+  import "swiper/css/pagination";
+
+  new Swiper(".swiper-professores", {
+    slidesPerView: 1.4,
+    spaceBetween: 20,
+    direction: "vertical",
+    centeredSlides: true,
+    mousewheel: true,
+    modules: [Pagination, Mousewheel],
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+
+<style scoped>
+  .swiper {
+    min-height: 27rem;
+  }
+  .swiper-container {
+    margin-top: 2rem;
+    padding: 0 3rem;
+  }
+  .swiper-container .swiper-slide {
+    width: 18rem;
+    height: 28rem;
+    height: auto;
+    place-self: center;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 1.2rem -0.6rem rgba(0, 0, 0, 0.15);
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 5rem;
+    height: 5rem;
+    background: var(--clr-ice);
+    border-radius: 5rem;
+    box-shadow: 0 0.1rem 2rem hsl(0, 0%, 60%);
+    margin: -2.8rem 1rem;
+  }
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+  }
+  .swiper-professores {
+    height: -webkit-fill-available;
+    position: absolute;
+  }
+  .tema {
+    width: -webkit-fill-available;
+    text-align: left;
+    background: var(--clr-dblue);
+    padding: 2rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(0.4rem);
+  }
+  .tema h2 {
+    color: var(--clr-green);
+    margin-bottom: 1rem;
+  }
+  .rotina {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    max-width: 16rem;
+    padding-top: 1.6rem;
+  }
+  .rotina:before {
+    content: "";
+    position: absolute;
+    width: -webkit-fill-available;
+    height: 0.08rem;
+    background: var(--clr-green);
+    top: 53%;
+    z-index: -1;
+  }
+  .rotina div:first-child {
+    background: var(--clr-blue);
+    border-radius: 100rem;
+    font-family: var(--font-black);
+    font-size: 3rem;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    border: 0.2rem solid var(--clr-green);
+    filter: drop-shadow(-0.4rem -0.4rem 0.4rem hsl(215, 100%, 30%))
+      drop-shadow(0.4rem 0.4rem 0.4rem hsl(195, 100%, 24%));
+  }
+  .rotina h2 {
+    color: var(--clr-green);
+    margin: 0.6rem;
+  }
+</style>
