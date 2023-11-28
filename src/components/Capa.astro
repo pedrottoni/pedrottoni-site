@@ -46,6 +46,7 @@ const { id, estilo, title, destaque, botao, link, linha } = Astro.props;
   .capa {
     /* filter: drop-shadow(-4rem -4rem 6rem hsl(215, 100%, 30%))
       drop-shadow(4rem 4rem 6rem hsl(195, 100%, 24%)); */
+
     z-index: -1;
   }
   .destaque {
@@ -65,8 +66,8 @@ const { id, estilo, title, destaque, botao, link, linha } = Astro.props;
     color: var(--clr-black);
     width: calc(78vw - 2rem);
     padding: 3rem 3rem;
-    /*     filter: drop-shadow(-4rem -4rem 6rem hsl(215, 100%, 30%))
-      drop-shadow(4rem 4rem 6rem hsl(195, 100%, 24%)); */
+    filter: drop-shadow(-4rem -4rem 6rem hsl(215, 100%, 30%))
+      drop-shadow(4rem 4rem 6rem hsl(195, 100%, 24%));
     overflow: hidden;
     z-index: 1;
   }
