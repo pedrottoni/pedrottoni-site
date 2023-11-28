@@ -40,6 +40,7 @@ const { title, description } = Astro.props;
       href="https://api.whatsapp.com/send?phone=5512997364916&text=Ol%C3%A1!%20Gostaria%20de%20ajuda"
       class="contato"
     >
+      <p>Precisa de ajuda?</p>
       <svg
         width="170"
         height="171"
@@ -220,11 +221,32 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
   }
   .contato {
     position: fixed;
+    display: flex;
+    align-items: center;
     right: 2rem;
     bottom: -1rem;
-    display: flex;
-    width: 4rem;
+    width: auto;
     z-index: 20;
+    transition: 0.4s ease;
+  }
+  .contato p {
+    display: none;
+    font-family: var(--font-light);
+    font-weight: 600;
+    background: hsl(124, 50%, 50%);
+    padding: 0.5rem 4rem 0.5rem 1.4rem;
+    border: 0.12rem solid hsl(0deg 0% 100% / 50%);
+    border-radius: 100rem;
+    z-index: -1;
+    left: 3rem;
+    position: relative;
+  }
+  .contato svg {
+    max-width: 4.2rem;
+  }
+  .contato:hover p,
+  .contato:hover svg {
+    filter: brightness(1.05);
   }
   .capa-itens {
     list-style: none;
@@ -383,6 +405,9 @@ https://www.onlinewebfonts.com/search?q=GothamSSm
     }
     .image-capa {
       margin-bottom: 0rem;
+    }
+    .contato p {
+      display: block;
     }
   }
   @media screen and (min-width: 1026px) {
